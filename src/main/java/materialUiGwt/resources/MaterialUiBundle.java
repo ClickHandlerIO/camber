@@ -13,18 +13,15 @@ public interface MaterialUiBundle extends ClientBundle {
     // JS Resources
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Source("materialUiLib/app-bar.js")
-    TextResource appBar();
+    @Source("js/app.js")
+    TextResource compiledJs();
 
-    @Source("materialUiLib/app-canvas.js")
-    TextResource appCanvas();
+//    @Source("materialUiLib/auto-complete.js")
+//    TextResource autoComplete();
 
-    @Source("materialUiLib/auto-complete.js")
-    TextResource autoComplete();
+//    @Source("materialUiLib/left-nav.js")
+//    TextResource leftNav();
 
-    @Source("materialUiLib/left-nav.js")
-    TextResource leftNav();
-
-    @Source("materialUiLib/raised-button.js")
-    TextResource raisedButton();
+//    @Source("materialUiLib/raised-button.js")
+//    TextResource raisedButton();
 }
