@@ -1,4 +1,4 @@
-package materialUiGwt.client.components.List;
+package materialUiGwt.client.components.list;
 
 import jsinterop.annotations.JsType;
 import webmattr.react.ReactElement;

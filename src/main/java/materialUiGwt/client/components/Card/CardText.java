@@ -1,7 +1,6 @@
-package materialUiGwt.client.components.Card;
+package materialUiGwt.client.components.card;
 
 import jsinterop.annotations.JsType;
-import webmattr.react.ReactElement;
 
 /**
  *  Card consists of many different parts that share property names:

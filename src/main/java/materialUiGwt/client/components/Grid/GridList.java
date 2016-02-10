@@ -1,4 +1,4 @@
-package materialUiGwt.client.components.Grid;
+package materialUiGwt.client.components.grid;
 
 import jsinterop.annotations.JsType;
 

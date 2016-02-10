@@ -1,4 +1,4 @@
-package materialUiGwt.client.components.Menus;
+package materialUiGwt.client.components.menus;
 
 import jsinterop.annotations.JsType;
 import webmattr.react.ReactElement;
