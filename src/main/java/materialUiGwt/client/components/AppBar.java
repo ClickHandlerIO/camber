@@ -16,7 +16,7 @@ public class AppBar {
         String style; // ?
         ReactElement title; // default = '',  The title to display on the app bar
         String titleStyle; // ?
-        String propTypes_zDepth; // ? type = PropTypes.zDepth
+        String zDepth; // ? type = PropTypes.zDepth
 
         // functions
         Object onLeftIconButtonTouchTap; // func
