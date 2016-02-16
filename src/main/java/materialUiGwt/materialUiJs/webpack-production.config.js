@@ -8,8 +8,8 @@ var config = {
     entry: [path.join(__dirname, 'main.jsx')],
     resolve: {
         //When require, do not have to add these extensions to file's name
-        extensions: ["", ".js", ".jsx"]
-        //node_modules: ["web_modules", "node_modules"]  (Default Settings)
+        extensions: ["", ".js", ".jsx"],
+        node_modules: ["node_modules"]
     },
 
     //Render source-map file for final build
