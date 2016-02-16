@@ -1,8 +1,8 @@
 package materialUiGwt.client.components.grid;
 
 import jsinterop.annotations.JsType;
-import webmattr.react.ReactComponent;
-import webmattr.react.ReactElement;
+import io.clickhandler.web.react.ReactComponent;
+import io.clickhandler.web.react.ReactElement;
 
 /**
  *  Grid consists of:

@@ -1,7 +1,7 @@
 package materialUiGwt.client.components.progress;
 
 import jsinterop.annotations.JsType;
-import webmattr.react.ReactElement;
+import io.clickhandler.web.react.ReactElement;
 
 /**
  *

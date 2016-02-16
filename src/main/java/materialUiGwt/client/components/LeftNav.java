@@ -1,7 +1,7 @@
 package materialUiGwt.client.components;
 
 import jsinterop.annotations.JsType;
-import webmattr.react.ReactElement;
+import io.clickhandler.web.react.ReactElement;
 
 /**
  *  worth checking docs for this: http://www.material-ui.com/#/components/left-nav

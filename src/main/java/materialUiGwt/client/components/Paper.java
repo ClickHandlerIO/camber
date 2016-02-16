@@ -1,7 +1,7 @@
 package materialUiGwt.client.components;
 
 import jsinterop.annotations.JsType;
-import webmattr.react.ReactElement;
+import io.clickhandler.web.react.ReactElement;
 
 /**
  *  paper is a basic container that can give depth to the page
