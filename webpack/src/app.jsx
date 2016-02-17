@@ -11,7 +11,9 @@ module.exports = {
   React: React,
   ReactDOM: ReactDOM,
   InjectTapEventPlugin: injectTapEventPlugin,
-  AppBar: AppBar,
-  LeftNav: LeftNav,
-  RaisedButton: RaisedButton,
+  MaterialUi: {
+    AppBar: AppBar,
+    LeftNav: LeftNav,
+    RaisedButton: RaisedButton,
+  },
 };

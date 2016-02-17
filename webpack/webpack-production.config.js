@@ -16,7 +16,7 @@ var config = {
   //output config
   output: {
     libraryTarget: "var",
-    library: "WebpackOutput",
+    library: "Camber",
     path: buildPath,    //Path of output file
     filename: 'webpack-output.js'  //Name of output file
   },

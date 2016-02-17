@@ -10,11 +10,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.clickhandler</groupId>
-    <artifactId>material-ui-gwt</artifactId>
+    <artifactId>camber</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>material-ui-gwt</name>
-    <description>Material UI React GWT Wrapper</description>
+    <name>camber</name>
+    <description>Expose React and Js deps for GWT</description>
     <url>http://www.clickhandler.io</url>
     <organization>
         <name>ClickHandlerIO LLC</name>
@@ -44,9 +44,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:ClickHandlerIO/material-ui-gwt</connection>
-        <developerConnection>scm:git:git@github.com:ClickHandlerIO/material-ui-gwt.git</developerConnection>
-        <url>git@github.com:ClickHandlerIO/material-ui-gwt</url>
+        <connection>scm:git:git@github.com:ClickHandlerIO/camber</connection>
+        <developerConnection>scm:git:git@github.com:ClickHandlerIO/camber.git</developerConnection>
+        <url>git@github.com:ClickHandlerIO/camber</url>
     </scm>
 
     <properties>
