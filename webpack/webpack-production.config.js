@@ -4,7 +4,7 @@ var buildPath = path.resolve(__dirname, 'build');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 var config = {
-  entry: [path.join(__dirname, '/src/app/app.jsx')],
+  entry: [path.join(__dirname, '/src/app.jsx')],
   resolve: {
     //When require, do not have to add these extensions to file's name
     extensions: ["", ".js", ".jsx"]
@@ -12,12 +12,13 @@ var config = {
   },
   //Render source-map file for final build
   devtool: 'source-map',
+
   //output config
   output: {
     libraryTarget: "var",
-    library: "WebPackOutput",
+    library: "WebpackOutput",
     path: buildPath,    //Path of output file
-    filename: 'app.js'  //Name of output file
+    filename: 'webpack-output.js'  //Name of output file
   },
   plugins: [
     //Minify the bundle
