@@ -30,7 +30,7 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         String disabledBackgroundColor;
         String disabledLabelColor;
         String label;
-        String labelStyle; // ?
+        Object labelStyle;
         boolean linkButton;
         MouseEventHandler onMouseDown;
     }
