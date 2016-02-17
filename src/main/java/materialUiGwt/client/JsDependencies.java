@@ -6,9 +6,8 @@ import materialUiGwt.resources.WebpackResourceBundle;
 public class JsDependencies {
     public static void inject() {
         ScriptInjector.fromString(WebpackResourceBundle.INSTANCE.WebpackOutput().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
-        ScriptInjector.fromString(WebpackResourceBundle.INSTANCE.ReactRouter().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
-
         exposePackedJs();
+        ScriptInjector.fromString(WebpackResourceBundle.INSTANCE.ReactRouter().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
         tapEventPlugin();
     }
 

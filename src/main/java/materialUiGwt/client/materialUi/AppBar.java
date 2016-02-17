@@ -2,6 +2,7 @@ package materialUiGwt.client.materialUi;
 
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsType;
 import materialUiGwt.client.ExternalComponent;
@@ -25,20 +26,20 @@ public class AppBar extends ExternalComponent<AppBar.Props> {
     }-*/;
 
     @JsType
-    public static class Props {
-        String className;
-        String iconClassNameLeft;
-        String iconClassNameRight;
-        ReactElement iconElementLeft;
-        ReactElement iconElementRight;
-        String iconStyleRight; // ?
-        boolean showMenuIconButton = true;
-        String style; // ?
-        ReactElement title; // default = '',  The title to display on the app bar
-        String titleStyle; // ?
-        String zDepth; // ? type = PropTypes.zDepth
-        MouseEventHandler onLeftIconButtonTouchTap;
-        MouseEventHandler onRightIconButtonTouchTap;
-        TouchEventHandler onTitleTouchTap;
+    public static class Props extends BaseProps {
+        public String className;
+        public String iconClassNameLeft;
+        public String iconClassNameRight;
+        public ReactElement iconElementLeft;
+        public ReactElement iconElementRight;
+        public Object iconStyleRight;
+        public MouseEventHandler onLeftIconButtonTouchTap;
+        public MouseEventHandler onRightIconButtonTouchTap;
+        public TouchEventHandler onTitleTouchTap;
+        public boolean showMenuIconButton;
+        public Object style;
+        public String title;
+        public Object titleStyle;
+        public int zDepth;
     }
 }
