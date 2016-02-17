@@ -14,7 +14,7 @@ public interface MaterialUiBundle extends ClientBundle {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Source("js/app.js")
-    TextResource compiledJs();
+    TextResource WebPackOutput();
 
 //    @Source("materialUiLib/auto-complete.js")
 //    TextResource autoComplete();
