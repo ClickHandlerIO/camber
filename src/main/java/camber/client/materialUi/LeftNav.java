@@ -1,9 +1,10 @@
 package camber.client.materialUi;
 
-import io.clickhandler.web.react.BaseProps;
-import jsinterop.annotations.JsType;
 import camber.client.ExternalComponent;
 import camber.client.ReactClass;
+import io.clickhandler.web.Func;
+import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
@@ -26,10 +27,10 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
         public Boolean open; // uses Boolean because can be null, null value means uncontrolled
         public boolean openRight;
         public String overlayClassName;
-        public String overlayStyle; //
-        public String style; // ?
-        public int swipeAreaWidth; // default 30
+        public Object overlayStyle;
+        public Object style;
+        public int swipeAreaWidth;
         public Integer width; // can be null, defaulting to value from theme
-        public Object onRequestChange; // func
+        public Func.Run2<Boolean, Object> onRequestChange; // TODO get this to work (need to pass in a function
     }
 }

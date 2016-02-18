@@ -1,7 +1,9 @@
 package camber.client;
 
 import io.clickhandler.web.Func;
+import io.clickhandler.web.Reflection;
 import io.clickhandler.web.dom.DOM;
+import io.clickhandler.web.react.ChildCounter;
 import io.clickhandler.web.react.React;
 import io.clickhandler.web.react.ReactElement;
 
@@ -13,7 +15,14 @@ public abstract class ExternalComponent<P> {
     protected abstract ReactClass<P> reactClass();
 
     protected P defaultProps() {
-        return reactClass().getDefaultProps();
+        P props = reactClass().getDefaultProps();
+
+        Object key = Reflection.get(props, "key");
+        if(key == null) {
+            Reflection.set(props, "key", ChildCounter.get().newKey());
+        }
+
+        return props;
     }
 
     public ReactElement $() {
