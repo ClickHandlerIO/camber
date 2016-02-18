@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import camber.client.ExternalComponent;
 import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsType;
@@ -25,10 +26,9 @@ public class ListComponent extends ExternalComponent<ListComponent.Props> {
     @JsType
     public static class Props extends BaseProps {
         public boolean insetSubheader;
-        public Object style;
+        public CSSProps style;
         public ReactElement subheader;
         public Object subheaderStyle;
         public int zDepth;
-
     }
 }

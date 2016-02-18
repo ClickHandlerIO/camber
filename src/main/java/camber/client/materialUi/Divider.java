@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import camber.client.ExternalComponent;
 import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
 
@@ -23,6 +24,6 @@ public class Divider extends ExternalComponent<Divider.Props> {
        public String className;
        public boolean inset; // inset parameter allows the divider to to align with inset content, such as inset List_u components
        public Object muiTheme;
-       public Object style;
+       public CSSProps style;
     }
 }

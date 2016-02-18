@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import camber.client.ExternalComponent;
 import camber.client.ReactClass;
 import io.clickhandler.web.Func;
+import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
 
@@ -28,7 +29,7 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
         public boolean openRight;
         public String overlayClassName;
         public Object overlayStyle;
-        public Object style;
+        public CSSProps style;
         public int swipeAreaWidth;
         public Integer width; // can be null, defaulting to value from theme
         public Func.Run2<Boolean, Object> onRequestChange; // TODO get this to work (need to pass in a function

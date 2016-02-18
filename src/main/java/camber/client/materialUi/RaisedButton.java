@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
@@ -42,6 +43,6 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         public MouseEventHandler onTouchStart;
         public boolean primary;
         public boolean secondary;
-        public Object style;
+        public CSSProps style;
     }
 }
