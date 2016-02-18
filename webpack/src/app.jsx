@@ -9,7 +9,6 @@ import LeftNav from 'material-ui/lib/left-nav';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import RaisedButton from 'material-ui/lib/raised-button';
-import {SelectableContainerEnhance} from 'material-ui/lib/hoc/selectable-enhance';
 
 module.exports = {
   React: React,
@@ -22,6 +21,5 @@ module.exports = {
     List: List,
     ListItem: ListItem,
     RaisedButton: RaisedButton,
-    SelectableList: SelectableContainerEnhance(List),
   },
 };
