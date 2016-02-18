@@ -3,7 +3,7 @@ package camber.client.materialUi.styles.theme;
 import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
-public class TextfieldMuiTheme1 {
+public class TextFieldMuiTheme {
     public String textColor;
     public String hintColor;
     public String floatingLabelColor;

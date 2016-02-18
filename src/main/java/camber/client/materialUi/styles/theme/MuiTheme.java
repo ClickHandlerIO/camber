@@ -46,5 +46,5 @@ public class MuiTheme {
     public ToggleMuiTheme toggle;
     public ToolbarMuiTheme toolbar;
     public TabsMuiTheme tabs;
-    public TextfieldMuiTheme1 textField;
+    public TextFieldMuiTheme textField;
 }
