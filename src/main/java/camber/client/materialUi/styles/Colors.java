@@ -2,7 +2,7 @@ package camber.client.materialUi.styles;
 
 import jsinterop.annotations.JsType;
 
-@JsType(isNative = true, namespace = "Camber.MaterialUi.Styles.Colors")
+@JsType(isNative = true, namespace = "Camber.MaterialUi.Styles")
 public class Colors {
     public static String red50;
     public static String red100;

@@ -10,7 +10,13 @@ import LeftNav from 'material-ui/lib/left-nav';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import RaisedButton from 'material-ui/lib/raised-button';
+
 import Colors from 'material-ui/lib/styles/colors';
+import Spacing from 'material-ui/lib/styles/spacing';
+import Typography from 'material-ui/lib/styles/typography';
+import ZIndex from 'material-ui/lib/styles/zIndex';
+
+import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 
 module.exports = {
   React: React,
@@ -25,6 +31,12 @@ module.exports = {
     RaisedButton: RaisedButton,
     Styles: {
       Colors: Colors,
+      Spacing: Spacing,
+      Typography: Typography,
+      ZIndex: ZIndex,
+    },
+    Utils: {
+      ColorManipulator: ColorManipulator,
     },
   },
 };
