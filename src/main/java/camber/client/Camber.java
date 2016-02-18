@@ -12,11 +12,11 @@ public class Camber {
     }
 
     private static native void exposePackedJs() /*-{
-        $wnd.React = $wnd.WebpackOutput.React;
-        $wnd.ReactDOM = $wnd.WebpackOutput.ReactDOM;
+        $wnd.React = $wnd.Camber.React;
+        $wnd.ReactDOM = $wnd.Camber.ReactDOM;
     }-*/;
 
     private static native void tapEventPlugin() /*-{
-        $wnd.WebpackOutput.InjectTapEventPlugin();
+        $wnd.Camber.InjectTapEventPlugin();
     }-*/;
 }
