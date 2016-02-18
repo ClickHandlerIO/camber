@@ -21,7 +21,7 @@ public class Divider extends ExternalComponent<Divider.Props> {
     @JsType
     public static class Props extends BaseProps {
        public String className;
-       public boolean inset; // inset parameter allows the divider to to align with inset content, such as inset List components
+       public boolean inset; // inset parameter allows the divider to to align with inset content, such as inset List_u components
        public Object muiTheme;
        public Object style;
     }
