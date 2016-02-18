@@ -11,15 +11,15 @@ import javax.inject.Inject;
 /**
  * material ui list, many options and list types - http://www.material-ui.com/#/components/list
  */
-public class ListComponent extends ExternalComponent<ListComponent.Props> {
+public class SelectableList extends ExternalComponent<SelectableList.Props> {
 
     @Inject
-    public ListComponent() {
+    public SelectableList() {
     }
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.MaterialUi.List;
+        return $wnd.Camber.MaterialUi.SelectableList;
     }-*/;
 
     @JsType
