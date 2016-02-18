@@ -3,7 +3,7 @@ package camber.client.materialUi.utils;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
 
-@JsType(isNative = true, name = "Camber.MaterialUi.Utils")
+@JsType(isNative = true, namespace = "Camber.MaterialUi.Utils")
 public class ColorManipulator {
     @JsMethod
     public static native String fade(String color, double amount);
