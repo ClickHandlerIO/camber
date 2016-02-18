@@ -12,6 +12,7 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 import Colors from 'material-ui/lib/styles/colors';
+import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import Spacing from 'material-ui/lib/styles/spacing';
 import Typography from 'material-ui/lib/styles/typography';
 import ZIndex from 'material-ui/lib/styles/zIndex';
@@ -31,6 +32,7 @@ module.exports = {
     RaisedButton: RaisedButton,
     Styles: {
       Colors: Colors,
+      MuiTheme: MuiTheme,
       Spacing: Spacing,
       Typography: Typography,
       ZIndex: ZIndex,
