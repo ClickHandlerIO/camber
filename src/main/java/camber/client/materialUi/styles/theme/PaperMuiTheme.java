@@ -4,5 +4,6 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class PaperMuiTheme {
-    public String textColor;
+    public String backgroundColor;
+    public native String zDepthShadows();
 }

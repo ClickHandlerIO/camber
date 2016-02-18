@@ -4,5 +4,14 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class ToggleMuiTheme {
-    public String textColor;
+    public String thumbOnColor;
+    public String thumbOffColor;
+    public String thumbDisabledColor;
+    public String thumbRequiredColor;
+    public String trackOnColor;
+    public String trackOffColor;
+    public String trackDisabledColor;
+    public String labelColor;
+    public String labelDisabledColor;
+    public String trackRequiredColor;
 }

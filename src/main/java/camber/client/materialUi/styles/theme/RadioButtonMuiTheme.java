@@ -4,5 +4,12 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class RadioButtonMuiTheme {
-    public String textColor;
+    public String borderColor;
+    public String backgroundColor;
+    public String checkedColor;
+    public String requiredColor;
+    public String disabledColor;
+    public int size;
+    public String labelColor;
+    public String labelDisabledColor;
 }

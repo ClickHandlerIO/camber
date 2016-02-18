@@ -4,5 +4,5 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class ListItemMuiTheme {
-    public String textColor;
+    public int nestedLevelDepth;
 }

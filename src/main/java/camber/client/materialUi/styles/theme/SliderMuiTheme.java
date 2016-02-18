@@ -4,5 +4,14 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class SliderMuiTheme {
-    public String textColor;
+    public int trackSize;
+    public String trackColor;
+    public String trackColorSelected;
+    public int handleSize;
+    public int handleSizeDisabled;
+    public int handleSizeActive;
+    public String handleColorZero;
+    public String handleFillColor;
+    public String selectionColor;
+    public String rippleColor;
 }

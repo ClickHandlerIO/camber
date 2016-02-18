@@ -4,5 +4,6 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class RefreshIndicatorMuiTheme {
-    public String textColor;
+    public String strokeColor;
+    public String loadingStrokeColor;
 }

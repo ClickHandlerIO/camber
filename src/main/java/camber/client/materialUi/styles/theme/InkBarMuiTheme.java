@@ -4,5 +4,5 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class InkBarMuiTheme {
-    public String textColor;
+    public String backgroundColor;
 }

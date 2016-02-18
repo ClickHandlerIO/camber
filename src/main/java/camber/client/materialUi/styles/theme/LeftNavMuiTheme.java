@@ -4,5 +4,6 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true)
 public class LeftNavMuiTheme {
-    public String textColor;
+    public int width;
+    public String color;
 }
