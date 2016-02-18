@@ -18,7 +18,7 @@ public abstract class ExternalComponent<P> {
         P props = reactClass().getDefaultProps();
 
         Object key = Reflection.get(props, "key");
-        if(key == null) {
+        if (key == null) {
             Reflection.set(props, "key", ChildCounter.get().newKey());
         }
 
@@ -27,6 +27,10 @@ public abstract class ExternalComponent<P> {
 
     public ReactElement $() {
         return React.createElement(reactClass(), defaultProps());
+    }
+
+    public ReactElement $(Object... children) {
+        return React.createElement(reactClass(), defaultProps(), children);
     }
 
     public ReactElement $(Func.Run1<P> propsCallback) {
