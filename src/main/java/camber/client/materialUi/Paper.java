@@ -1,18 +1,31 @@
 package camber.client.materialUi;
 
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
 
-/**
- *  paper is a basic container that can give depth to the page
- */
-public class Paper {
-    @JsType
-    public static class Props {
-        boolean circle;
-        boolean rounded = true;
-        String style; // ?
-        boolean transitionEnabled;
-        String zDepth; // ? type = PropTypes.zDepth, default 1
+import javax.inject.Inject;
 
+
+public class Paper extends ExternalComponent<Paper.Props> {
+
+    @Inject
+    public Paper() {
+    }
+
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.Paper;
+    }-*/;
+
+    @JsType
+    public static class Props extends BaseProps {
+        public boolean circle;
+        public boolean rounded;
+        public CSSProps style;
+        public boolean transitionEnabled;
+        public int zDepth;
     }
 }

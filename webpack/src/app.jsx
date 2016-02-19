@@ -9,6 +9,7 @@ import Divider from 'material-ui/lib/divider';
 import LeftNav from 'material-ui/lib/left-nav';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
+import Paper from 'material-ui/lib/paper';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import RaisedButton from 'material-ui/lib/raised-button';
@@ -31,6 +32,7 @@ module.exports = {
     LeftNav: LeftNav,
     List: List,
     ListItem: ListItem,
+    Paper: Paper,
     RaisedButton: RaisedButton,
     Tab: Tab,
     Tabs: Tabs,
