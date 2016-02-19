@@ -21,6 +21,14 @@ public class LaunchSvgIcon extends ExternalComponent<LaunchSvgIcon.Props> {
         return $wnd.Camber.MaterialUi.Icons.Launch;
     }-*/;
 
+    @Override
+    protected Props defaultProps() {
+        Props props = new Props();
+        props.viewBox = "0 0 24 24";
+        applyKey(props);
+        return props;
+    }
+
     @JsType
     public static class Props extends SvgIcon.Props {
     }
