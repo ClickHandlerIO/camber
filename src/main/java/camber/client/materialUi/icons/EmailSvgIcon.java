@@ -5,10 +5,10 @@ import camber.client.ReactClass;
 import javax.inject.Inject;
 
 
-public class EmailSvgIcon2 extends AbstractMaterialIcon {
+public class EmailSvgIcon extends AbstractMaterialIcon {
 
     @Inject
-    public EmailSvgIcon2() {
+    public EmailSvgIcon() {
     }
 
     @Override
