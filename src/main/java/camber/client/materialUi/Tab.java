@@ -27,14 +27,14 @@ public class Tab extends ExternalComponent<Tab.Props> {
 
     @JsType
     public static class Props extends BaseProps {
-        String className;
-        ReactElement icon;
-        ReactElement label;
-        Func.Run onActive;
-        TouchEventHandler onTouchTap;
-        boolean selected;
-        CSSProps style;
-        Object value;
-        String width;
+       public String className;
+       public ReactElement icon;
+       public ReactElement label;
+       public Func.Run onActive;
+       public TouchEventHandler onTouchTap;
+       public boolean selected;
+       public CSSProps style;
+       public Object value;
+       public String width;
     }
 }

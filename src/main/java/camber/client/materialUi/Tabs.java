@@ -25,15 +25,15 @@ public class Tabs extends ExternalComponent<Tabs.Props> {
 
     @JsType
     public static class Props extends BaseProps {
-        String className;
-        String contentContainerClassName;
-        String contentContainerStyle;
-        int initialSelectedIndex;
-        CSSProps inkBarStyle;
-        Func.Run onChange;
-        CSSProps style;
-        CSSProps tabItemContainerStyle;
-        Object tabTemplate; // from docs: Override the default tab template used to wrap the content of each tab element.
-        Object value;
+       public String className;
+       public String contentContainerClassName;
+       public String contentContainerStyle;
+       public int initialSelectedIndex;
+       public CSSProps inkBarStyle;
+       public Func.Run onChange;
+       public CSSProps style;
+       public CSSProps tabItemContainerStyle;
+       public Object tabTemplate; // from docs: Override the default tab template used to wrap the content of each tab element.
+       public Object value;
     }
 }
