@@ -1,30 +1,46 @@
 package camber.client.materialUi;
 
-import jsinterop.annotations.JsType;
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.Func;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.KeyboardEventHandler;
+import io.clickhandler.web.event.MouseEventHandler;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsType;
 
-public class FlatButton {
+import javax.inject.Inject;
+
+public class FlatButton extends ExternalComponent<FlatButton.Props> {
+
+    @Inject
+    public FlatButton() {
+    }
+
+    @Override
+    protected native ReactClass<FlatButton.Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.FlatButton;
+    }-*/;
+
     @JsType
-    public static class Props {
-        String backgroundColor;
-        boolean disabled;
-        String hoverColor;
-        String href;
-        ReactElement icon;
-        ReactElement label;
-        String labelPosition = "after"; // enum 'before' 'after'
-        String labelStyle;
-        boolean linkButton;
-        boolean primary;
-        String rippleColor;
-        boolean secondary;
-        String style;
-
-        // functions
-        Object onKeyboardFocus; // func
-        Object onMouseEnter; // func
-        Object onMouseLeave; // func
-        Object onTouchStart; // func
-
+    public static class Props extends BaseProps {
+        public String backgroundColor;
+        public boolean disabled;
+        public String hoverColor;
+        public String href;
+        public ReactElement icon;
+        public ReactElement label;
+        public String labelPosition; // "before" or "after"
+        public CSSProps labelStyle;
+        public boolean linkButton;
+        public KeyboardEventHandler onKeyboardFocus;
+        public MouseEventHandler onMouseEnter;
+        public MouseEventHandler onMouseLeave;
+        public Func.Run onTouchStart;
+        public boolean primary;
+        public String rippleColor;
+        public boolean secondary;
+        public CSSProps style;
     }
 }

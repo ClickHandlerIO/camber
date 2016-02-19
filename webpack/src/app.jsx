@@ -6,6 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // Material Ui
 import AppBar from 'material-ui/lib/app-bar';
 import Divider from 'material-ui/lib/divider';
+import FlatButton from 'material-ui/lib/flat-button';
 import LeftNav from 'material-ui/lib/left-nav';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
@@ -29,6 +30,7 @@ module.exports = {
   MaterialUi: {
     AppBar: AppBar,
     Divider: Divider,
+    FlatButton: FlatButton,
     LeftNav: LeftNav,
     List: List,
     ListItem: ListItem,
