@@ -1,26 +1,44 @@
 package camber.client.materialUi;
 
-import jsinterop.annotations.JsType;
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.FocusEventHandler;
+import io.clickhandler.web.event.KeyboardEventHandler;
+import io.clickhandler.web.event.MouseEventHandler;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsType;
 
-public class IconButton {
+import javax.inject.Inject;
+
+public class IconButton extends ExternalComponent<IconButton.Props> {
+
+    @Inject
+    public IconButton() {
+    }
+
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.IconButton;
+    }-*/;
+
     @JsType
-    public static class Props {
-        String className;
-        boolean disabled;
-        String iconStyle;
-        String style;
-        ReactElement tooltip;
-        String tooltipPosition; // type = PropTypes.cornersAndCenter default='bottom-center'
-        String tooltipStyles;
-        boolean touch; // prop to make tooltip larger for mobile
-
-        // functions
-        Object onBlur; // func
-        Object onFocus; // func
-        Object onKeyboardFocus; // func
-        Object onMouseEnter; // func
-        Object onMouseLeave; // func
-
+    public static class Props extends BaseProps {
+       public String className;
+       public boolean disabled;
+       public String iconClassName;
+       public CSSProps iconStyle;
+       public FocusEventHandler onBlur;
+       public FocusEventHandler onFocus;
+       public KeyboardEventHandler onKeyboardFocus;
+       public MouseEventHandler onMouseEnter;
+       public MouseEventHandler onMouseLeave;
+       public MouseEventHandler onClick;
+       public CSSProps style;
+       public String tooltip;
+       public String tooltipPosition; // "bottom-center", "top-center", "bottom-right", "top-right", "bottom-left" and "top-left"
+       public CSSProps tooltipStyles;
+       public boolean touch; // prop to make tooltip larger for mobile, defaults to false
     }
 }

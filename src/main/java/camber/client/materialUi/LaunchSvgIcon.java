@@ -17,7 +17,7 @@ public class LaunchSvgIcon extends ExternalComponent<LaunchSvgIcon.Props> {
     }
 
     @Override
-    protected native ReactClass<LaunchSvgIcon.Props> reactClass() /*-{
+    protected native ReactClass<Props> reactClass() /*-{
         return $wnd.Camber.MaterialUi.Icons.Launch;
     }-*/;
 

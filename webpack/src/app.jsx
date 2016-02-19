@@ -9,6 +9,7 @@ import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import Divider from 'material-ui/lib/divider';
 import FlatButton from 'material-ui/lib/flat-button';
+import IconButton from 'material-ui/lib/icon-button';
 import LeftNav from 'material-ui/lib/left-nav';
 import Launch from 'material-ui/lib/svg-icons/action/launch';
 import List from 'material-ui/lib/lists/list';
@@ -33,6 +34,7 @@ module.exports = {
     AppBar: AppBar,
     Divider: Divider,
     FlatButton: FlatButton,
+    IconButton: IconButton,
     LeftNav: LeftNav,
     List: List,
     ListItem: ListItem,
