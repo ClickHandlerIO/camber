@@ -16,13 +16,15 @@ public abstract class ExternalComponent<P> {
 
     protected P defaultProps() {
         P props = reactClass().getDefaultProps();
+        applyKey(props);
+        return props;
+    }
 
+    protected void applyKey(P props) {
         Object key = Reflection.get(props, "key");
         if (key == null) {
             Reflection.set(props, "key", ChildCounter.get().newKey());
         }
-
-        return props;
     }
 
     public ReactElement $() {

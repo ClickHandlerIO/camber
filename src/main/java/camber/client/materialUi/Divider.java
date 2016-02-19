@@ -12,6 +12,8 @@ import javax.inject.Inject;
 
 public class Divider {
 
+    // todo need to get MuiTheme passed in
+
     @Inject
     public Divider() {
     }

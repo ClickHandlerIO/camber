@@ -25,16 +25,23 @@ public class Tab extends ExternalComponent<Tab.Props> {
         return $wnd.Camber.MaterialUi.Tab;
     }-*/;
 
+    @Override
+    protected Props defaultProps() {
+        Props props = new Props();
+        applyKey(props);
+        return props;
+    }
+
     @JsType
     public static class Props extends BaseProps {
-       public String className;
-       public ReactElement icon;
-       public ReactElement label;
-       public Func.Run onActive;
-       public TouchEventHandler onTouchTap;
-       public boolean selected;
-       public CSSProps style;
-       public Object value;
-       public String width;
+        public String className;
+        public ReactElement icon;
+        public ReactElement label;
+        public Func.Run onActive;
+        public TouchEventHandler onTouchTap;
+        public boolean selected;
+        public CSSProps style;
+        public Object value;
+        public String width;
     }
 }
