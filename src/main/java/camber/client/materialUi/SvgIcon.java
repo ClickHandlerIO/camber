@@ -1,22 +1,33 @@
 package camber.client.materialUi;
 
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
+import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
 
-/**
- *  SvgIcon component takes an SVG path element as its child, and converts it to a React component which displays the path and allows the icon to be styled and respond to mouse events
- */
-public class SvgIcon {
+import javax.inject.Inject;
+
+
+public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
+
+    @Inject
+    public SvgIcon() {
+    }
+
+    @Override
+    protected native ReactClass<SvgIcon.Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.SvgIcon;
+    }-*/;
+
     @JsType
-    public static class Props {
-//        String className;
-        String color;
-        String hoverColor;
-        String style; // ?
-        String viewBox; // default '0 0 24 24' coordinates, 0 0 being top left
-
-        // functions
-        Object onMouseEnter; // func
-        Object onMouseLeave; // func
-
+    public static class Props extends BaseProps {
+       public String color;
+       public String hoverColor;
+       public MouseEventHandler onMouseEnter;
+       public MouseEventHandler onMouseLeave;
+       public CSSProps style;
+       public String viewBox;
     }
 }

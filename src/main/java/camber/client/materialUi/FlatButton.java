@@ -30,13 +30,14 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         public String hoverColor;
         public String href;
         public ReactElement icon;
-        public ReactElement label;
+        public String label;
         public String labelPosition; // "before" or "after"
         public CSSProps labelStyle;
         public boolean linkButton;
         public KeyboardEventHandler onKeyboardFocus;
         public MouseEventHandler onMouseEnter;
         public MouseEventHandler onMouseLeave;
+        public MouseEventHandler onClick;
         public Func.Run onTouchStart;
         public boolean primary;
         public String rippleColor;
