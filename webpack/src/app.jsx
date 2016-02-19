@@ -9,6 +9,8 @@ import Divider from 'material-ui/lib/divider';
 import LeftNav from 'material-ui/lib/left-nav';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
+import Tab from 'material-ui/lib/tabs/tab';
+import Tabs from 'material-ui/lib/tabs/tabs';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 import Colors from 'material-ui/lib/styles/colors';
@@ -34,6 +36,8 @@ module.exports = {
       Colors: Colors,
       MuiTheme: MuiTheme,
       Spacing: Spacing,
+      Tab: Tab,
+      Tabs: Tabs,
       Typography: Typography,
       ZIndex: ZIndex,
     },
