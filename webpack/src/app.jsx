@@ -4,6 +4,8 @@ import ReactRouter from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Material Ui
+import AccountBox from 'material-ui/lib/svg-icons/action/account-box';
+import AccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
 import AppBar from 'material-ui/lib/app-bar';
 import Avatar from 'material-ui/lib/avatar';
 import Colors from 'material-ui/lib/styles/colors';
@@ -16,9 +18,12 @@ import LeftNav from 'material-ui/lib/left-nav';
 import Launch from 'material-ui/lib/svg-icons/action/launch';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
+import Email from 'material-ui/lib/svg-icons/communication/email.js';
+import MailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item'; // TODO 2 menu item (one in menus too)
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import Notifications from 'material-ui/lib/svg-icons/social/notifications';
 import Paper from 'material-ui/lib/paper';
 import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
@@ -27,8 +32,6 @@ import Tabs from 'material-ui/lib/tabs/tabs';
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
-
-
 
 module.exports = {
   React: React,
@@ -52,7 +55,12 @@ module.exports = {
     Tab: Tab,
     Tabs: Tabs,
     Icons: {
+      AccountBox: AccountBox,
+      AccountCircle: AccountCircle,
       Launch: Launch,
+      MailOutline: MailOutline,
+      Email: Email,
+      Notifications: Notifications,
     },
     Styles: {
       Colors: Colors,

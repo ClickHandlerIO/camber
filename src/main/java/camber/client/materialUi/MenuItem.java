@@ -1,34 +1,43 @@
 package camber.client.materialUi;
 
-import jsinterop.annotations.JsType;
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.TouchEventHandler;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsType;
+
+import javax.inject.Inject;
 
 /**
  *
  */
-public class MenuItem {
+public class MenuItem extends ExternalComponent<MenuItem.Props> {
+
+    @Inject
+    public MenuItem() {
+    }
+
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.MenuItem;
+    }-*/;
+
     @JsType
-    public static class Props {
-        boolean checked;
-        boolean desktop;
-        boolean disabled;
-        String focusState; // enum 'none' 'focused' 'keyboard-focused'
-        String innerDivStyle; // ?
-        boolean insetChildren;
-        ReactElement leftIcon;
-        ReactElement menuItems; // nested MenuItems for this menu item, for nested menus
-        ReactElement rightIcon;
-        ReactElement secondaryText; // node - clock element for secondary text, if string passed in it becomes a div
-        String style; // ?
-        Object value; // any
-
-        // functions
-        Object onChange; // func
-        Object onEscKeyDown; // func
-        Object onItemTouchTap; // func
-        Object onKeyDown; // func
-        Object onTouchTap; // func
-
-
+    public static class Props extends BaseProps {
+        public boolean checked;
+        public boolean desktop;
+        public boolean disabled;
+        public String focusState; // 'none', 'focused', 'keyboard-focused'
+        public CSSProps innerDivStyle;
+        public boolean insetChildren;
+        public ReactElement leftIcon;
+        public ReactElement menuItems; // nested MenuItems for this menu item, for nested menus
+        public TouchEventHandler onTouchTap;
+        public ReactElement rightIcon;
+        public ReactElement secondaryText;
+        public CSSProps style;
+        public Object value;
     }
 }
