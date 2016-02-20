@@ -1,37 +1,47 @@
 package camber.client.materialUi;
 
-import jsinterop.annotations.JsType;
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
+import io.clickhandler.web.Func;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsType;
 
-public class Dialog {
+import javax.inject.Inject;
+
+public class Dialog extends ExternalComponent<Dialog.Props> {
+
+    @Inject
+    public Dialog() {
+    }
+
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.Dialog;
+    }-*/;
+
     @JsType
-    public static class Props {
-        ReactElement actions; // node - this prop can be JSON object (depracated), a react element, or an array of react elements
-        String actionsContainerClassName;
-        String actionsContainerStyle; // ?
-        boolean autoDetectWindowHeight = true;
-        boolean autoScrollBodyContent;
-        String bodyClassName;
-        String bodyStyle; // ?
-        String className;
-        String contentClassName;
-        String contentStyle; // ?
-        boolean modal;
-        boolean open;
-        String overlayClassName;
-        String overlayStyle; // ?
-        boolean repositionOnUpdate = true;
-        String style; // ?
-        ReactElement title; // node
-        String titleClassName;
-        String titleStyle; // ?
-
-        // functions
-        Object onRequestClose; // func
-
-        // deprecated
-        String actionFocus;
-        String width; // any
-
+    public static class Props extends BaseProps {
+       public ReactElement[] actions;
+       public String actionsContainerClassName;
+       public CSSProps actionsContainerStyle;
+       public boolean autoDetectWindowHeight;
+       public boolean autoScrollBodyContent;
+       public String bodyClassName;
+       public CSSProps bodyStyle;
+       public String className;
+       public String contentClassName;
+       public CSSProps contentStyle;
+       public boolean modal;
+       public Func.Run1<Boolean> onRequestClose;
+       public boolean open;
+       public String overlayClassName;
+       public CSSProps overlayStyle;
+       public boolean repositionOnUpdate;
+       public CSSProps style;
+       public String title;
+       public String titleClassName;
+       public CSSProps titleStyle;
     }
 }

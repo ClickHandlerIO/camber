@@ -11,6 +11,7 @@ import Avatar from 'material-ui/lib/avatar';
 import Badge from 'material-ui/lib/badge';
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
+import Dialog from 'material-ui/lib/dialog';
 import Divider from 'material-ui/lib/divider';
 import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
@@ -44,6 +45,7 @@ module.exports = {
     AppBar: AppBar,
     Avatar: Avatar,
     Badge: Badge,
+    Dialog: Dialog,
     Divider: Divider,
     FlatButton: FlatButton,
     IconButton: IconButton,
