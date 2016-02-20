@@ -43,5 +43,9 @@ public class Tab extends ExternalComponent<Tab.Props> {
         public CSSProps style;
         public Object value;
         public String width;
+
+        @Inject
+        public Props() {
+        }
     }
 }

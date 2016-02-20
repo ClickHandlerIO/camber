@@ -39,5 +39,9 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
         public ReactElement secondaryText;
         public CSSProps style;
         public Object value;
+
+        @Inject
+        public Props() {
+        }
     }
 }

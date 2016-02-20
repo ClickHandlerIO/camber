@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *  Card_u consists of many different parts that share property names:
  *  for now they are separate classes
@@ -20,5 +22,8 @@ public class CardText {
         String color; // ?
         String style; // ?
 
+        @Inject
+        public Props() {
+        }
     }
 }

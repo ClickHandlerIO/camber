@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -24,5 +26,8 @@ public class Toggle {
         // functions
         Object onToggle; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

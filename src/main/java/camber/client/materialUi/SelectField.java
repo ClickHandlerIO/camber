@@ -3,6 +3,8 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -34,5 +36,9 @@ public class SelectField {
 
         // left out deprecated
 
+
+        @Inject
+        public Props() {
+        }
     }
 }

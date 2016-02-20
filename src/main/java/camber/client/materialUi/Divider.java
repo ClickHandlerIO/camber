@@ -52,5 +52,9 @@ public class Divider {
         public boolean inset; // inset parameter allows the divider to to align with inset content, such as inset List_u components
         public Object muiTheme;
         public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

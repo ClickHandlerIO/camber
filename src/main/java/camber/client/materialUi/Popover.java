@@ -3,6 +3,8 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -25,5 +27,8 @@ public class Popover {
         Object animation; // func
         Object onRequestClose; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

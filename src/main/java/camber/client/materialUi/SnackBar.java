@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -22,5 +24,9 @@ public class SnackBar {
 
 
         // left out deprecated
+
+        @Inject
+        public Props() {
+        }
     }
 }

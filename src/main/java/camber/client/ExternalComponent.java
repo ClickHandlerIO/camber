@@ -7,7 +7,12 @@ import io.clickhandler.web.react.ChildCounter;
 import io.clickhandler.web.react.React;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
+
 public abstract class ExternalComponent<P> {
+    @Inject
+    Provider<P> propsProvider;
 
     public ExternalComponent() {
     }
@@ -15,7 +20,8 @@ public abstract class ExternalComponent<P> {
     protected abstract ReactClass<P> reactClass();
 
     protected P defaultProps() {
-        P props = reactClass().getDefaultProps();
+        final P props = propsProvider.get();
+        Reflection.assign(props, reactClass().getDefaultProps());
         applyKey(props);
         return props;
     }

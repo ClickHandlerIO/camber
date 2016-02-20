@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 public class DatePicker {
     @JsType
     public static class Props {
@@ -28,5 +30,9 @@ public class DatePicker {
         public Object onShow; // func
         public Object onTouchTap; // func
         public Object shouldDisableDate; // func
+
+        @Inject
+        public Props() {
+        }
     }
 }

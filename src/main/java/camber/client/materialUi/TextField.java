@@ -3,6 +3,8 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -40,5 +42,8 @@ public class TextField {
         Object onFocus; // func
         Object onKeyDown; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

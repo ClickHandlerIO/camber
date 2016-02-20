@@ -38,5 +38,9 @@ public class AppBar extends ExternalComponent<AppBar.Props> {
         public String title;
         public Object titleStyle;
         public int zDepth;
+
+        @Inject
+        public Props() {
+        }
     }
 }

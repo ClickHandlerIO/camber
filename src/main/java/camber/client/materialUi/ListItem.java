@@ -54,5 +54,9 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         public ReactElement secondaryText; // node - contains secondary text, string becomes div element
         public int secondaryTextLines; // enum can be 1 or 2 - number of lines before ellipsis (more) shows
         public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

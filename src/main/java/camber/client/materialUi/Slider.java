@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -28,6 +30,10 @@ public class Slider {
         Object onDragStart; // func
         Object onDragStop; // func
         Object onFocus; // func
+
+        @Inject
+        public Props() {
+        }
 
     }
 }

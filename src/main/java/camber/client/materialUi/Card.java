@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *  Card_u consists of many different parts: for now they are separate classes
  *  1. Card_u
@@ -22,5 +24,8 @@ public class Card {
         // functions
         Object onExpandChange; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

@@ -3,6 +3,8 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -20,5 +22,8 @@ public class Checkbox {
         String style;
         String valueLink;
 
+        @Inject
+        public Props() {
+        }
     }
 }

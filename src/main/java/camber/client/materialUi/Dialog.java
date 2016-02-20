@@ -43,5 +43,9 @@ public class Dialog extends ExternalComponent<Dialog.Props> {
        public String title;
        public String titleClassName;
        public CSSProps titleStyle;
+
+        @Inject
+        public Props() {
+        }
     }
 }

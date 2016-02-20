@@ -29,5 +29,9 @@ public class Avatar extends ExternalComponent<Avatar.Props> {
        public int size;
        public String src;
        public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

@@ -33,5 +33,9 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
         public int swipeAreaWidth;
         public Integer width; // can be null, defaulting to value from theme
         public Func.Run2<Boolean, Object> onRequestChange; // TODO get this to work (need to pass in a function
+
+        @Inject
+        public Props() {
+        }
     }
 }

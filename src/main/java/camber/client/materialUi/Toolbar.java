@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -12,5 +14,8 @@ public class Toolbar {
         String style;
         boolean noGutter; // spacing of toolbar
 
+        @Inject
+        public Props() {
+        }
     }
 }

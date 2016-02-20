@@ -1,11 +1,11 @@
 package camber.client.materialUi;
 
+import camber.client.ExternalComponent;
+import camber.client.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import jsinterop.annotations.JsType;
-import camber.client.ExternalComponent;
-import camber.client.ReactClass;
 
 import javax.inject.Inject;
 
@@ -44,5 +44,9 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         public boolean primary;
         public boolean secondary;
         public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

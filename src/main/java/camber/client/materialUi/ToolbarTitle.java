@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -12,5 +14,8 @@ public class ToolbarTitle {
         String style;
         String text; // text to be displayed in title
 
+        @Inject
+        public Props() {
+        }
     }
 }

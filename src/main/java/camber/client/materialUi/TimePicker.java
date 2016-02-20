@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 public class TimePicker {
     @JsType
     public static class Props {
@@ -19,5 +21,8 @@ public class TimePicker {
         Object onShow; // func
         Object onTouchTap; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

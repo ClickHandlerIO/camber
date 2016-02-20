@@ -3,6 +3,8 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *  Card_u consists of many different parts that share property names:
  *  for now they are separate classes
@@ -27,5 +29,8 @@ public class CardTitle {
         String titleColor;
         String titleStyle; // ?
 
+        @Inject
+        public Props() {
+        }
     }
 }

@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -31,5 +33,8 @@ public class DropDownMenu {
         String valueLink;
         String valueMember;
 
+        @Inject
+        public Props() {
+        }
     }
 }

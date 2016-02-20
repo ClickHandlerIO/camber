@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 public class FontIcon {
     @JsType
     public static class Props {
@@ -14,5 +16,8 @@ public class FontIcon {
         Object onMouseEnter; // func
         Object onMouseLeave; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

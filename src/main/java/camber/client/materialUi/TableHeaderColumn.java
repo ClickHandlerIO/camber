@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -18,5 +20,8 @@ public class TableHeaderColumn {
         // functions
         Object onClick; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

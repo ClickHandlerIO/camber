@@ -27,5 +27,9 @@ public class Paper extends ExternalComponent<Paper.Props> {
         public CSSProps style;
         public boolean transitionEnabled;
         public int zDepth;
+
+        @Inject
+        public Props() {
+        }
     }
 }

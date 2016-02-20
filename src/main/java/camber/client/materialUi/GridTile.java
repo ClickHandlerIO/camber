@@ -4,6 +4,8 @@ import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactComponent;
 import io.clickhandler.web.react.ReactElement;
 
+import javax.inject.Inject;
+
 /**
  *  Grid_u consists of:
  *  1. GridList
@@ -24,5 +26,8 @@ public class GridTile {
         String titleBackground; // default 'rgba(0, 0, 0, 0.4)' - white
         String titlePosition; // enum 'top' 'bottom'
 
+        @Inject
+        public Props() {
+        }
     }
 }

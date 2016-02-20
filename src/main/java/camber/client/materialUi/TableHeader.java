@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -18,5 +20,8 @@ public class TableHeader {
         // functions
         Object onSelectAll; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

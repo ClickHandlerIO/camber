@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -18,5 +20,9 @@ public class RadioButton {
 
         // functions
         Object onCheck; // func
+
+        @Inject
+        public Props() {
+        }
     }
 }

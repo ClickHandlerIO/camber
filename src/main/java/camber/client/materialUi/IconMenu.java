@@ -47,6 +47,10 @@ public class IconMenu extends ExternalComponent<IconMenu.Props> {
         public CSSProps style;
         public Origin targetOrigin;
         public int touchTapCloseDelay;
+
+        @Inject
+        public Props() {
+        }
     }
 
     @JsType

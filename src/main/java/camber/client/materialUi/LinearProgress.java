@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -16,5 +18,8 @@ public class LinearProgress {
         String style;
         int value = 0; // only works in determinate mode
 
+        @Inject
+        public Props() {
+        }
     }
 }

@@ -4,6 +4,8 @@ import camber.client.ExternalComponent;
 import camber.client.materialUi.SvgIcon;
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 public abstract class AbstractMaterialIcon extends ExternalComponent<AbstractMaterialIcon.Props> {
 
     @Override
@@ -16,5 +18,8 @@ public abstract class AbstractMaterialIcon extends ExternalComponent<AbstractMat
 
     @JsType
     public static class Props extends SvgIcon.Props {
+        @Inject
+        public Props() {
+        }
     }
 }

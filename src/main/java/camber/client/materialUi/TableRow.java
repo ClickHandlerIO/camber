@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -26,5 +28,8 @@ public class TableRow {
         Object onRowHover; // func
         Object onRowHoverExit; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

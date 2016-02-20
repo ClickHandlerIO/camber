@@ -30,5 +30,9 @@ public class ListComponent extends ExternalComponent<ListComponent.Props> {
         public ReactElement subheader;
         public Object subheaderStyle;
         public int zDepth;
+
+        @Inject
+        public Props() {
+        }
     }
 }

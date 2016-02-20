@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *  Grid_u consists of:
  *  1. GridList
@@ -16,5 +18,8 @@ public class GridList {
         int padding;
         String style; // ?
 
+        @Inject
+        public Props() {
+        }
     }
 }

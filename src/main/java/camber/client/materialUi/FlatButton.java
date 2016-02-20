@@ -43,5 +43,9 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         public String rippleColor;
         public boolean secondary;
         public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

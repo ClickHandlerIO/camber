@@ -23,11 +23,15 @@ public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
 
     @JsType
     public static class Props extends BaseProps {
-       public String color;
-       public String hoverColor;
-       public MouseEventHandler onMouseEnter;
-       public MouseEventHandler onMouseLeave;
-       public CSSProps style;
-       public String viewBox;
+        public String color;
+        public String hoverColor;
+        public MouseEventHandler onMouseEnter;
+        public MouseEventHandler onMouseLeave;
+        public CSSProps style;
+        public String viewBox;
+
+        @Inject
+        public Props() {
+        }
     }
 }

@@ -45,5 +45,9 @@ public class Menu extends ExternalComponent<Menu.Props> {
         public Object valueLink;
         public int width;
         public int zDepth;
+
+        @Inject
+        public Props() {
+        }
     }
 }

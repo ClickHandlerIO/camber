@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -17,5 +19,8 @@ public class RefreshIndicator {
         String style;
         int top; // the absolute top position of the indicator in pixels
 
+        @Inject
+        public Props() {
+        }
     }
 }

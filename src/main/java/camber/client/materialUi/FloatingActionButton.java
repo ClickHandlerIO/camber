@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 public class FloatingActionButton {
     @JsType
     public static class Props {
@@ -24,5 +26,8 @@ public class FloatingActionButton {
         Object onTouchEnd; // func
         Object onTouchStart; // func
 
+        @Inject
+        public Props() {
+        }
     }
 }

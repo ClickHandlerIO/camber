@@ -40,5 +40,9 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
        public String tooltipPosition; // "bottom-center", "top-center", "bottom-right", "top-right", "bottom-left" and "top-left"
        public CSSProps tooltipStyles;
        public boolean touch; // prop to make tooltip larger for mobile, defaults to false
+
+        @Inject
+        public Props() {
+        }
     }
 }

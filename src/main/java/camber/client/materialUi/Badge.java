@@ -28,5 +28,9 @@ public class Badge extends ExternalComponent<Badge.Props> {
         public boolean primary;
         public boolean secondary;
         public CSSProps style;
+
+        @Inject
+        public Props() {
+        }
     }
 }

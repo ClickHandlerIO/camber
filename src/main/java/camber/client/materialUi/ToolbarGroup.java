@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -15,5 +17,8 @@ public class ToolbarGroup {
         boolean rightGap; // for last child right gap
         String style;
 
+        @Inject
+        public Props() {
+        }
     }
 }

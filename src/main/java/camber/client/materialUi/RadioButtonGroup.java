@@ -2,6 +2,8 @@ package camber.client.materialUi;
 
 import jsinterop.annotations.JsType;
 
+import javax.inject.Inject;
+
 /**
  *
  */
@@ -17,5 +19,9 @@ public class RadioButtonGroup {
 
         // functions
         Object onChange; // func
+
+        @Inject
+        public Props() {
+        }
     }
 }
