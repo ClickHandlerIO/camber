@@ -63,6 +63,7 @@ module.exports = {
       MailOutline: MailOutline,
       Email: Email,
       Notifications: Notifications,
+      Search: Search,
     },
     Styles: {
       Colors: Colors,
