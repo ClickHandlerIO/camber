@@ -8,6 +8,7 @@ import AccountBox from 'material-ui/lib/svg-icons/action/account-box';
 import AccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
 import AppBar from 'material-ui/lib/app-bar';
 import Avatar from 'material-ui/lib/avatar';
+import Badge from 'material-ui/lib/badge';
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import Divider from 'material-ui/lib/divider';
@@ -40,6 +41,7 @@ module.exports = {
   MaterialUi: {
     AppBar: AppBar,
     Avatar: Avatar,
+    Badge: Badge,
     Divider: Divider,
     FlatButton: FlatButton,
     IconButton: IconButton,
