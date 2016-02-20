@@ -3,10 +3,12 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *
  */
+@Singleton
 public class ToolbarGroup {
     @JsType
     public static class Props {

@@ -4,6 +4,7 @@ import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *  Card_u consists of many different parts that share property names:
@@ -15,6 +16,7 @@ import javax.inject.Inject;
  *  5. CardTitle
  *  6. CardText
  */
+@Singleton
 public class CardHeader {
     @JsType
     public static class Props {

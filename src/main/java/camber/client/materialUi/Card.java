@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *  Card_u consists of many different parts: for now they are separate classes
@@ -13,6 +14,7 @@ import javax.inject.Inject;
  *  5. CardTitle
  *  6. CardText
  */
+@Singleton
 public class Card {
     @JsType
     public static class Props {

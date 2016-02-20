@@ -9,7 +9,9 @@ import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class Divider {
 
     // todo need to get MuiTheme passed in

@@ -1,6 +1,6 @@
 package camber.client.materialUi.icons;
 
-import camber.client.ExternalComponent;
+import io.clickhandler.web.react.ExternalComponent;
 import camber.client.materialUi.SvgIcon;
 import jsinterop.annotations.JsType;
 

@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *  Grid_u consists of:
@@ -10,6 +11,7 @@ import javax.inject.Inject;
  *  2. GridTile
  *  ... for now they are separate classes
  */
+@Singleton
 public class GridList {
     @JsType
     public static class Props {

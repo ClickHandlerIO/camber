@@ -1,6 +1,6 @@
 package camber.client.materialUi.icons;
 
-import camber.client.ReactClass;
+import io.clickhandler.web.react.ReactClass;
 
 import javax.inject.Inject;
 

@@ -1,14 +1,16 @@
 package camber.client.materialUi;
 
-import camber.client.ExternalComponent;
-import camber.client.ReactClass;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class Badge extends ExternalComponent<Badge.Props> {
 
     @Inject

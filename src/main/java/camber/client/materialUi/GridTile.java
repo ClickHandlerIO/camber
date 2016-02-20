@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactComponent;
 import io.clickhandler.web.react.ReactElement;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *  Grid_u consists of:
@@ -12,6 +13,7 @@ import javax.inject.Inject;
  *  2. GridTile
  *  ... for now they are separate classes
  */
+@Singleton
 public class GridTile {
     @JsType
     public static class Props {

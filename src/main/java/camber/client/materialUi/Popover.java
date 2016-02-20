@@ -4,10 +4,12 @@ import jsinterop.annotations.JsType;
 import io.clickhandler.web.react.ReactElement;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  *
  */
+@Singleton
 public class Popover {
     @JsType
     public static class Props {

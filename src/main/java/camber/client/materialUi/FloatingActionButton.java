@@ -3,7 +3,9 @@ package camber.client.materialUi;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class FloatingActionButton {
     @JsType
     public static class Props {
