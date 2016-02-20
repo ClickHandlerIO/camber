@@ -22,10 +22,12 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import Email from 'material-ui/lib/svg-icons/communication/email.js';
 import MailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import Menu from 'material-ui/lib/menu/menu';
+import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item'; // TODO 2 menu item (one in menus too)
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import Notifications from 'material-ui/lib/svg-icons/social/notifications';
 import Paper from 'material-ui/lib/paper';
+import Search from 'material-ui/lib/svg-icons/action/search';
 import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
 import Tab from 'material-ui/lib/tabs/tab';
@@ -61,6 +63,7 @@ module.exports = {
       AccountCircle: AccountCircle,
       Launch: Launch,
       MailOutline: MailOutline,
+      Menu: MenuIcon,
       Email: Email,
       Notifications: Notifications,
       Search: Search,
