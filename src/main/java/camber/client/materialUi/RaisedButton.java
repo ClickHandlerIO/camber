@@ -37,6 +37,7 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         public String labelPosition;
         public Object labelStyle;
         public boolean linkButton;
+        public MouseEventHandler onClick;
         public MouseEventHandler onMouseDown;
         public MouseEventHandler onMouseEnter;
         public MouseEventHandler onMouseLeave;

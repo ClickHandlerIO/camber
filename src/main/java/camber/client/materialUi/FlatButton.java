@@ -40,6 +40,8 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         public MouseEventHandler onMouseEnter;
         public MouseEventHandler onMouseLeave;
         public MouseEventHandler onClick;
+        public boolean keyboardFocused;
+        public boolean focused; // not working
         public Func.Run onTouchStart;
         public boolean primary;
         public String rippleColor;
