@@ -30,7 +30,7 @@ public class TextField extends ExternalComponent<TextField.Props> {
     @JsType
     public static class Props extends BaseProps {
         public String className;
-        public String defaultValue;
+        public Object defaultValue;
         public boolean disabled;
         public CSSProps errorStyle;
         public String errorText;
@@ -55,7 +55,7 @@ public class TextField extends ExternalComponent<TextField.Props> {
         public CSSProps underlineFocusStyle;
         public boolean underlineShow;
         public CSSProps underlineStyle;
-        public String value;
+        public Object value;
 
         @Inject
         public Props() {
