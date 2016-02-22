@@ -24,7 +24,7 @@ import Email from 'material-ui/lib/svg-icons/communication/email.js';
 import MailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import Menu from 'material-ui/lib/menu/menu';
 import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
-import MenuItem from 'material-ui/lib/menu/menu-item'; // TODO 2 menu item (one in menus too)
+import MenuItem from 'material-ui/lib/menu/menu-item';
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import Notifications from 'material-ui/lib/svg-icons/social/notifications';
 import Paper from 'material-ui/lib/paper';
@@ -33,7 +33,7 @@ import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
-import TextField from 'material-ui/lib/TextField/TextField';
+import TextField from './overrides/material-ui/lib/TextField/TextField';
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
