@@ -33,7 +33,7 @@ import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/lib/TextField/TextField';
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
