@@ -1,7 +1,13 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.Func;
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.FormEventHandler;
+import io.clickhandler.web.event.KeyboardEventHandler;
+import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
 import jsinterop.annotations.JsType;
-import io.clickhandler.web.react.ReactElement;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -10,39 +16,46 @@ import javax.inject.Singleton;
  *
  */
 @Singleton
-public class TextField {
+public class TextField extends ExternalComponent<TextField.Props> {
+
+    @Inject
+    public TextField() {
+    }
+
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.TextField;
+    }-*/;
+
     @JsType
-    public static class Props {
-        String className;
-        String defaultValue;
-        boolean disabled;
-        String errorStyle;
-        ReactElement errorText;
-        String floatingLabelStyle;
-        ReactElement floatingLabelText;
-        boolean fullWidth;
-        String hintStyle;
-        ReactElement hintText;
-        String id;
-        String inputStyle;
-        boolean multiLine;
-        int rows = 1;
-        int rowsMax;
-        String style;
-        String type = "text";
-        String underlineDisabledStyle;
-        String underlineFocusStyle;
-        boolean underlineShow = true;
-        String underlineStyle;
-        Object value; // String most likely but can be nmber bool
-
-
-        // functions
-        Object onBlur; // func
-        Object onChange; // func
-        Object onEnterKeyDown; // func
-        Object onFocus; // func
-        Object onKeyDown; // func
+    public static class Props extends BaseProps {
+        public String className;
+        public String defaultValue;
+        public boolean disabled;
+        public CSSProps errorStyle;
+        public String errorText;
+        public CSSProps floatingLabelStyle;
+        public String floatingLabelText;
+        public boolean fullWidth;
+        public CSSProps hintStyle;
+        public String hintText;
+        public String id;
+        public CSSProps inputStyle;
+        public boolean multiLine;
+        public Func.Run onBlur;
+        public FormEventHandler onChange;
+        public KeyboardEventHandler onEnterKeyDown;
+        public Func.Run onFocus;
+        public KeyboardEventHandler onKeyDown;
+        public int rows;
+        public int rowsMax;
+        public CSSProps style;
+        public String type; // ie "text" or "password"
+        public CSSProps underlineDisabledStyle;
+        public CSSProps underlineFocusStyle;
+        public boolean underlineShow;
+        public CSSProps underlineStyle;
+        public String value;
 
         @Inject
         public Props() {
