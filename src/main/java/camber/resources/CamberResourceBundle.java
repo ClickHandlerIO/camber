@@ -18,4 +18,10 @@ public interface CamberResourceBundle extends ClientBundle {
 
     @Source("js/react-router.min.js")
     TextResource ReactRouter();
+
+    @Source("js/jquery-2.2.1.min.js")
+    TextResource jQuery();
+
+    @Source("js/select2.full.min.js")
+    TextResource Select2();
 }
