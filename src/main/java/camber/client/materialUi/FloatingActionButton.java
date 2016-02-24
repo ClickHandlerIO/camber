@@ -129,6 +129,7 @@ public class FloatingActionButton extends ExternalComponent<FloatingActionButton
         @JsProperty
         void setStyle(CSSProps style);
 
+
         ////////////////////
         // fluent setters
         ////////////////////

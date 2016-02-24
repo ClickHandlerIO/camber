@@ -36,7 +36,7 @@ public class Card extends ExternalComponent<Card.Props>{
     public interface Props extends BaseProps {
 
         @JsProperty
-        public boolean isActAsExpander();
+        boolean isActAsExpander();
 
         @JsProperty
         void setActAsExpander(boolean actAsExpander);
