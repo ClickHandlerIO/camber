@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -25,21 +26,69 @@ public class Tabs extends ExternalComponent<Tabs.Props> {
         return $wnd.Camber.MaterialUi.Tabs;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String className;
-        public String contentContainerClassName;
-        public String contentContainerStyle;
-        public int initialSelectedIndex;
-        public CSSProps inkBarStyle;
-        public Func.Run onChange;
-        public CSSProps style;
-        public CSSProps tabItemContainerStyle;
-        public Object tabTemplate; // from docs: Override the default tab template used to wrap the content of each tab element.
-        public Object value;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getClassName();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setClassName(String className);
+
+        @JsProperty
+        String getContentContainerClassName();
+
+        @JsProperty
+        void setContentContainerClassName(String contentContainerClassName);
+
+        @JsProperty
+        String getContentContainerStyle();
+
+        @JsProperty
+        void setContentContainerStyle(String contentContainerStyle);
+
+        @JsProperty
+        double getInitialSelectedIndex();
+
+        @JsProperty
+        void setInitialSelectedIndex(double initialSelectedIndex);
+
+        @JsProperty
+        CSSProps getInkBarStyle();
+
+        @JsProperty
+        void setInkBarStyle(CSSProps inkBarStyle);
+
+        @JsProperty
+        Func.Run getOnChange();
+
+        @JsProperty
+        void setOnChange(Func.Run onChange);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        CSSProps getTabItemContainerStyle();
+
+        @JsProperty
+        void setTabItemContainerStyle(CSSProps tabItemContainerStyle);
+
+        @JsProperty
+        Object getTabTemplate();
+
+        @JsProperty
+        void setTabTemplate(Object tabTemplate);
+
+        @JsProperty
+        Object getValue();
+
+        @JsProperty
+        void setValue(Object value);
     }
 }

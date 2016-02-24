@@ -6,6 +6,7 @@ import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -23,31 +24,129 @@ public class Dialog extends ExternalComponent<Dialog.Props> {
         return $wnd.Camber.MaterialUi.Dialog;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-       public ReactElement[] actions;
-       public String actionsContainerClassName;
-       public CSSProps actionsContainerStyle;
-       public boolean autoDetectWindowHeight;
-       public boolean autoScrollBodyContent;
-       public String bodyClassName;
-       public CSSProps bodyStyle;
-       public String className;
-       public String contentClassName;
-       public CSSProps contentStyle;
-       public boolean modal;
-       public Func.Run1<Boolean> onRequestClose;
-       public boolean open;
-       public String overlayClassName;
-       public CSSProps overlayStyle;
-       public boolean repositionOnUpdate;
-       public CSSProps style;
-       public String title;
-       public String titleClassName;
-       public CSSProps titleStyle;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        ReactElement[] getActions();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setActions(ReactElement[] actions);
+
+        @JsProperty
+        String getActionsContainerClassName();
+
+        @JsProperty
+        void setActionsContainerClassName(String actionsContainerClassName);
+
+        @JsProperty
+        CSSProps getActionsContainerStyle();
+
+        @JsProperty
+        void setActionsContainerStyle(CSSProps actionsContainerStyle);
+
+        @JsProperty
+        boolean isAutoDetectWindowHeight();
+
+        @JsProperty
+        void setAutoDetectWindowHeight(boolean autoDetectWindowHeight);
+
+        @JsProperty
+        boolean isAutoScrollBodyContent();
+
+        @JsProperty
+        void setAutoScrollBodyContent(boolean autoScrollBodyContent);
+
+        @JsProperty
+        String getBodyClassName();
+
+        @JsProperty
+        void setBodyClassName(String bodyClassName);
+
+        @JsProperty
+        CSSProps getBodyStyle();
+
+        @JsProperty
+        void setBodyStyle(CSSProps bodyStyle);
+
+        @JsProperty
+        String getClassName();
+
+        @JsProperty
+        void setClassName(String className);
+
+        @JsProperty
+        String getContentClassName();
+
+        @JsProperty
+        void setContentClassName(String contentClassName);
+
+        @JsProperty
+        CSSProps getContentStyle();
+
+        @JsProperty
+        void setContentStyle(CSSProps contentStyle);
+
+        @JsProperty
+        boolean isModal();
+
+        @JsProperty
+        void setModal(boolean modal);
+
+        @JsProperty
+        Func.Run1<Boolean> getOnRequestClose();
+
+        @JsProperty
+        void setOnRequestClose(Func.Run1<Boolean> onRequestClose);
+
+        @JsProperty
+        boolean isOpen();
+
+        @JsProperty
+        void setOpen(boolean open);
+
+        @JsProperty
+        String getOverlayClassName();
+
+        @JsProperty
+        void setOverlayClassName(String overlayClassName);
+
+        @JsProperty
+        CSSProps getOverlayStyle();
+
+        @JsProperty
+        void setOverlayStyle(CSSProps overlayStyle);
+
+        @JsProperty
+        boolean isRepositionOnUpdate();
+
+        @JsProperty
+        void setRepositionOnUpdate(boolean repositionOnUpdate);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        String getTitle();
+
+        @JsProperty
+        void setTitle(String title);
+
+        @JsProperty
+        String getTitleClassName();
+
+        @JsProperty
+        void setTitleClassName(String titleClassName);
+
+        @JsProperty
+        CSSProps getTitleStyle();
+
+        @JsProperty
+        void setTitleStyle(CSSProps titleStyle);
     }
 }

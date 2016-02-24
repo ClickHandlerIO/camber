@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -22,17 +23,45 @@ public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
         return $wnd.Camber.MaterialUi.SvgIcon;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String color;
-        public String hoverColor;
-        public MouseEventHandler onMouseEnter;
-        public MouseEventHandler onMouseLeave;
-        public CSSProps style;
-        public String viewBox;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getColor();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setColor(String color);
+
+        @JsProperty
+        String getHoverColor();
+
+        @JsProperty
+        void setHoverColor(String hoverColor);
+
+        @JsProperty
+        MouseEventHandler getOnMouseEnter();
+
+        @JsProperty
+        void setOnMouseEnter(MouseEventHandler onMouseEnter);
+
+        @JsProperty
+        MouseEventHandler getOnMouseLeave();
+
+        @JsProperty
+        void setOnMouseLeave(MouseEventHandler onMouseLeave);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        String getViewBox();
+
+        @JsProperty
+        void setViewBox(String viewBox);
     }
 }

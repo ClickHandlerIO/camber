@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -25,16 +26,39 @@ public class ListComponent extends ExternalComponent<ListComponent.Props> {
         return $wnd.Camber.MaterialUi.List;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public boolean insetSubheader;
-        public CSSProps style;
-        public ReactElement subheader;
-        public Object subheaderStyle;
-        public int zDepth;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        boolean isInsetSubheader();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setInsetSubheader(boolean insetSubheader);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        ReactElement getSubheader();
+
+        @JsProperty
+        void setSubheader(ReactElement subheader);
+
+        @JsProperty
+        Object getSubheaderStyle();
+
+        @JsProperty
+        void setSubheaderStyle(Object subheaderStyle);
+
+        @JsProperty
+        double getZDepth();
+
+        @JsProperty
+        void setZDepth(double zDepth);
     }
 }

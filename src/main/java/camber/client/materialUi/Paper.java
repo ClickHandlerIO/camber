@@ -4,6 +4,7 @@ import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -21,16 +22,39 @@ public class Paper extends ExternalComponent<Paper.Props> {
         return $wnd.Camber.MaterialUi.Paper;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public boolean circle;
-        public boolean rounded;
-        public CSSProps style;
-        public boolean transitionEnabled;
-        public int zDepth;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        boolean isCircle();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setCircle(boolean circle);
+
+        @JsProperty
+        boolean isRounded();
+
+        @JsProperty
+        void setRounded(boolean rounded);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        boolean isTransitionEnabled();
+
+        @JsProperty
+        void setTransitionEnabled(boolean transitionEnabled);
+
+        @JsProperty
+        double getZDepth();
+
+        @JsProperty
+        void setZDepth(double zDepth);
     }
 }

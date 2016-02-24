@@ -7,6 +7,7 @@ import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -27,38 +28,171 @@ public class TextField extends ExternalComponent<TextField.Props> {
         return $wnd.Camber.MaterialUi.TextField;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String className;
-        public Object defaultValue;
-        public boolean disabled;
-        public CSSProps errorStyle;
-        public String errorText;
-        public CSSProps floatingLabelStyle;
-        public String floatingLabelText;
-        public boolean fullWidth;
-        public CSSProps hintStyle;
-        public String hintText;
-        public String id;
-        public CSSProps inputStyle;
-        public boolean multiLine;
-        public Func.Run onBlur;
-        public FormEventHandler onChange;
-        public KeyboardEventHandler onEnterKeyDown;
-        public Func.Run onFocus;
-        public KeyboardEventHandler onKeyDown;
-        public int rows;
-        public int rowsMax;
-        public CSSProps style;
-        public String type; // ie "text" or "password"
-        public CSSProps underlineDisabledStyle;
-        public CSSProps underlineFocusStyle;
-        public boolean underlineShow;
-        public CSSProps underlineStyle;
-        public Object value;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getClassName();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setClassName(String className);
+
+        @JsProperty
+        Object getDefaultValue();
+
+        @JsProperty
+        void setDefaultValue(Object defaultValue);
+
+        @JsProperty
+        boolean isDisabled();
+
+        @JsProperty
+        void setDisabled(boolean disabled);
+
+        @JsProperty
+        CSSProps getErrorStyle();
+
+        @JsProperty
+        void setErrorStyle(CSSProps errorStyle);
+
+        @JsProperty
+        String getErrorText();
+
+        @JsProperty
+        void setErrorText(String errorText);
+
+        @JsProperty
+        CSSProps getFloatingLabelStyle();
+
+        @JsProperty
+        void setFloatingLabelStyle(CSSProps floatingLabelStyle);
+
+        @JsProperty
+        String getFloatingLabelText();
+
+        @JsProperty
+        void setFloatingLabelText(String floatingLabelText);
+
+        @JsProperty
+        boolean isFullWidth();
+
+        @JsProperty
+        void setFullWidth(boolean fullWidth);
+
+        @JsProperty
+        CSSProps getHintStyle();
+
+        @JsProperty
+        void setHintStyle(CSSProps hintStyle);
+
+        @JsProperty
+        String getHintText();
+
+        @JsProperty
+        void setHintText(String hintText);
+
+        @JsProperty
+        String getId();
+
+        @JsProperty
+        void setId(String id);
+
+        @JsProperty
+        CSSProps getInputStyle();
+
+        @JsProperty
+        void setInputStyle(CSSProps inputStyle);
+
+        @JsProperty
+        boolean isMultiLine();
+
+        @JsProperty
+        void setMultiLine(boolean multiLine);
+
+        @JsProperty
+        Func.Run getOnBlur();
+
+        @JsProperty
+        void setOnBlur(Func.Run onBlur);
+
+        @JsProperty
+        FormEventHandler getOnChange();
+
+        @JsProperty
+        void setOnChange(FormEventHandler onChange);
+
+        @JsProperty
+        KeyboardEventHandler getOnEnterKeyDown();
+
+        @JsProperty
+        void setOnEnterKeyDown(KeyboardEventHandler onEnterKeyDown);
+
+        @JsProperty
+        Func.Run getOnFocus();
+
+        @JsProperty
+        void setOnFocus(Func.Run onFocus);
+
+        @JsProperty
+        KeyboardEventHandler getOnKeyDown();
+
+        @JsProperty
+        void setOnKeyDown(KeyboardEventHandler onKeyDown);
+
+        @JsProperty
+        double getRows();
+
+        @JsProperty
+        void setRows(double rows);
+
+        @JsProperty
+        double getRowsMax();
+
+        @JsProperty
+        void setRowsMax(double rowsMax);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        String getType();
+
+        @JsProperty
+        void setType(String type);
+
+        @JsProperty
+        CSSProps getUnderlineDisabledStyle();
+
+        @JsProperty
+        void setUnderlineDisabledStyle(CSSProps underlineDisabledStyle);
+
+        @JsProperty
+        CSSProps getUnderlineFocusStyle();
+
+        @JsProperty
+        void setUnderlineFocusStyle(CSSProps underlineFocusStyle);
+
+        @JsProperty
+        boolean isUnderlineShow();
+
+        @JsProperty
+        void setUnderlineShow(boolean underlineShow);
+
+        @JsProperty
+        CSSProps getUnderlineStyle();
+
+        @JsProperty
+        void setUnderlineStyle(CSSProps underlineStyle);
+
+        @JsProperty
+        Object getValue();
+
+        @JsProperty
+        void setValue(Object value);
     }
 }

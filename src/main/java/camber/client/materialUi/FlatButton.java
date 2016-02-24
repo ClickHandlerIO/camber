@@ -8,6 +8,7 @@ import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -25,31 +26,129 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         return $wnd.Camber.MaterialUi.FlatButton;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String backgroundColor;
-        public boolean disabled;
-        public String hoverColor;
-        public String href;
-        public ReactElement icon;
-        public String label;
-        public String labelPosition; // "before" or "after"
-        public CSSProps labelStyle;
-        public boolean linkButton;
-        public KeyboardEventHandler onKeyboardFocus;
-        public MouseEventHandler onMouseEnter;
-        public MouseEventHandler onMouseLeave;
-        public MouseEventHandler onClick;
-        public boolean keyboardFocused;
-        public boolean focused; // not working
-        public Func.Run onTouchStart;
-        public boolean primary;
-        public String rippleColor;
-        public boolean secondary;
-        public CSSProps style;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getBackgroundColor();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setBackgroundColor(String backgroundColor);
+
+        @JsProperty
+        boolean isDisabled();
+
+        @JsProperty
+        void setDisabled(boolean disabled);
+
+        @JsProperty
+        String getHoverColor();
+
+        @JsProperty
+        void setHoverColor(String hoverColor);
+
+        @JsProperty
+        String getHref();
+
+        @JsProperty
+        void setHref(String href);
+
+        @JsProperty
+        ReactElement getIcon();
+
+        @JsProperty
+        void setIcon(ReactElement icon);
+
+        @JsProperty
+        String getLabel();
+
+        @JsProperty
+        void setLabel(String label);
+
+        @JsProperty
+        String getLabelPosition();
+
+        @JsProperty
+        void setLabelPosition(String labelPosition);
+
+        @JsProperty
+        CSSProps getLabelStyle();
+
+        @JsProperty
+        void setLabelStyle(CSSProps labelStyle);
+
+        @JsProperty
+        boolean isLinkButton();
+
+        @JsProperty
+        void setLinkButton(boolean linkButton);
+
+        @JsProperty
+        KeyboardEventHandler getOnKeyboardFocus();
+
+        @JsProperty
+        void setOnKeyboardFocus(KeyboardEventHandler onKeyboardFocus);
+
+        @JsProperty
+        MouseEventHandler getOnMouseEnter();
+
+        @JsProperty
+        void setOnMouseEnter(MouseEventHandler onMouseEnter);
+
+        @JsProperty
+        MouseEventHandler getOnMouseLeave();
+
+        @JsProperty
+        void setOnMouseLeave(MouseEventHandler onMouseLeave);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
+        @JsProperty
+        boolean isKeyboardFocused();
+
+        @JsProperty
+        void setKeyboardFocused(boolean keyboardFocused);
+
+        @JsProperty
+        boolean isFocused();
+
+        @JsProperty
+        void setFocused(boolean focused);
+
+        @JsProperty
+        Func.Run getOnTouchStart();
+
+        @JsProperty
+        void setOnTouchStart(Func.Run onTouchStart);
+
+        @JsProperty
+        boolean isPrimary();
+
+        @JsProperty
+        void setPrimary(boolean primary);
+
+        @JsProperty
+        String getRippleColor();
+
+        @JsProperty
+        void setRippleColor(String rippleColor);
+
+        @JsProperty
+        boolean isSecondary();
+
+        @JsProperty
+        void setSecondary(boolean secondary);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
     }
 }

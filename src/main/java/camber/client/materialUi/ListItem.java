@@ -9,6 +9,7 @@ import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -26,38 +27,171 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         return $wnd.Camber.MaterialUi.ListItem;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public boolean autoGenerateNestedIndicator;
-        public boolean disableKeyboardFocus;
-        public boolean disabled;
-        public boolean initiallyOpen;
-        public Object innerDivStyle;
-        public boolean insetChildren;
-        public ReactElement leftAvatar;
-        public ReactElement leftCheckbox;
-        public ReactElement leftIcon;
-        public ReactElement[] nestedItems;
-        public int nestedLevel; // managed prop, modify at own risk
-        public Object nestedListStyle;
-        public KeyboardEventHandler onKeyboardFocus; // func
-        public MouseEventHandler onMouseEnter; // func
-        public MouseEventHandler onMouseLeave; // func
-        public Func.Run onNestedListToggle; // func
-        public TouchEventHandler onTouchStart; // func
-        public TouchEventHandler onTouchTap; // func
-        public ReactElement primaryText; // node - block element that contains the primary text, if a string passed in, a div tag will be rendered
-        public boolean primaryTogglesNestedList;
-        public ReactElement rightAvatar;
-        public ReactElement rightIcon;
-        public ReactElement rightButton;
-        public ReactElement rightToggle;
-        public ReactElement secondaryText; // node - contains secondary text, string becomes div element
-        public int secondaryTextLines; // enum can be 1 or 2 - number of lines before ellipsis (more) shows
-        public CSSProps style;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        boolean isAutoGenerateNestedIndicator();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setAutoGenerateNestedIndicator(boolean autoGenerateNestedIndicator);
+
+        @JsProperty
+        boolean isDisableKeyboardFocus();
+
+        @JsProperty
+        void setDisableKeyboardFocus(boolean disableKeyboardFocus);
+
+        @JsProperty
+        boolean isDisabled();
+
+        @JsProperty
+        void setDisabled(boolean disabled);
+
+        @JsProperty
+        boolean isInitiallyOpen();
+
+        @JsProperty
+        void setInitiallyOpen(boolean initiallyOpen);
+
+        @JsProperty
+        Object getInnerDivStyle();
+
+        @JsProperty
+        void setInnerDivStyle(Object innerDivStyle);
+
+        @JsProperty
+        boolean isInsetChildren();
+
+        @JsProperty
+        void setInsetChildren(boolean insetChildren);
+
+        @JsProperty
+        ReactElement getLeftAvatar();
+
+        @JsProperty
+        void setLeftAvatar(ReactElement leftAvatar);
+
+        @JsProperty
+        ReactElement getLeftCheckbox();
+
+        @JsProperty
+        void setLeftCheckbox(ReactElement leftCheckbox);
+
+        @JsProperty
+        ReactElement getLeftIcon();
+
+        @JsProperty
+        void setLeftIcon(ReactElement leftIcon);
+
+        @JsProperty
+        ReactElement[] getNestedItems();
+
+        @JsProperty
+        void setNestedItems(ReactElement[] nestedItems);
+
+        @JsProperty
+        double getNestedLevel();
+
+        @JsProperty
+        void setNestedLevel(double nestedLevel);
+
+        @JsProperty
+        Object getNestedListStyle();
+
+        @JsProperty
+        void setNestedListStyle(Object nestedListStyle);
+
+        @JsProperty
+        KeyboardEventHandler getOnKeyboardFocus();
+
+        @JsProperty
+        void setOnKeyboardFocus(KeyboardEventHandler onKeyboardFocus);
+
+        @JsProperty
+        MouseEventHandler getOnMouseEnter();
+
+        @JsProperty
+        void setOnMouseEnter(MouseEventHandler onMouseEnter);
+
+        @JsProperty
+        MouseEventHandler getOnMouseLeave();
+
+        @JsProperty
+        void setOnMouseLeave(MouseEventHandler onMouseLeave);
+
+        @JsProperty
+        Func.Run getOnNestedListToggle();
+
+        @JsProperty
+        void setOnNestedListToggle(Func.Run onNestedListToggle);
+
+        @JsProperty
+        TouchEventHandler getOnTouchStart();
+
+        @JsProperty
+        void setOnTouchStart(TouchEventHandler onTouchStart);
+
+        @JsProperty
+        TouchEventHandler getOnTouchTap();
+
+        @JsProperty
+        void setOnTouchTap(TouchEventHandler onTouchTap);
+
+        @JsProperty
+        ReactElement getPrimaryText();
+
+        @JsProperty
+        void setPrimaryText(ReactElement primaryText);
+
+        @JsProperty
+        boolean isPrimaryTogglesNestedList();
+
+        @JsProperty
+        void setPrimaryTogglesNestedList(boolean primaryTogglesNestedList);
+
+        @JsProperty
+        ReactElement getRightAvatar();
+
+        @JsProperty
+        void setRightAvatar(ReactElement rightAvatar);
+
+        @JsProperty
+        ReactElement getRightIcon();
+
+        @JsProperty
+        void setRightIcon(ReactElement rightIcon);
+
+        @JsProperty
+        ReactElement getRightButton();
+
+        @JsProperty
+        void setRightButton(ReactElement rightButton);
+
+        @JsProperty
+        ReactElement getRightToggle();
+
+        @JsProperty
+        void setRightToggle(ReactElement rightToggle);
+
+        @JsProperty
+        ReactElement getSecondaryText();
+
+        @JsProperty
+        void setSecondaryText(ReactElement secondaryText);
+
+        @JsProperty
+        double getSecondaryTextLines();
+
+        @JsProperty
+        void setSecondaryTextLines(double secondaryTextLines);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
     }
 }

@@ -1,12 +1,13 @@
 package camber.client.materialUi;
 
-import io.clickhandler.web.react.ExternalComponent;
-import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -27,27 +28,63 @@ public class Tab extends ExternalComponent<Tab.Props> {
         return $wnd.Camber.MaterialUi.Tab;
     }-*/;
 
-    @Override
-    protected Props defaultProps() {
-        Props props = new Props();
-        applyKey(props);
-        return props;
-    }
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getClassName();
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String className;
-        public ReactElement icon;
-        public ReactElement label;
-        public Func.Run onActive;
-        public TouchEventHandler onTouchTap;
-        public boolean selected;
-        public CSSProps style;
-        public Object value;
-        public String width;
+        @JsProperty
+        void setClassName(String className);
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        ReactElement getIcon();
+
+        @JsProperty
+        void setIcon(ReactElement icon);
+
+        @JsProperty
+        ReactElement getLabel();
+
+        @JsProperty
+        void setLabel(ReactElement label);
+
+        @JsProperty
+        Func.Run getOnActive();
+
+        @JsProperty
+        void setOnActive(Func.Run onActive);
+
+        @JsProperty
+        TouchEventHandler getOnTouchTap();
+
+        @JsProperty
+        void setOnTouchTap(TouchEventHandler onTouchTap);
+
+        @JsProperty
+        boolean isSelected();
+
+        @JsProperty
+        void setSelected(boolean selected);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        Object getValue();
+
+        @JsProperty
+        void setValue(Object value);
+
+        @JsProperty
+        String getWidth();
+
+        @JsProperty
+        void setWidth(String width);
     }
 }

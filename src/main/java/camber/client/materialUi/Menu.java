@@ -1,12 +1,13 @@
 package camber.client.materialUi;
 
-import io.clickhandler.web.react.ExternalComponent;
-import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -17,7 +18,6 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class Menu extends ExternalComponent<Menu.Props> {
-
     @Inject
     public Menu() {
     }
@@ -27,29 +27,117 @@ public class Menu extends ExternalComponent<Menu.Props> {
         return $wnd.Camber.MaterialUi.Menu;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public boolean animated;
-        public boolean autoWidth;
-        public boolean desktop;
-        public boolean initiallyKeyboardFocused;
-        public CSSProps listStyle;
-        public Integer maxHeight; // can be null
-        public boolean multiple;
-        public Func.Run onChange; // func
-        public KeyboardEventHandler onEscKeyDown;
-        public TouchEventHandler onItemTouchTap;
-        public KeyboardEventHandler onKeyDown;
-        public String openDirection; // ie 'bottom-left'  type = PropTypes.corners
-        public CSSProps selectedMenuItemStyle;
-        public CSSProps style;
-        public Object value;
-        public Object valueLink;
-        public int width;
-        public int zDepth;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        boolean isAnimated();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setAnimated(boolean animated);
+
+        @JsProperty
+        boolean isAutoWidth();
+
+        @JsProperty
+        void setAutoWidth(boolean autoWidth);
+
+        @JsProperty
+        boolean isDesktop();
+
+        @JsProperty
+        void setDesktop(boolean desktop);
+
+        @JsProperty
+        boolean isInitiallyKeyboardFocused();
+
+        @JsProperty
+        void setInitiallyKeyboardFocused(boolean initiallyKeyboardFocused);
+
+        @JsProperty
+        CSSProps getListStyle();
+
+        @JsProperty
+        void setListStyle(CSSProps listStyle);
+
+        @JsProperty
+        Integer getMaxHeight();
+
+        @JsProperty
+        void setMaxHeight(Integer maxHeight);
+
+        @JsProperty
+        boolean isMultiple();
+
+        @JsProperty
+        void setMultiple(boolean multiple);
+
+        @JsProperty
+        Func.Run getOnChange();
+
+        @JsProperty
+        void setOnChange(Func.Run onChange);
+
+        @JsProperty
+        KeyboardEventHandler getOnEscKeyDown();
+
+        @JsProperty
+        void setOnEscKeyDown(KeyboardEventHandler onEscKeyDown);
+
+        @JsProperty
+        TouchEventHandler getOnItemTouchTap();
+
+        @JsProperty
+        void setOnItemTouchTap(TouchEventHandler onItemTouchTap);
+
+        @JsProperty
+        KeyboardEventHandler getOnKeyDown();
+
+        @JsProperty
+        void setOnKeyDown(KeyboardEventHandler onKeyDown);
+
+        @JsProperty
+        String getOpenDirection();
+
+        @JsProperty
+        void setOpenDirection(String openDirection);
+
+        @JsProperty
+        CSSProps getSelectedMenuItemStyle();
+
+        @JsProperty
+        void setSelectedMenuItemStyle(CSSProps selectedMenuItemStyle);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        Object getValue();
+
+        @JsProperty
+        void setValue(Object value);
+
+        @JsProperty
+        Object getValueLink();
+
+        @JsProperty
+        void setValueLink(Object valueLink);
+
+        @JsProperty
+        double getWidth();
+
+        @JsProperty
+        void setWidth(double width);
+
+        @JsProperty
+        double getZDepth();
+
+        @JsProperty
+        void setZDepth(double zDepth);
     }
 }

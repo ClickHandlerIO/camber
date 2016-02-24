@@ -1,25 +1,19 @@
 package camber.client.materialUi.icons;
 
-import io.clickhandler.web.react.ExternalComponent;
 import camber.client.materialUi.SvgIcon;
+import io.clickhandler.web.react.ExternalComponent;
 import jsinterop.annotations.JsType;
-
-import javax.inject.Inject;
 
 public abstract class AbstractMaterialIcon extends ExternalComponent<AbstractMaterialIcon.Props> {
 
     @Override
     protected Props defaultProps() {
-        Props props = new Props();
-        props.viewBox = "0 0 24 24";
-        applyKey(props);
+        final Props props = super.defaultProps();
+        props.setViewBox("0 0 24 24");
         return props;
     }
 
-    @JsType
-    public static class Props extends SvgIcon.Props {
-        @Inject
-        public Props() {
-        }
+    @JsType(isNative = true)
+    public interface Props extends SvgIcon.Props {
     }
 }

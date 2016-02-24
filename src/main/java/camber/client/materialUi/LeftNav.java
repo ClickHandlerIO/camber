@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -22,22 +23,75 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
         return $wnd.Camber.MaterialUi.LeftNav;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public String className;
-        public boolean disableSwipeToOpen;
-        public boolean docked = true;
-        public Boolean open; // uses Boolean because can be null, null value means uncontrolled
-        public boolean openRight;
-        public String overlayClassName;
-        public Object overlayStyle;
-        public CSSProps style;
-        public int swipeAreaWidth;
-        public Integer width; // can be null, defaulting to value from theme
-        public Func.Run2<Boolean, Object> onRequestChange; // TODO get this to work (need to pass in a function
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        String getClassName();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setClassName(String className);
+
+        @JsProperty
+        boolean isDisableSwipeToOpen();
+
+        @JsProperty
+        void setDisableSwipeToOpen(boolean disableSwipeToOpen);
+
+        @JsProperty
+        boolean isDocked();
+
+        @JsProperty
+        void setDocked(boolean docked);
+
+        @JsProperty
+        Boolean getOpen();
+
+        @JsProperty
+        void setOpen(Boolean open);
+
+        @JsProperty
+        boolean isOpenRight();
+
+        @JsProperty
+        void setOpenRight(boolean openRight);
+
+        @JsProperty
+        String getOverlayClassName();
+
+        @JsProperty
+        void setOverlayClassName(String overlayClassName);
+
+        @JsProperty
+        Object getOverlayStyle();
+
+        @JsProperty
+        void setOverlayStyle(Object overlayStyle);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        double getSwipeAreaWidth();
+
+        @JsProperty
+        void setSwipeAreaWidth(double swipeAreaWidth);
+
+        @JsProperty
+        Double getWidth();
+
+        @JsProperty
+        void setWidth(Double width);
+
+        @JsProperty
+        Func.Run2<Boolean, Object> getOnRequestChange();
+
+        @JsProperty
+        void setOnRequestChange(Func.Run2<Boolean, Object> onRequestChange);
     }
 }

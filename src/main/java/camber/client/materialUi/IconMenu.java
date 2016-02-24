@@ -9,6 +9,7 @@ import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -29,35 +30,135 @@ public class IconMenu extends ExternalComponent<IconMenu.Props> {
         return $wnd.Camber.MaterialUi.IconMenu;
     }-*/;
 
-    @JsType
-    public static class Props extends BaseProps {
-        public Origin anchorOrigin;
-        public String className;
-        public boolean closeOnItemTouchTap;
-        public ReactElement iconButtonElement;
-        public CSSProps iconStyle;
-        public CSSProps menuStyle;
-        public TouchEventHandler onItemTouchTap;
-        public KeyboardEventHandler onKeyboardFocus;
-        public MouseEventHandler onMouseDown;
-        public MouseEventHandler onMouseEnter;
-        public MouseEventHandler onMouseLeave;
-        public MouseEventHandler onMouseUp;
-        public Func.Run onRequestChange;
-        public TouchEventHandler onTouchTap;
-        public boolean open;
-        public CSSProps style;
-        public Origin targetOrigin;
-        public int touchTapCloseDelay;
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+        @JsProperty
+        Origin getAnchorOrigin();
 
-        @Inject
-        public Props() {
-        }
+        @JsProperty
+        void setAnchorOrigin(Origin anchorOrigin);
+
+        @JsProperty
+        String getClassName();
+
+        @JsProperty
+        void setClassName(String className);
+
+        @JsProperty
+        boolean isCloseOnItemTouchTap();
+
+        @JsProperty
+        void setCloseOnItemTouchTap(boolean closeOnItemTouchTap);
+
+        @JsProperty
+        ReactElement getIconButtonElement();
+
+        @JsProperty
+        void setIconButtonElement(ReactElement iconButtonElement);
+
+        @JsProperty
+        CSSProps getIconStyle();
+
+        @JsProperty
+        void setIconStyle(CSSProps iconStyle);
+
+        @JsProperty
+        CSSProps getMenuStyle();
+
+        @JsProperty
+        void setMenuStyle(CSSProps menuStyle);
+
+        @JsProperty
+        TouchEventHandler getOnItemTouchTap();
+
+        @JsProperty
+        void setOnItemTouchTap(TouchEventHandler onItemTouchTap);
+
+        @JsProperty
+        KeyboardEventHandler getOnKeyboardFocus();
+
+        @JsProperty
+        void setOnKeyboardFocus(KeyboardEventHandler onKeyboardFocus);
+
+        @JsProperty
+        MouseEventHandler getOnMouseDown();
+
+        @JsProperty
+        void setOnMouseDown(MouseEventHandler onMouseDown);
+
+        @JsProperty
+        MouseEventHandler getOnMouseEnter();
+
+        @JsProperty
+        void setOnMouseEnter(MouseEventHandler onMouseEnter);
+
+        @JsProperty
+        MouseEventHandler getOnMouseLeave();
+
+        @JsProperty
+        void setOnMouseLeave(MouseEventHandler onMouseLeave);
+
+        @JsProperty
+        MouseEventHandler getOnMouseUp();
+
+        @JsProperty
+        void setOnMouseUp(MouseEventHandler onMouseUp);
+
+        @JsProperty
+        Func.Run getOnRequestChange();
+
+        @JsProperty
+        void setOnRequestChange(Func.Run onRequestChange);
+
+        @JsProperty
+        TouchEventHandler getOnTouchTap();
+
+        @JsProperty
+        void setOnTouchTap(TouchEventHandler onTouchTap);
+
+        @JsProperty
+        boolean isOpen();
+
+        @JsProperty
+        void setOpen(boolean open);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+        @JsProperty
+        Origin getTargetOrigin();
+
+        @JsProperty
+        void setTargetOrigin(Origin targetOrigin);
+
+        @JsProperty
+        double getTouchTapCloseDelay();
+
+        @JsProperty
+        void setTouchTapCloseDelay(double touchTapCloseDelay);
     }
 
-    @JsType
-    public static class Origin {
-        public String vertical; // top, middle, bottom
-        public String horizontal; // left, center, right
+    /**
+     *
+     */
+    @JsType(isNative = true)
+    public interface Origin {
+        @JsProperty
+        String getVertical();
+
+        @JsProperty
+        void setVertical(String vertical);
+
+        @JsProperty
+        String getHorizontal();
+
+        @JsProperty
+        void setHorizontal(String horizontal);
     }
 }
