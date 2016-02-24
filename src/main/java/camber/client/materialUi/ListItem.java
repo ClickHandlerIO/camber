@@ -192,6 +192,10 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
         @JsOverlay
         default Props autoGenerateNestedIndicator(boolean autoGenerateNestedIndicator) {
             setAutoGenerateNestedIndicator(autoGenerateNestedIndicator);

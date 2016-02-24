@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -63,5 +64,47 @@ public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
 
         @JsProperty
         void setViewBox(String viewBox);
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props color(String color) {
+            setColor(color);
+            return this;
+        }
+
+        @JsOverlay
+        default Props hoverColor(String hoverColor) {
+            setHoverColor(hoverColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseEnter(MouseEventHandler onMouseEnter) {
+            setOnMouseEnter(onMouseEnter);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseLeave(MouseEventHandler onMouseLeave) {
+            setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props viewBox(String viewBox) {
+            setViewBox(viewBox);
+            return this;
+        }
+
+
     }
 }
