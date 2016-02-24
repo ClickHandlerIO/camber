@@ -192,6 +192,7 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsOverlay
         default Props autoGenerateNestedIndicator(boolean autoGenerateNestedIndicator) {
             setAutoGenerateNestedIndicator(autoGenerateNestedIndicator);
             return this;
@@ -252,7 +253,7 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         }
 
         @JsOverlay
-        default Props nestedLevel(int nestedLevel) {
+        default Props nestedLevel(double nestedLevel) {
             setNestedLevel(nestedLevel);
             return this;
         }
@@ -342,7 +343,7 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         }
 
         @JsOverlay
-        default Props secondaryTextLines(int secondaryTextLines) {
+        default Props secondaryTextLines(double secondaryTextLines) {
             setSecondaryTextLines(secondaryTextLines);
             return this;
         }
