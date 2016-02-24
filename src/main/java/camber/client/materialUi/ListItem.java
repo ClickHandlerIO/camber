@@ -28,9 +28,6 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         return $wnd.Camber.MaterialUi.ListItem;
     }-*/;
 
-    /**
-     *
-     */
     @JsType(isNative = true)
     public interface Props extends BaseProps {
         @JsProperty
