@@ -73,7 +73,7 @@ module.exports = {
     React: React,
     ReactDOM: ReactDOM,
     InjectTapEventPlugin: injectTapEventPlugin,
-    lodash: {
+    Lodash: {
         isEqual: isEqual,
     },
     MaterialUi: {
