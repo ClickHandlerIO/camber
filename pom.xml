@@ -54,7 +54,7 @@
         <java.version>1.8</java.version>
         <gwt.version>2.8.0-beta1</gwt.version>
         <dagger-gwt.version>0.1.0-SNAPSHOT</dagger-gwt.version>
-        <clickhandlerweb.version>0.1.0-SNAPSHOT</clickhandlerweb.version>
+        <clickhandlerweb.version>0.2.0-SNAPSHOT</clickhandlerweb.version>
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <gwt-maven-plugin.version>2.8.0-SNAPSHOT</gwt-maven-plugin.version>
         <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
@@ -205,22 +205,25 @@
                         </executions>
                     </plugin>
 
-                    <!-- Add Dagger generated sources to the source path. GWT compile needs this. -->
+                    <!-- Include generated sources -->
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <version>${build-helper-maven-plugin.version}</version>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>${maven-resources-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>add-source</id>
-                                <phase>generate-sources</phase>
+                                <id>copy-resources</id>
+                                <phase>process-classes</phase>
                                 <goals>
-                                    <goal>add-source</goal>
+                                    <goal>copy-resources</goal>
                                 </goals>
                                 <configuration>
-                                    <sources>
-                                        <source>target/generated-sources/annotations</source>
-                                    </sources>
+                                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}/target/generated-sources/annotations</directory>
+                                            <filtering>false</filtering>
+                                        </resource>
+                                    </resources>
                                 </configuration>
                             </execution>
                         </executions>
