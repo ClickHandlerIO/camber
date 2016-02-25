@@ -160,8 +160,10 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         @JsProperty
         void setSecondary(boolean secondary);
 
+        @JsProperty
         CSSProps getStyle();
 
+        @JsProperty
         void setStyle(CSSProps style);
     }
 }
