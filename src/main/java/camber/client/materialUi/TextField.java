@@ -7,6 +7,7 @@ import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -194,5 +195,172 @@ public class TextField extends ExternalComponent<TextField.Props> {
 
         @JsProperty
         void setValue(Object value);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props defaultValue(Object defaultValue) {
+            setDefaultValue(defaultValue);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disabled(boolean disabled) {
+            setDisabled(disabled);
+            return this;
+        }
+
+        @JsOverlay
+        default Props errorStyle(CSSProps errorStyle) {
+            setErrorStyle(errorStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props errorText(String errorText) {
+            setErrorText(errorText);
+            return this;
+        }
+
+        @JsOverlay
+        default Props floatingLabelStyle(CSSProps floatingLabelStyle) {
+            setFloatingLabelStyle(floatingLabelStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props floatingLabelText(String floatingLabelText) {
+            setFloatingLabelText(floatingLabelText);
+            return this;
+        }
+
+        @JsOverlay
+        default Props fullWidth(boolean fullWidth) {
+            setFullWidth(fullWidth);
+            return this;
+        }
+
+        @JsOverlay
+        default Props hintStyle(CSSProps hintStyle) {
+            setHintStyle(hintStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props hintText(String hintText) {
+            setHintText(hintText);
+            return this;
+        }
+
+        @JsOverlay
+        default Props id(String id) {
+            setId(id);
+            return this;
+        }
+
+        @JsOverlay
+        default Props inputStyle(CSSProps inputStyle) {
+            setInputStyle(inputStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props multiLine(boolean multiLine) {
+            setMultiLine(multiLine);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onBlur(Func.Run onBlur) {
+            setOnBlur(onBlur);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onChange(FormEventHandler onChange) {
+            setOnChange(onChange);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onEnterKeyDown(KeyboardEventHandler onEnterKeyDown) {
+            setOnEnterKeyDown(onEnterKeyDown);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onFocus(Func.Run onFocus) {
+            setOnFocus(onFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onKeyDown(KeyboardEventHandler onKeyDown) {
+            setOnKeyDown(onKeyDown);
+            return this;
+        }
+
+        @JsOverlay
+        default Props rows(double rows) {
+            setRows(rows);
+            return this;
+        }
+
+        @JsOverlay
+        default Props rowsMax(double rowsMax) {
+            setRowsMax(rowsMax);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props type(String type) {
+            setType(type);
+            return this;
+        }
+
+        @JsOverlay
+        default Props underlineDisabledStyle(CSSProps underlineDisabledStyle) {
+            setUnderlineDisabledStyle(underlineDisabledStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props underlineFocusStyle(CSSProps underlineFocusStyle) {
+            setUnderlineFocusStyle(underlineFocusStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props underlineShow(boolean underlineShow) {
+            setUnderlineShow(underlineShow);
+            return this;
+        }
+
+        @JsOverlay
+        default Props underlineStyle(CSSProps underlineStyle) {
+            setUnderlineStyle(underlineStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props value(Object value) {
+            setValue(value);
+            return this;
+        }
     }
 }
