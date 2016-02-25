@@ -170,6 +170,7 @@
 
                     <!-- Include generated sources in output and filter fonts and images (fonts do not work if they do not get filtered). -->
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-resources-plugin</artifactId>
                         <version>${maven-resources-plugin.version}</version>
                         <executions>
@@ -202,16 +203,10 @@
                                     </nonFilteredFileExtensions>
                                 </configuration>
                             </execution>
-                        </executions>
-                    </plugin>
 
-                    <!-- Include generated sources -->
-                    <plugin>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <version>${maven-resources-plugin.version}</version>
-                        <executions>
+                            <!-- Include generated sources -->
                             <execution>
-                                <id>copy-resources</id>
+                                <id>copy-generated-resources</id>
                                 <phase>process-classes</phase>
                                 <goals>
                                     <goal>copy-resources</goal>
