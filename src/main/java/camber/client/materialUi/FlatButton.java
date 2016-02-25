@@ -150,5 +150,129 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
 
         @JsProperty
         void setStyle(CSSProps style);
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsProperty
+        default Props backgroundColor(String backgroundColor){
+            setBackgroundColor(backgroundColor);
+            return this;
+        }
+
+        @JsProperty
+        default Props disabled(boolean disabled){
+            setDisabled(disabled);
+            return this;
+        }
+
+        @JsProperty
+        default Props hoverColor(String hoverColor){
+            setHoverColor(hoverColor);
+            return this;
+        }
+
+        @JsProperty
+        default Props href(String href){
+            setHref(href);
+            return this;
+        }
+
+        @JsProperty
+        default Props icon(ReactElement icon){
+            setIcon(icon);
+            return this;
+        }
+
+        @JsProperty
+        default Props label(String label){
+            setLabel(label);
+            return this;
+        }
+
+        @JsProperty
+        default Props labelPosition(String labelPosition){
+            setLabelPosition(labelPosition);
+            return this;
+        }
+
+        @JsProperty
+        default Props labelStyle(CSSProps labelStyle){
+            setLabelStyle(labelStyle);
+            return this;
+        }
+
+        @JsProperty
+        default Props linkButton(boolean linkButton){
+            setLinkButton(linkButton);
+            return this;
+        }
+
+        @JsProperty
+        default Props onKeyboardFocus(KeyboardEventHandler onKeyboardFocus){
+            setOnKeyboardFocus(onKeyboardFocus);
+            return this;
+        }
+
+        @JsProperty
+        default Props onMouseEnter(MouseEventHandler onMouseEnter){
+            setOnMouseEnter(onMouseEnter);
+            return this;
+        }
+
+        @JsProperty
+        default Props onMouseLeave(MouseEventHandler onMouseLeave){
+            setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsProperty
+        default Props onClick(MouseEventHandler onClick){
+            setOnClick(onClick);
+            return this;
+        }
+
+        @JsProperty
+        default Props keyboardFocused(boolean keyboardFocused){
+            setKeyboardFocused(keyboardFocused);
+            return this;
+        }
+
+        @JsProperty
+        default Props focused(boolean focused){
+            setFocused(focused);
+            return this;
+        }
+
+        @JsProperty
+        default Props touchStart(Func.Run onTouchStart){
+            setOnTouchStart(onTouchStart);
+            return this;
+        }
+
+        @JsProperty
+        default Props primary(boolean primary){
+            setPrimary(primary);
+            return this;
+        }
+
+        @JsProperty
+        default Props rippleColor(String rippleColor){
+            setRippleColor(rippleColor);
+            return this;
+        }
+
+        @JsProperty
+        default Props secondary(boolean secondary){
+            setSecondary(secondary);
+            return this;
+        }
+
+        @JsProperty
+        default Props style(CSSProps style){
+            setStyle(style);
+            return this;
+        }
     }
 }

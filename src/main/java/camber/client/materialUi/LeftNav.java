@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -65,10 +66,10 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
         void setOverlayClassName(String overlayClassName);
 
         @JsProperty
-        Object getOverlayStyle();
+        CSSProps getOverlayStyle();
 
         @JsProperty
-        void setOverlayStyle(Object overlayStyle);
+        void setOverlayStyle(CSSProps overlayStyle);
 
         @JsProperty
         CSSProps getStyle();
@@ -93,5 +94,77 @@ public class LeftNav extends ExternalComponent<LeftNav.Props> {
 
         @JsProperty
         void setOnRequestChange(Func.Run2<Boolean, Object> onRequestChange);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disableSwipeToOpen(boolean disableSwipeToOpen) {
+            setDisableSwipeToOpen(disableSwipeToOpen);
+            return this;
+        }
+
+        @JsOverlay
+        default Props docked(boolean docked) {
+            setDocked(docked);
+            return this;
+        }
+
+        @JsOverlay
+        default Props open(Boolean open) {
+            setOpen(open);
+            return this;
+        }
+
+        @JsOverlay
+        default Props openRight(boolean openRight) {
+            setOpenRight(openRight);
+            return this;
+        }
+
+        @JsOverlay
+        default Props overlayClassName(String overlayClassName) {
+            setOverlayClassName(overlayClassName);
+            return this;
+        }
+
+        @JsOverlay
+        default Props overlayStyle(CSSProps overlayStyle) {
+            setOverlayStyle(overlayStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props swipeAreaWidth(double swipeAreaWidth) {
+            setSwipeAreaWidth(swipeAreaWidth);
+            return this;
+        }
+
+        @JsOverlay
+        default Props width(Double width) {
+            setWidth(width);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onRequestChange(Func.Run2<Boolean, Object> onRequestChange) {
+            setOnRequestChange(onRequestChange);
+            return this;
+        }
+
     }
 }

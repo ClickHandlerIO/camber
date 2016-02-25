@@ -1,5 +1,11 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
+import jsinterop.annotations.JsOverlay;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
@@ -16,16 +22,71 @@ import javax.inject.Singleton;
  *  6. CardText
  */
 @Singleton
-public class CardText {
-    @JsType
-    public static class Props {
-        boolean actAsExpander;
-        boolean expandable;
-        String color; // ?
-        String style; // ?
+public class CardText extends ExternalComponent<CardText.Props> {
+    @Inject
+    public CardText() {
+    }
+    @Override
+    protected native ReactClass<Props> reactClass() /*-{
+        return $wnd.Camber.MaterialUi.CardText;
+    }-*/;
 
-        @Inject
-        public Props() {
+    @JsType(isNative = true)
+    public interface Props extends BaseProps {
+
+        @JsProperty
+        boolean isActAsExpander();
+
+        @JsProperty
+        void setActAsExpander(boolean actAsExpander);
+
+        @JsProperty
+        boolean isExpandable();
+
+        @JsProperty
+        void setExpandable(boolean expandable);
+
+        @JsProperty
+        String getColor();
+
+        @JsProperty
+        void setColor(String color);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props actAsExpander(final boolean actAsExpander) {
+            setActAsExpander(actAsExpander);
+            return this;
         }
+
+        @JsOverlay
+        default Props expandable(final boolean expandable) {
+            setExpandable(expandable);
+            return this;
+        }
+
+        @JsOverlay
+        default Props color(final String color) {
+            setColor(color);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(final CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+
     }
 }

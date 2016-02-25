@@ -129,6 +129,11 @@ public class FloatingActionButton extends ExternalComponent<FloatingActionButton
         @JsProperty
         void setStyle(CSSProps style);
 
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
         @JsOverlay
         default Props backgroundColor(final String backgroundColor) {
             setBackgroundColor(backgroundColor);

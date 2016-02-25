@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -60,5 +61,40 @@ public class ListComponent extends ExternalComponent<ListComponent.Props> {
 
         @JsProperty
         void setZDepth(double zDepth);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props insetSubheader(boolean insetSubheader) {
+            setInsetSubheader(insetSubheader);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props subheader(ReactElement subheader) {
+            setSubheader(subheader);
+            return this;
+        }
+
+        @JsOverlay
+        default Props subheaderStyle(Object subheaderStyle) {
+            setSubheaderStyle(subheaderStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props zDepth(double zDepth) {
+            setZDepth(zDepth);
+            return this;
+        }
     }
 }

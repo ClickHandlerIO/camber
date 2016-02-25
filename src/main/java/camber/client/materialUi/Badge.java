@@ -5,6 +5,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -62,5 +63,45 @@ public class Badge extends ExternalComponent<Badge.Props> {
 
         @JsProperty
         void setStyle(CSSProps style);
+
+        // fluent setters
+        @JsOverlay
+        default Props badgeContent(ReactElement badgeContent){
+            setBadgeContent(badgeContent);
+            return this;
+        }
+
+        @JsOverlay
+        default Props badgeStyle(CSSProps badgeStyle){
+            setBadgeStyle(badgeStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props className(String className){
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props primary(boolean primary){
+            setPrimary(primary);
+            return this;
+        }
+
+        @JsOverlay
+        default Props secondary(boolean secondary){
+            setSecondary(secondary);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style){
+            setStyle(style);
+            return this;
+        }
+
+
+
     }
 }
