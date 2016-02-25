@@ -4,6 +4,7 @@ import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -56,5 +57,41 @@ public class Paper extends ExternalComponent<Paper.Props> {
 
         @JsProperty
         void setZDepth(double zDepth);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props circle(boolean circle) {
+            setCircle(circle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props rounded(boolean rounded) {
+            setRounded(rounded);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props transitionEnabled(boolean transitionEnabled) {
+            setTransitionEnabled(transitionEnabled);
+            return this;
+        }
+
+        @JsOverlay
+        default Props zDepth(double zDepth) {
+            setZDepth(zDepth);
+            return this;
+        }
+
     }
 }

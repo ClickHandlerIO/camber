@@ -1,10 +1,12 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -95,10 +97,10 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         void setLabelPosition(String labelPosition);
 
         @JsProperty
-        Object getLabelStyle();
+        CSSProps getLabelStyle();
 
         @JsProperty
-        void setLabelStyle(Object labelStyle);
+        void setLabelStyle(CSSProps labelStyle);
 
         @JsProperty
         boolean isLinkButton();
@@ -137,16 +139,16 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         void setOnMouseUp(MouseEventHandler onMouseUp);
 
         @JsProperty
-        MouseEventHandler getOnTouchEnd();
+        TouchEventHandler getOnTouchEnd();
 
         @JsProperty
-        void setOnTouchEnd(MouseEventHandler onTouchEnd);
+        void setOnTouchEnd(TouchEventHandler onTouchEnd);
 
         @JsProperty
-        MouseEventHandler getOnTouchStart();
+        TouchEventHandler getOnTouchStart();
 
         @JsProperty
-        void setOnTouchStart(MouseEventHandler onTouchStart);
+        void setOnTouchStart(TouchEventHandler onTouchStart);
 
         @JsProperty
         boolean isPrimary();
@@ -160,8 +162,154 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         @JsProperty
         void setSecondary(boolean secondary);
 
+        @JsProperty
         CSSProps getStyle();
 
+        @JsProperty
         void setStyle(CSSProps style);
+
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props backgroundColor(String backgroundColor) {
+            setBackgroundColor(backgroundColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disabled(boolean disabled) {
+            setDisabled(disabled);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disabledBackgroundColor(String disabledBackgroundColor) {
+            setDisabledBackgroundColor(disabledBackgroundColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disabledLabelColor(String disabledLabelColor) {
+            setDisabledLabelColor(disabledLabelColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props fullWidth(boolean fullWidth) {
+            setFullWidth(fullWidth);
+            return this;
+        }
+
+        @JsOverlay
+        default Props href(String href) {
+            setHref(href);
+            return this;
+        }
+
+        @JsOverlay
+        default Props icon(String icon) {
+            setIcon(icon);
+            return this;
+        }
+
+        @JsOverlay
+        default Props label(String label) {
+            setLabel(label);
+            return this;
+        }
+
+        @JsOverlay
+        default Props labelColor(String labelColor) {
+            setLabelColor(labelColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props labelPosition(String labelPosition) {
+            setLabelPosition(labelPosition);
+            return this;
+        }
+
+        @JsOverlay
+        default Props labelStyle(CSSProps labelStyle) {
+            setLabelStyle(labelStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props linkButton(boolean linkButton) {
+            setLinkButton(linkButton);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseDown(MouseEventHandler onMouseDown) {
+            setOnMouseDown(onMouseDown);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseEnter(MouseEventHandler onMouseEnter) {
+            ;
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseLeave(MouseEventHandler onMouseLeave) {
+            setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseUp(MouseEventHandler onMouseUp) {
+            setOnMouseUp(onMouseUp);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onTouchEnd(TouchEventHandler onTouchEnd) {
+            setOnTouchEnd(onTouchEnd);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onTouchStart(TouchEventHandler onTouchStart) {
+            setOnTouchStart(onTouchStart);
+            return this;
+        }
+
+        @JsOverlay
+        default Props primary(boolean primary) {
+            setPrimary(primary);
+            return this;
+        }
+
+        @JsOverlay
+        default Props secondary(boolean secondary) {
+            setSecondary(secondary);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
     }
 }
