@@ -8,6 +8,7 @@ import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -155,121 +156,121 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         // fluent setters
         ////////////////////
 
-        @JsProperty
+        @JsOverlay
         default Props backgroundColor(String backgroundColor){
             setBackgroundColor(backgroundColor);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props disabled(boolean disabled){
             setDisabled(disabled);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props hoverColor(String hoverColor){
             setHoverColor(hoverColor);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props href(String href){
             setHref(href);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props icon(ReactElement icon){
             setIcon(icon);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props label(String label){
             setLabel(label);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props labelPosition(String labelPosition){
             setLabelPosition(labelPosition);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props labelStyle(CSSProps labelStyle){
             setLabelStyle(labelStyle);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props linkButton(boolean linkButton){
             setLinkButton(linkButton);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props onKeyboardFocus(KeyboardEventHandler onKeyboardFocus){
             setOnKeyboardFocus(onKeyboardFocus);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props onMouseEnter(MouseEventHandler onMouseEnter){
             setOnMouseEnter(onMouseEnter);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props onMouseLeave(MouseEventHandler onMouseLeave){
             setOnMouseLeave(onMouseLeave);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props onClick(MouseEventHandler onClick){
             setOnClick(onClick);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props keyboardFocused(boolean keyboardFocused){
             setKeyboardFocused(keyboardFocused);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props focused(boolean focused){
             setFocused(focused);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props touchStart(Func.Run onTouchStart){
             setOnTouchStart(onTouchStart);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props primary(boolean primary){
             setPrimary(primary);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props rippleColor(String rippleColor){
             setRippleColor(rippleColor);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props secondary(boolean secondary){
             setSecondary(secondary);
             return this;
         }
 
-        @JsProperty
+        @JsOverlay
         default Props style(CSSProps style){
             setStyle(style);
             return this;
