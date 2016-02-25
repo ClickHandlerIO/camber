@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.FocusEventHandler;
 import io.clickhandler.web.event.FormEventHandler;
 import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.react.BaseProps;
@@ -113,10 +114,10 @@ public class TextField extends ExternalComponent<TextField.Props> {
         void setMultiLine(boolean multiLine);
 
         @JsProperty
-        Func.Run getOnBlur();
+        FocusEventHandler getOnBlur();
 
         @JsProperty
-        void setOnBlur(Func.Run onBlur);
+        void setOnBlur(FocusEventHandler onBlur);
 
         @JsProperty
         FormEventHandler getOnChange();
@@ -131,10 +132,10 @@ public class TextField extends ExternalComponent<TextField.Props> {
         void setOnEnterKeyDown(KeyboardEventHandler onEnterKeyDown);
 
         @JsProperty
-        Func.Run getOnFocus();
+        FocusEventHandler getOnFocus();
 
         @JsProperty
-        void setOnFocus(Func.Run onFocus);
+        void setOnFocus(FocusEventHandler onFocus);
 
         @JsProperty
         KeyboardEventHandler getOnKeyDown();
@@ -280,7 +281,7 @@ public class TextField extends ExternalComponent<TextField.Props> {
         }
 
         @JsOverlay
-        default Props onBlur(Func.Run onBlur) {
+        default Props onBlur(FocusEventHandler onBlur) {
             setOnBlur(onBlur);
             return this;
         }
@@ -298,7 +299,7 @@ public class TextField extends ExternalComponent<TextField.Props> {
         }
 
         @JsOverlay
-        default Props onFocus(Func.Run onFocus) {
+        default Props onFocus(FocusEventHandler onFocus) {
             setOnFocus(onFocus);
             return this;
         }
