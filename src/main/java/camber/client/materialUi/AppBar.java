@@ -108,9 +108,9 @@ public class AppBar extends ExternalComponent<AppBar.Props> {
         void setTitleStyle(Object titleStyle);
 
         @JsProperty
-        int getZDepth();
+        double getZDepth();
 
         @JsProperty
-        void setZDepth(int zDepth);
+        void setZDepth(double zDepth);
     }
 }
