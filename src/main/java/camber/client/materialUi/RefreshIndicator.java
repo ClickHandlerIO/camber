@@ -36,7 +36,7 @@ public class RefreshIndicator extends ExternalComponent<RefreshIndicator.Props> 
 //        String status = "hide"; // enum 'ready' 'loading' 'hide'
 //        CSSProps style;
 //        double top; // the absolute top position of the indicator in pixels
-
+//        // leaving out onClick, unless we want is to be an attempted interrupt or something, sounds a little odd though
 
         @JsProperty
         String getColor();

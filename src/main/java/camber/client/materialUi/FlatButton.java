@@ -1,5 +1,7 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.TouchEventHandler;
+import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
@@ -123,10 +125,10 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         void setFocused(boolean focused);
 
         @JsProperty
-        Func.Run getOnTouchStart();
+        TouchEventHandler getOnTouchStart();
 
         @JsProperty
-        void setOnTouchStart(Func.Run onTouchStart);
+        void setOnTouchStart(TouchEventHandler onTouchStart);
 
         @JsProperty
         boolean isPrimary();
@@ -247,7 +249,7 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         }
 
         @JsOverlay
-        default Props touchStart(Func.Run onTouchStart){
+        default Props touchStart(TouchEventHandler onTouchStart){
             setOnTouchStart(onTouchStart);
             return this;
         }

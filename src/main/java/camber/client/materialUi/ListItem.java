@@ -192,6 +192,13 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
+
         ////////////////////
         // fluent setters
         ////////////////////
@@ -357,5 +364,12 @@ public class ListItem extends ExternalComponent<ListItem.Props> {
             setStyle(style);
             return this;
         }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
+
     }
 }

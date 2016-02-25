@@ -1,6 +1,7 @@
 package camber.client.materialUi;
 
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -46,6 +47,7 @@ public class CardTitle extends ExternalComponent<CardTitle.Props> {
 //        ReactElement title; // node
 //        String titleColor;
 //        CSSProps titleStyle; // ?
+//        // MouseEventHandle onClick; // added in
 
 
         @JsProperty
@@ -108,6 +110,13 @@ public class CardTitle extends ExternalComponent<CardTitle.Props> {
         @JsProperty
         void setTitleStyle(CSSProps titleStyle);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler style);
+
+
         ////////////////////
         // fluent setters
         ////////////////////
@@ -169,6 +178,12 @@ public class CardTitle extends ExternalComponent<CardTitle.Props> {
         @JsOverlay
         default Props titleStyle(final CSSProps titleStyle) {
             setTitleStyle(titleStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

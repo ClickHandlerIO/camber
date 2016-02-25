@@ -1,6 +1,7 @@
 package camber.client.materialUi;
 
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -39,6 +40,7 @@ public class GridTile extends ExternalComponent<GridTile.Props> {
 //        ReactElement subtitle;
 //        String titleBackground; // default 'rgba(0, 0, 0, 0.4)' - white
 //        String titlePosition; // enum 'top' 'bottom'
+//        // MouseEventHandler onClick;
 
 
         @JsProperty
@@ -100,6 +102,13 @@ public class GridTile extends ExternalComponent<GridTile.Props> {
 
         @JsProperty
         void setTitlePosition(String titlePosition);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
 
 
         ////////////////////
@@ -163,6 +172,12 @@ public class GridTile extends ExternalComponent<GridTile.Props> {
         @JsOverlay
         default Props titlePosition(final String titlePosition) {
             setTitlePosition(titlePosition);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

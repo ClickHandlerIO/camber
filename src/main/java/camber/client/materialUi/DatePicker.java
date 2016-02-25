@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.FocusEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
@@ -48,7 +49,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
 //        public Func.Run formatDate; // func
 //        public Func.Run onChange; // func
 //        public Func.Run onDismiss; // func
-//        public Func.Run onFocus; // func
+//        public FocusEventHandler onFocus; // func
 //        public Func.Run onShow; // func
 //        public TouchEventHandler onTouchTap; // func
 //        public Func.Run shouldDisableDate; // func
@@ -170,10 +171,10 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         void setOnDismiss(Func.Run onDismiss);
 
         @JsProperty
-        Func.Run getOnFocus();
+        FocusEventHandler getOnFocus();
 
         @JsProperty
-        void setOnFocus(Func.Run onFocus);
+        void setOnFocus(FocusEventHandler onFocus);
 
         @JsProperty
         Func.Run getOnShow();
@@ -313,7 +314,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         }
 
         @JsOverlay
-        default Props onFocus(final Func.Run onFocus) {
+        default Props onFocus(final FocusEventHandler onFocus) {
             setOnFocus(onFocus);
             return this;
         }

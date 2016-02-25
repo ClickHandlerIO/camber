@@ -33,6 +33,7 @@ public class FontIcon extends ExternalComponent<FontIcon.Props> {
 //        CSSProps style; // ?
 //        MouseEventHandler onMouseEnter; // func
 //        MouseEventHandler onMouseLeave; // func
+//        MouseEventHandler onClick; // func - added in
 
 
         @JsProperty
@@ -70,6 +71,12 @@ public class FontIcon extends ExternalComponent<FontIcon.Props> {
 
         @JsProperty
         void setOnMouseLeave(MouseEventHandler onMouseLeave);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////
@@ -109,6 +116,12 @@ public class FontIcon extends ExternalComponent<FontIcon.Props> {
         @JsOverlay
         default Props onMouseLeave(final MouseEventHandler onMouseLeave) {
             setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

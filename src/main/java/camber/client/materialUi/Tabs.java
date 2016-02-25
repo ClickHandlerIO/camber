@@ -1,10 +1,12 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -90,5 +92,83 @@ public class Tabs extends ExternalComponent<Tabs.Props> {
 
         @JsProperty
         void setValue(Object value);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props contentContainerClassName(String contentContainerClassName) {
+            setContentContainerClassName(contentContainerClassName);
+            return this;
+        }
+
+        @JsOverlay
+        default Props contentContainerStyle(String contentContainerStyle) {
+            setContentContainerStyle(contentContainerStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props initialSelectedIndex(double initialSelectedIndex) {
+            setInitialSelectedIndex(initialSelectedIndex);
+            return this;
+        }
+
+        @JsOverlay
+        default Props inkBarStyle(CSSProps inkBarStyle) {
+            setInkBarStyle(inkBarStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onChange(Func.Run onChange) {
+            setOnChange(onChange);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props tabItemContainerStyle(CSSProps tabItemContainerStyle) {
+            setTabItemContainerStyle(tabItemContainerStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props tabTemplate(Object tabTemplate) {
+            setTabTemplate(tabTemplate);
+            return this;
+        }
+
+        @JsOverlay
+        default Props value(Object value) {
+            setValue(value);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
+
     }
 }

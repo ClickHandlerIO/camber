@@ -7,6 +7,7 @@ import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -112,5 +113,104 @@ public class AppBar extends ExternalComponent<AppBar.Props> {
 
         @JsProperty
         void setZDepth(double zDepth);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler style);
+
+
+        // Fluent setters
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconClassNameLeft(String iconClassNameLeft) {
+            setIconClassNameLeft(iconClassNameLeft);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconClassNameRight(String iconClassNameRight) {
+            setIconClassNameRight(iconClassNameRight);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconElementLeft(ReactElement iconElementLeft) {
+            setIconElementLeft(iconElementLeft);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconElementRight(ReactElement iconElementRight) {
+            setIconElementRight(iconElementRight);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconStyleRight(Object iconStyleRight) {
+            setIconStyleRight(iconStyleRight);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onLeftIconButtonTouchTap(MouseEventHandler onLeftIconButtonTouchTap) {
+            setOnLeftIconButtonTouchTap(onLeftIconButtonTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onRightIconButtonTouchTap(MouseEventHandler onRightIconButtonTouchTap) {
+            setOnRightIconButtonTouchTap(onRightIconButtonTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onTitleTouchTap(TouchEventHandler onTitleTouchTap) {
+            setOnTitleTouchTap(onTitleTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props showMenuIconButton(boolean showMenuIconButton) {
+            setShowMenuIconButton(showMenuIconButton);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props title(String title) {
+            setTitle(title);
+            return this;
+        }
+
+        @JsOverlay
+        default Props titleStyle(Object titleStyle) {
+            setTitleStyle(titleStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props zDepth(int zDepth) {
+            setZDepth(zDepth);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
     }
 }

@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.KeyboardEventHandler;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
@@ -141,6 +142,12 @@ public class Menu extends ExternalComponent<Menu.Props> {
         @JsProperty
         void setZDepth(double zDepth);
 
+//        @JsProperty
+//        MouseEventHandler getOnClick();
+//
+//        @JsProperty
+//        void setOnClick(MouseEventHandler onClick);
+
 
 
         ////////////////////
@@ -254,5 +261,11 @@ public class Menu extends ExternalComponent<Menu.Props> {
             setZDepth(zDepth);
             return this;
         }
+
+//        @JsOverlay
+//        default Props onClick(MouseEventHandler onClick) {
+//            setOnClick(onClick);
+//            return this;
+//        }
     }
 }

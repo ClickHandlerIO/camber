@@ -1,6 +1,7 @@
 package camber.client.materialUi;
 
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -85,6 +86,12 @@ public class CardMedia extends ExternalComponent<CardMedia.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler style);
+
 
         ////////////////////
         // fluent setters
@@ -135,6 +142,12 @@ public class CardMedia extends ExternalComponent<CardMedia.Props> {
         @JsOverlay
         default Props style(final CSSProps style) {
             setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 
