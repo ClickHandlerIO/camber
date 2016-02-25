@@ -58,6 +58,8 @@ public class Paper extends ExternalComponent<Paper.Props> {
         @JsProperty
         void setZDepth(double zDepth);
 
+        // leaving out onClick as this contains many other components
+
 
         ////////////////////
         // fluent setters

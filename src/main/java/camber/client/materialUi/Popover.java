@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -43,6 +44,7 @@ public class Popover extends ExternalComponent<Popover.Props> {
 //        double zDepth; // ? type = PropTypes.zDepth, default 1
 //        Func.Run animation; // func
 //        Func.Run onRequestClose; // func
+//        MouseEventHandler onClick;
 
 
         @JsProperty
@@ -122,6 +124,12 @@ public class Popover extends ExternalComponent<Popover.Props> {
 
         @JsProperty
         void setOnRequestClose(Func.Run onRequestClose);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////
@@ -203,6 +211,12 @@ public class Popover extends ExternalComponent<Popover.Props> {
         @JsOverlay
         default Props onRequestClose(final Func.Run onRequestClose) {
             setOnRequestClose(onRequestClose);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

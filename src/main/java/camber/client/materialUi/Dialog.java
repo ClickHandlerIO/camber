@@ -151,8 +151,6 @@ public class Dialog extends ExternalComponent<Dialog.Props> {
         void setTitleStyle(CSSProps titleStyle);
 
 
-
-
         ////////////////////
         // fluent setters
         ////////////////////

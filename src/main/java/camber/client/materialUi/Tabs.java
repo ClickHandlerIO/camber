@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.Func;
@@ -92,6 +93,12 @@ public class Tabs extends ExternalComponent<Tabs.Props> {
         @JsProperty
         void setValue(Object value);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
 
         ////////////////////
         // fluent setters
@@ -154,6 +161,12 @@ public class Tabs extends ExternalComponent<Tabs.Props> {
         @JsOverlay
         default Props value(Object value) {
             setValue(value);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
@@ -39,6 +40,7 @@ public class SnackBar extends ExternalComponent<SnackBar.Props> {
 //        CSSProps style;
 //        TouchEventHandler onActionTouchTap; // func
 //        Func.Run onRequestClose; // func
+//        MouseEventHandler onClick;
 
 
         @JsProperty
@@ -94,6 +96,12 @@ public class SnackBar extends ExternalComponent<SnackBar.Props> {
 
         @JsProperty
         void setOnRequestClose(Func.Run onRequestClose);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////
@@ -151,6 +159,12 @@ public class SnackBar extends ExternalComponent<SnackBar.Props> {
         @JsOverlay
         default Props onRequestClose(final Func.Run onRequestClose) {
             setOnRequestClose(onRequestClose);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

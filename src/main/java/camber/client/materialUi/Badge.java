@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
@@ -64,6 +65,13 @@ public class Badge extends ExternalComponent<Badge.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler style);
+
+
         // fluent setters
         @JsOverlay
         default Props badgeContent(ReactElement badgeContent){
@@ -98,6 +106,12 @@ public class Badge extends ExternalComponent<Badge.Props> {
         @JsOverlay
         default Props style(CSSProps style){
             setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

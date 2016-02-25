@@ -2,6 +2,7 @@ package camber.client.materialUi;
 
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -42,6 +43,7 @@ public class DropDownMenu extends ExternalComponent<DropDownMenu.Props> {
 //        CSSProps underlineStyle;
 //        Object value;
 //        Func.Run onChange; // func
+//        MouseEventHandler onClick; // func - added in, even though default opens and closes menu
 
         @JsProperty
         boolean isAutoWidth();
@@ -114,6 +116,13 @@ public class DropDownMenu extends ExternalComponent<DropDownMenu.Props> {
 
         @JsProperty
         void setOnChange(Func.Run onChange);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnCLick(MouseEventHandler onClick);
+
 
         ////////////////////
         // fluent setters
@@ -188,6 +197,12 @@ public class DropDownMenu extends ExternalComponent<DropDownMenu.Props> {
         @JsOverlay
         default Props onChange(final Func.Run onChange) {
             setOnChange(onChange);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnCLick(onClick);
             return this;
         }
         

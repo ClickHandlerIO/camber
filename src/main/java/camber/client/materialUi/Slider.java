@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -30,7 +31,6 @@ public class Slider extends ExternalComponent<Slider.Props> {
 
     @JsType(isNative = true)
     public interface Props extends BaseProps {
-
 //        double defaultValue; // type valueInRangePropType
 //        double min; // must be between 0 and 1 inclusive, cannot equal max
 //        double max; // must be between 0 and 1 inclusive, cannot equal min
@@ -48,7 +48,7 @@ public class Slider extends ExternalComponent<Slider.Props> {
 //        Func.Run onDragStart; // func
 //        Func.Run onDragStop; // func
 //        FocusEventHandler onFocus; // func
-
+//        MouseEventHandler onClick; // func - may be unused as it is added in here only
 
         @JsProperty
         double getDefaultValue();
@@ -151,6 +151,12 @@ public class Slider extends ExternalComponent<Slider.Props> {
 
         @JsProperty
         void setOnFocus(FocusEventHandler onFocus);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onFocus);
 
 
         ////////////////////
@@ -256,6 +262,12 @@ public class Slider extends ExternalComponent<Slider.Props> {
         @JsOverlay
         default Props onFocus(final FocusEventHandler onFocus) {
             setOnFocus(onFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

@@ -65,6 +65,13 @@ public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
         @JsProperty
         void setViewBox(String viewBox);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler viewBox);
+
+
         ////////////////////
         // fluent setters
         ////////////////////
@@ -102,6 +109,12 @@ public class SvgIcon extends ExternalComponent<SvgIcon.Props> {
         @JsOverlay
         default Props viewBox(String viewBox) {
             setViewBox(viewBox);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

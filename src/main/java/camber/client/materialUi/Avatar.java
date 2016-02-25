@@ -1,6 +1,7 @@
 package camber.client.materialUi;
 
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -72,6 +73,13 @@ public class Avatar extends ExternalComponent<Avatar.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler style);
+
+
         // fluent setters
 
         @JsOverlay
@@ -113,6 +121,12 @@ public class Avatar extends ExternalComponent<Avatar.Props> {
         @JsOverlay
         default Props style(CSSProps style){
             setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

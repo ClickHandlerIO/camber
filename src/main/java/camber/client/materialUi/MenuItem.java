@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
@@ -110,6 +111,12 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
         @JsProperty
         void setValue(Object value);
 
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
+
 
 
         ////////////////////
@@ -191,6 +198,12 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
         @JsOverlay
         default Props value(Object value) {
             setValue(value);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 

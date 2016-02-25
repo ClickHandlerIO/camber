@@ -3,6 +3,7 @@ package camber.client.materialUi;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -51,6 +52,7 @@ public class SelectField extends ExternalComponent<SelectField.Props> {
 //        FocusEventHandler onBlur; // func
 //        Func.Run onChange; // func
 //        FocusEventHandler onFocus; // func
+//        MouseEventHandler onClick; // func - added here, may not be used
 
         @JsProperty
         boolean isAutoWidth();
@@ -171,6 +173,12 @@ public class SelectField extends ExternalComponent<SelectField.Props> {
 
         @JsProperty
         void setOnFocus(FocusEventHandler onFocus);
+
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////
@@ -294,6 +302,12 @@ public class SelectField extends ExternalComponent<SelectField.Props> {
         @JsOverlay
         default Props onFocus(final FocusEventHandler onFocus) {
             setOnFocus(onFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(final MouseEventHandler onClick) {
+            setOnClick(onClick);
             return this;
         }
 
