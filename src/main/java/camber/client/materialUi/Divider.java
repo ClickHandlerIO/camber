@@ -4,7 +4,7 @@ import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
-import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -53,5 +53,35 @@ public class Divider extends ExternalComponent<Divider.Props> {
 
         @JsProperty
         void setStyle(CSSProps style);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props inset(boolean inset) {
+            setInset(inset);
+            return this;
+        }
+
+        @JsOverlay
+        default Props muiTheme(Object muiTheme) {
+            setMuiTheme(muiTheme);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
     }
 }

@@ -162,13 +162,13 @@ public class CardTitle extends ExternalComponent<CardTitle.Props> {
 
         @JsOverlay
         default Props titleColor(final String titleColor) {
-            this.titleColor = titleColor;
+            setTitleColor(titleColor);
             return this;
         }
 
         @JsOverlay
         default Props titleStyle(final CSSProps titleStyle) {
-            this.titleStyle = titleStyle;
+            setTitleStyle(titleStyle);
             return this;
         }
 

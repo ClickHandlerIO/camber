@@ -7,6 +7,7 @@ import io.clickhandler.web.event.FocusEventHandler;
 import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -119,5 +120,101 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
 
         @JsProperty
         void setTouch(boolean touch);
+
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props disabled(boolean disabled) {
+            setDisabled(disabled);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconClassName(String iconClassName) {
+            setIconClassName(iconClassName);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconStyle(CSSProps iconStyle) {
+            setIconStyle(iconStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onBlur(FocusEventHandler onBlur) {
+            setOnBlur(onBlur);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onFocus(FocusEventHandler onFocus) {
+            setOnFocus(onFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onKeyboardFocus(KeyboardEventHandler onKeyboardFocus) {
+            setOnKeyboardFocus(onKeyboardFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseEnter(MouseEventHandler onMouseEnter) {
+            setOnMouseEnter(onMouseEnter);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseLeave(MouseEventHandler onMouseLeave) {
+            setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props tooltip(String tooltip) {
+            setTooltip(tooltip);
+            return this;
+        }
+
+        @JsOverlay
+        default Props tooltipPosition(String tooltipPosition) {
+            setTooltipPosition(tooltipPosition);
+            return this;
+        }
+
+        @JsOverlay
+        default Props tooltipStyles(CSSProps tooltipStyles) {
+            setTooltipStyles(tooltipStyles);
+            return this;
+        }
+
+        @JsOverlay
+        default Props touch(boolean touch) {
+            setTouch(touch);
+            return this;
+        }
     }
 }

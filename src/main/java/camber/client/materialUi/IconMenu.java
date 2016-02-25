@@ -9,6 +9,7 @@ import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ReactElement;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -142,6 +143,121 @@ public class IconMenu extends ExternalComponent<IconMenu.Props> {
 
         @JsProperty
         void setTouchTapCloseDelay(double touchTapCloseDelay);
+
+
+        ////////////////////
+        // fluent setters
+        ////////////////////
+
+        @JsOverlay
+        default Props anchorOrigin(Origin anchorOrigin) {
+            setAnchorOrigin(anchorOrigin);
+            return this;
+        }
+
+        @JsOverlay
+        default Props className(String className) {
+            setClassName(className);
+            return this;
+        }
+
+        @JsOverlay
+        default Props closeOnItemTouchTap(boolean closeOnItemTouchTap) {
+            setCloseOnItemTouchTap(closeOnItemTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconButtonElement(ReactElement iconButtonElement) {
+            setIconButtonElement(iconButtonElement);
+            return this;
+        }
+
+        @JsOverlay
+        default Props iconStyle(CSSProps iconStyle) {
+            setIconStyle(iconStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props menuStyle(CSSProps menuStyle) {
+            setMenuStyle(menuStyle);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onItemTouchTap(TouchEventHandler onItemTouchTap) {
+            setOnItemTouchTap(onItemTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onKeyboardFocus(KeyboardEventHandler onKeyboardFocus) {
+            setOnKeyboardFocus(onKeyboardFocus);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseDown(MouseEventHandler onMouseDown) {
+            setOnMouseDown(onMouseDown);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseEnter(MouseEventHandler onMouseEnter) {
+            setOnMouseEnter(onMouseEnter);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseLeave(MouseEventHandler onMouseLeave) {
+            setOnMouseLeave(onMouseLeave);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onMouseUp(MouseEventHandler onMouseUp) {
+            setOnMouseUp(onMouseUp);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onRequestChange(Func.Run onRequestChange) {
+            setOnRequestChange(onRequestChange);
+            return this;
+        }
+
+        @JsOverlay
+        default Props onTouchTap(TouchEventHandler onTouchTap) {
+            setOnTouchTap(onTouchTap);
+            return this;
+        }
+
+        @JsOverlay
+        default Props open(boolean open) {
+            setOpen(open);
+            return this;
+        }
+
+        @JsOverlay
+        default Props style(CSSProps style) {
+            setStyle(style);
+            return this;
+        }
+
+        @JsOverlay
+        default Props targetOrigin(Origin targetOrigin) {
+            setTargetOrigin(targetOrigin);
+            return this;
+        }
+
+        @JsOverlay
+        default Props touchTapCloseDelay(double touchTapCloseDelay) {
+            setTouchTapCloseDelay(touchTapCloseDelay);
+            return this;
+        }
+
+
     }
 
     /**
@@ -160,5 +276,6 @@ public class IconMenu extends ExternalComponent<IconMenu.Props> {
 
         @JsProperty
         void setHorizontal(String horizontal);
+
     }
 }
