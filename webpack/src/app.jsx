@@ -59,7 +59,6 @@ import TableHeaderColumn from 'material-ui/lib/table/table-header-column'
 import TableBody from 'material-ui/lib/table/table-body'
 import TableFooter from 'material-ui/lib/table/table-footer'
 import TextField from 'material-ui/lib/TextField/TextField';
-//import TextField from './overrides/material-ui/lib/TextField/TextField';
 import TimePicker from 'material-ui/lib/time-picker/time-picker'
 import Toolbar from 'material-ui/lib/toolbar/toolbar'
 import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group'
