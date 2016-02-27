@@ -4,8 +4,8 @@ import ReactRouter from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Material Ui
-import AccountBox from 'material-ui/lib/svg-icons/action/account-box';
-import AccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
+
+
 import AppBar from 'material-ui/lib/app-bar';
 import AutoComplete from 'material-ui/lib/auto-complete'
 import Avatar from 'material-ui/lib/avatar';
@@ -13,9 +13,6 @@ import Badge from 'material-ui/lib/badge';
 import Card from 'material-ui/lib/card/card'
 import CircularProgress from 'material-ui/lib/circular-progress'
 import Checkbox from 'material-ui/lib/checkbox'
-import ChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
-import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
-import Close from 'material-ui/lib/svg-icons/navigation/close';
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import DatePicker from 'material-ui/lib/date-picker/date-picker'
@@ -30,28 +27,37 @@ import IconButton from 'material-ui/lib/icon-button';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import isEqual from 'lodash.isequal';
 import LeftNav from 'material-ui/lib/left-nav';
-import Launch from 'material-ui/lib/svg-icons/action/launch';
 import LinearProgress from 'material-ui/lib/linear-progress'
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
-import Email from 'material-ui/lib/svg-icons/communication/email.js';
-import MailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import Menu from 'material-ui/lib/menu/menu';
-import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import Notifications from 'material-ui/lib/svg-icons/social/notifications';
 import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover'
 import RadioButton from 'material-ui/lib/radio-button'
 import RadioButtonGroup from 'material-ui/lib/radio-button-group'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
-import Search from 'material-ui/lib/svg-icons/action/search';
 import SelectField from 'material-ui/lib/select-field'
 import Slider from 'material-ui/lib/slider'
 import Snackbar from 'material-ui/lib/snackbar'
 import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
+import SvgIconAccountBox from 'material-ui/lib/svg-icons/action/account-box';
+import SvgIconAccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
+import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
+import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
+import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
+import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
+import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email.js';
+import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
+import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
+import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
+import SvgIconNotifications from 'material-ui/lib/svg-icons/social/notifications';
+import SvgIconPersonAdd from 'material-ui/lib/svg-icons/social/person-add';
+import SvgIconReply from 'material-ui/lib/svg-icons/content/reply';
+import SvgIconSearch from 'material-ui/lib/svg-icons/action/search';
+import SvgIconUnarchive from 'material-ui/lib/svg-icons/content/unarchive';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Table from 'material-ui/lib/table/table'
@@ -71,6 +77,8 @@ import Toggle from 'material-ui/lib/toggle'
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
+
+
 
 module.exports = {
     React: React,
@@ -130,17 +138,21 @@ module.exports = {
         ToolbarTitle: ToolbarTitle,
         Toggle: Toggle,
         Icons: {
-            AccountBox: AccountBox,
-            AccountCircle: AccountCircle,
-            ChevronLeft: ChevronLeft,
-            ChevronRight: ChevronRight,
-            Close: Close,
-            Launch: Launch,
-            MailOutline: MailOutline,
-            Menu: MenuIcon,
-            Email: Email,
-            Notifications: Notifications,
-            Search: Search,
+            AccountBox: SvgIconAccountBox,
+            AccountCircle: SvgIconAccountCircle,
+            Archive: SvgIconArchive,
+            ChevronLeft: SvgIconChevronLeft,
+            ChevronRight: SvgIconChevronRight,
+            Close: SvgIconClose,
+            Email: SvgIconEmail,
+            Launch: SvgIconLaunch,
+            MailOutline: SvgIconMailOutline,
+            Menu: SvgIconMenu,
+            Notifications: SvgIconNotifications,
+            PersonAdd: SvgIconPersonAdd,
+            Reply: SvgIconReply,
+            Search: SvgIconSearch,
+            Unarchive: SvgIconUnarchive,
         },
         Styles: {
             Colors: Colors,
