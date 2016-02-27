@@ -13,6 +13,9 @@ import Badge from 'material-ui/lib/badge';
 import Card from 'material-ui/lib/card/card'
 import CircularProgress from 'material-ui/lib/circular-progress'
 import Checkbox from 'material-ui/lib/checkbox'
+import ChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
+import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
+import Close from 'material-ui/lib/svg-icons/navigation/close';
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import DatePicker from 'material-ui/lib/date-picker/date-picker'
@@ -129,6 +132,9 @@ module.exports = {
         Icons: {
             AccountBox: AccountBox,
             AccountCircle: AccountCircle,
+            ChevronLeft: ChevronLeft,
+            ChevronRight: ChevronRight,
+            Close: Close,
             Launch: Launch,
             MailOutline: MailOutline,
             Menu: MenuIcon,
