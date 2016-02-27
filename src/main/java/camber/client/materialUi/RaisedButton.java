@@ -6,6 +6,7 @@ import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
@@ -73,10 +74,10 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         void setHref(String href);
 
         @JsProperty
-        String getIcon();
+        ReactElement getIcon();
 
         @JsProperty
-        void setIcon(String icon);
+        void setIcon(ReactElement icon);
 
         @JsProperty
         String getLabel();
@@ -217,7 +218,7 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         }
 
         @JsOverlay
-        default Props icon(String icon) {
+        default Props icon(ReactElement icon) {
             setIcon(icon);
             return this;
         }

@@ -58,6 +58,7 @@ import SvgIconNotifications from 'material-ui/lib/svg-icons/social/notifications
 import SvgIconPersonAdd from 'material-ui/lib/svg-icons/social/person-add';
 import SvgIconReply from 'material-ui/lib/svg-icons/content/reply';
 import SvgIconSearch from 'material-ui/lib/svg-icons/action/search';
+import SvgIconSend from 'material-ui/lib/svg-icons/content/send';
 import SvgIconUnarchive from 'material-ui/lib/svg-icons/content/unarchive';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
@@ -154,6 +155,7 @@ module.exports = {
             PersonAdd: SvgIconPersonAdd,
             Reply: SvgIconReply,
             Search: SvgIconSearch,
+            Send: SvgIconSend,
             Unarchive: SvgIconUnarchive,
         },
         Styles: {
