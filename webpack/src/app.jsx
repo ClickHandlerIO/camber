@@ -49,6 +49,7 @@ import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
 import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
+import SvgIconDelete from 'material-ui/lib/svg-icons/action/delete';
 import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email.js';
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
@@ -144,6 +145,7 @@ module.exports = {
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,
             Close: SvgIconClose,
+            Delete: SvgIconDelete,
             Email: SvgIconEmail,
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
