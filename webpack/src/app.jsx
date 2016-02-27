@@ -50,7 +50,8 @@ import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-lef
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
 import SvgIconDelete from 'material-ui/lib/svg-icons/action/delete';
-import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email.js';
+import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email';
+import SvgIconGpsFixed from 'material-ui/lib/svg-icons/device/gps-fixed';
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
@@ -148,6 +149,7 @@ module.exports = {
             Close: SvgIconClose,
             Delete: SvgIconDelete,
             Email: SvgIconEmail,
+            GpsFixed: SvgIconGpsFixed,
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
             Menu: SvgIconMenu,
