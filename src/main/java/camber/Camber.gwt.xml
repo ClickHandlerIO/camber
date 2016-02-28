@@ -7,6 +7,7 @@
     <inherits name="com.google.gwt.user.Debug"/>
     <inherits name="elemental.Elemental"/>
     <inherits name="io.clickhandler.web.Web"/>
+    <inherits name="io.clickhandler.momentGwt.Moment"/>
 
     <source path="client"/>
     <source path="resources"/>

@@ -52,8 +52,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <gwt.version>2.8.0-beta1</gwt.version>
+        <gwt.version>2.8.0-SNAPSHOT</gwt.version>
         <dagger-gwt.version>0.1.0-SNAPSHOT</dagger-gwt.version>
+        <moment-gwt.version>0.1.0-SNAPSHOT</moment-gwt.version>
         <clickhandlerweb.version>0.2.0-SNAPSHOT</clickhandlerweb.version>
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <gwt-maven-plugin.version>2.8.0-SNAPSHOT</gwt-maven-plugin.version>
@@ -91,6 +92,19 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
+
+        <repository>
+            <id>google-snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -125,6 +139,12 @@
             <groupId>io.clickhandler</groupId>
             <artifactId>web</artifactId>
             <version>${clickhandlerweb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.clickhandler</groupId>
+            <artifactId>moment-gwt</artifactId>
+            <version>${moment-gwt.version}</version>
         </dependency>
 
     </dependencies>
