@@ -25,11 +25,12 @@ import FontIcon from 'material-ui/lib/font-icon'
 import GridList from 'material-ui/lib/grid-list/grid-list'
 import IconButton from 'material-ui/lib/icon-button';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
-import isEqual from 'lodash.isequal';
 import LeftNav from 'material-ui/lib/left-nav';
 import LinearProgress from 'material-ui/lib/linear-progress'
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
+import LodashAssign from 'lodash.assign';
+import LodashIsEqual from 'lodash.isequal';
 import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
@@ -88,7 +89,8 @@ module.exports = {
     ReactDOM: ReactDOM,
     InjectTapEventPlugin: injectTapEventPlugin,
     Lodash: {
-        isEqual: isEqual,
+        assign: LodashAssign,
+        isEqual: LodashIsEqual,
     },
     MaterialUi: {
         AppBar: AppBar,
