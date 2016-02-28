@@ -42,18 +42,18 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
         FullCalendarOptions options = new FullCalendarOptions();
         options.header = header;
-        options.allDayDefault = false;
+//        options.allDayDefault = false;
         options.editable = false;
         options.eventLimit = true;
         options.aspectRatio = 1.35;
-        options.eventClick = (fullCalendarEvent, nativeEvent, fullCalendarView) -> {
-            if ($this.props().getOnEventClicked() != null) {
-                $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent.id);
-            }
-        };
+//        options.eventClick = (fullCalendarEvent, nativeEvent, fullCalendarView) -> {
+//            if ($this.props().getOnEventClicked() != null) {
+//                $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent.id);
+//            }
+//        };
 
         init(divRef.get($this), options);
-        updateData(divRef.get($this), $this.props().getData());
+//        updateData(divRef.get($this), $this.props().getData());
     }
 
     @Override
@@ -64,7 +64,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     @Override
     protected void componentDidUpdate(ReactComponent<Props, State> $this, Props curProps, Props nextProps, State curState, State nextState) {
         super.componentDidUpdate($this, curProps, nextProps, curState, nextState);
-        updateData(divRef.get($this), nextProps.getData());
+//        updateData(divRef.get($this), nextProps.getData());
     }
 
     @Override
@@ -78,7 +78,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     private native void init(DivElement divElement, FullCalendarOptions options) /*-{
-        $wnd.$(divElement).fullCalendar(options);
+        $wnd.$(divElement).fullCalendar({});
     }-*/;
 
     private native void destroy(DivElement divElement) /*-{
