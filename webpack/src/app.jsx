@@ -46,12 +46,18 @@ import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
 import SvgIconAccountBox from 'material-ui/lib/svg-icons/action/account-box';
 import SvgIconAccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
+import SvgIconAdd from 'material-ui/lib/svg-icons/content/add';
+import SvgIconAddBox from 'material-ui/lib/svg-icons/content/add-box';
+import SvgIconAddCircle from 'material-ui/lib/svg-icons/content/add-circle';
+import SvgIconAddCircleOutline from 'material-ui/lib/svg-icons/content/add-circle-outline';
+import SvgIconAddShoppingCart from 'material-ui/lib/svg-icons/action/add-shopping-cart';
 import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
 import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
 import SvgIconDelete from 'material-ui/lib/svg-icons/action/delete';
 import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email';
+import SvgIconFilterList from 'material-ui/lib/svg-icons/content/filter-list';
 import SvgIconGpsFixed from 'material-ui/lib/svg-icons/device/gps-fixed';
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
@@ -145,12 +151,18 @@ module.exports = {
         Icons: {
             AccountBox: SvgIconAccountBox,
             AccountCircle: SvgIconAccountCircle,
+            Add: SvgIconAdd,
+            AddBox: SvgIconAddBox,
+            AddCircle: SvgIconAddCircle,
+            AddCircleOutline: SvgIconAddCircleOutline,
+            AddShoppingCart: SvgIconAddShoppingCart,
             Archive: SvgIconArchive,
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,
             Close: SvgIconClose,
             Delete: SvgIconDelete,
             Email: SvgIconEmail,
+            FilterList: SvgIconFilterList,
             GpsFixed: SvgIconGpsFixed,
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
