@@ -1,11 +1,11 @@
 package camber.client.materialUi;
 
-import io.clickhandler.web.event.MouseEventHandler;
-import io.clickhandler.web.react.ExternalComponent;
-import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.BaseProps;
+import io.clickhandler.web.react.ExternalComponent;
+import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -94,6 +94,12 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
         void setRightIcon(ReactElement rightIcon);
 
         @JsProperty
+        ReactElement getPrimaryText();
+
+        @JsProperty
+        void setPrimaryText(ReactElement PrimaryText);
+
+        @JsProperty
         ReactElement getSecondaryText();
 
         @JsProperty
@@ -116,7 +122,6 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
 
         @JsProperty
         void setOnClick(MouseEventHandler onClick);
-
 
 
         ////////////////////
@@ -186,6 +191,11 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
         @JsOverlay
         default Props secondaryText(ReactElement secondaryText) {
             setSecondaryText(secondaryText);
+            return this;
+        }
+
+        default Props primaryText(ReactElement primaryText) {
+            setPrimaryText(primaryText);
             return this;
         }
 
