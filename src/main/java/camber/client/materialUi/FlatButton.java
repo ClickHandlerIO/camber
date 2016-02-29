@@ -1,10 +1,8 @@
 package camber.client.materialUi;
 
 import io.clickhandler.web.event.TouchEventHandler;
-import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
-import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.KeyboardEventHandler;
 import io.clickhandler.web.event.MouseEventHandler;

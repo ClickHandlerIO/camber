@@ -194,6 +194,7 @@ public class MenuItem extends ExternalComponent<MenuItem.Props> {
             return this;
         }
 
+        @JsOverlay
         default Props primaryText(ReactElement primaryText) {
             setPrimaryText(primaryText);
             return this;

@@ -1,6 +1,5 @@
 package camber.client.materialUi;
 
-import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
 import io.clickhandler.web.event.FormEventHandler;
