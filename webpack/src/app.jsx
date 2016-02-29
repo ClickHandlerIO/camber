@@ -31,8 +31,8 @@ import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import LodashAssign from 'lodash.assign';
 import LodashIsEqual from 'lodash.isequal';
-import Menu from 'material-ui/lib/menu/menu';
-import MenuItem from 'material-ui/lib/menu/menu-item';
+import Menu from 'material-ui/lib/menus/menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 import MuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover'
