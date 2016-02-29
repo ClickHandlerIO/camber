@@ -64,6 +64,7 @@ import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-out
 import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import SvgIconNotifications from 'material-ui/lib/svg-icons/social/notifications';
 import SvgIconPersonAdd from 'material-ui/lib/svg-icons/social/person-add';
+import SvgIconPowerSettingsNew from 'material-ui/lib/svg-icons/action/power-settings-new';
 import SvgIconReply from 'material-ui/lib/svg-icons/content/reply';
 import SvgIconSearch from 'material-ui/lib/svg-icons/action/search';
 import SvgIconSend from 'material-ui/lib/svg-icons/content/send';
@@ -170,6 +171,7 @@ module.exports = {
             Menu: SvgIconMenu,
             Notifications: SvgIconNotifications,
             PersonAdd: SvgIconPersonAdd,
+            PowerSettingsNew: SvgIconPowerSettingsNew,
             Reply: SvgIconReply,
             Search: SvgIconSearch,
             Send: SvgIconSend,
