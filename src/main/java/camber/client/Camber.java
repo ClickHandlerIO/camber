@@ -10,7 +10,7 @@ public class Camber {
         // moment js (needs to be before FullCalendar)
         Moment.injectJavascript();
 
-        // jquery and select2
+        // jquery and jquery plugins
         ScriptInjector.fromString(CamberResourceBundle.INSTANCE.jQuery().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
         ScriptInjector.fromString(CamberResourceBundle.INSTANCE.Select2().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
         ScriptInjector.fromString(CamberResourceBundle.INSTANCE.FullCalendar().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
