@@ -188,5 +188,5 @@ module.exports = {
         },
     },
     TextareaAutosize: TextareaAutosize,
-    ChartJs: ChartJs
+    ChartJs: ChartJs,
 };
