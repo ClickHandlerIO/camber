@@ -1,24 +1,25 @@
-package camber.client.charts;
+package camber.client.chartjs;
 
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
-public class charts extends ExternalComponent<charts.Props> {
+public class ChartJs extends ExternalComponent<ChartJs.Props> {
 
     @Inject
-    public charts() {
+    public ChartJs() {
     }
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.TextAreaAutosize;
+        return $wnd.Camber.ChartJs ;
     }-*/;
 
     @JsType(isNative = true)
-    public interface Props {
+    public interface Props extends BaseProps {
         // todo
     }
 }
