@@ -7,6 +7,9 @@ import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
+/**
+ *  need to install regular chart.js for this to work, use: npm install chart.js
+ */
 public class ChartJs extends ExternalComponent<ChartJs.Props> {
 
     @Inject
