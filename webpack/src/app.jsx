@@ -85,6 +85,7 @@ import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group'
 import ToolbarSeparator from 'material-ui/lib/toolbar/toolbar-separator'
 import ToolbarTitle from 'material-ui/lib/toolbar/toolbar-title'
 import Toggle from 'material-ui/lib/toggle'
+import TreeView from 'react-treeview/lib/react-treeview'
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
@@ -187,4 +188,5 @@ module.exports = {
         },
     },
     TextareaAutosize: TextareaAutosize,
+    TreeView: TreeView,
 };
