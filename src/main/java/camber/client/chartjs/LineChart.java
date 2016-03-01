@@ -44,6 +44,12 @@ public class LineChart extends ExternalComponent<LineChart.Props> {
 //        MouseEventHandler onClick; // func - leaving this out for now as the javascript seems to handle clicks based on where the chart is clicked
 
         @JsProperty
+        Data getData();
+
+        @JsProperty
+        void setData(Data data);
+
+        @JsProperty
         boolean isScaleShowGridLines();
 
         @JsProperty
@@ -143,6 +149,12 @@ public class LineChart extends ExternalComponent<LineChart.Props> {
         ////////////////////
         // fluent setters
         ////////////////////
+
+        @JsOverlay
+        default Props data(final Data data) {
+            setData(data);
+            return this;
+        }
 
         @JsOverlay
         default Props scaleShowGridLines(final boolean scaleShowGridLines) {

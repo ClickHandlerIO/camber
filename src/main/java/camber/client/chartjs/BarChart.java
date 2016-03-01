@@ -41,88 +41,73 @@ public class BarChart extends ExternalComponent<BarChart.Props> {
 
 
         @JsProperty
-        boolean isScaleBeginAtZero();
+        Data getData();
 
+        @JsProperty
+        void setData(Data data);
+
+        @JsProperty
+        boolean isScaleBeginAtZero();
 
         @JsProperty
         void setScaleBeginAtZero(boolean scaleBeginAtZero);
 
-
         @JsProperty
         boolean isScaleShowGridLines();
-
 
         @JsProperty
         void setScaleShowGridLines(boolean scaleShowGridLines);
 
-
         @JsProperty
         String getScaleGridLineColor();
-
 
         @JsProperty
         void setScaleGridLineColor(String scaleGridLineColor);
 
-
         @JsProperty
         double getScaleGridLineWidth();
-
 
         @JsProperty
         void setScaleGridLineWidth(double scaleGridLineWidth);
 
-
         @JsProperty
         boolean isScaleShowHorizontalLines();
-
 
         @JsProperty
         void setScaleShowHorizontalLines(boolean scaleShowHorizontalLines);
 
-
         @JsProperty
         boolean isScaleShowVerticalLines();
-
 
         @JsProperty
         void setScaleShowVerticalLines(boolean scaleShowVerticalLines);
 
-
         @JsProperty
         boolean isBarShowStroke();
-
 
         @JsProperty
         void setBarShowStroke(boolean barShowStroke);
 
-
         @JsProperty
         double getBarStrokeWidth();
-
 
         @JsProperty
         void setBarStrokeWidth(double barStrokeWidth);
 
-
         @JsProperty
         double getBarValueSpacing();
-
 
         @JsProperty
         void setBarValueSpacing(double barValueSpacing);
 
-
         @JsProperty
         double getBarDatasetSpacing();
-
 
         @JsProperty
         void setBarDatasetSpacing(double barDatasetSpacing);
 
-
         @JsProperty
         String getLegendTemplate();
-
 
         @JsProperty
         void setLegendTemplate(String legendTemplate);
@@ -131,6 +116,12 @@ public class BarChart extends ExternalComponent<BarChart.Props> {
         ////////////////////
         // fluent setters
         ////////////////////
+
+        @JsOverlay
+        default Props data(final Data data) {
+            setData(data);
+            return this;
+        }
 
         @JsOverlay
         default Props scaleBeginAtZero(final boolean scaleBeginAtZero) {

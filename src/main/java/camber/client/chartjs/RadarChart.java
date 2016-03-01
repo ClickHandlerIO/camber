@@ -27,6 +27,7 @@ public class RadarChart extends ExternalComponent<RadarChart.Props> {
     @JsType(isNative = true)
     public interface Props extends BaseProps {
         // chart specific options
+//        Data data;
 //        boolean scaleShowLine;
 //        boolean angleShowLineOut;
 //        boolean scaleShowLabels;
@@ -45,6 +46,13 @@ public class RadarChart extends ExternalComponent<RadarChart.Props> {
 //        double datasetStrokeWidth;
 //        boolean datasetFill;
 //        String legendTemplate;
+
+
+        @JsProperty
+        Data getData();
+
+        @JsProperty
+        void setData(Data data);
 
         @JsProperty
         boolean isScaleShowLine();
@@ -158,6 +166,12 @@ public class RadarChart extends ExternalComponent<RadarChart.Props> {
         ////////////////////
         // fluent setters
         ////////////////////
+
+        @JsOverlay
+        default Props data(final Data data) {
+            setData(data);
+            return this;
+        }
 
         @JsOverlay
         default Props scaleShowLine(final boolean scaleShowLine) {
