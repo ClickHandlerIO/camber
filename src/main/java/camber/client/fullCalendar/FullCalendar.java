@@ -32,8 +32,8 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected void componentDidMount(final ReactComponent<Props, State> $this) {
-        super.componentDidMount($this);
+    protected void componentDidMount(final ReactComponent<Props, State> $this, Props props, State state) {
+        super.componentDidMount($this, props, state);
         buildFullCalendar($this);
 
         $this.register(Window.addResizeHandler(resizeEvent -> {
@@ -58,9 +58,9 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     }
 
     @Override
-    protected void componentDidUpdate(ReactComponent<Props, State> $this, Props curProps, Props nextProps, State curState, State nextState) {
-        super.componentDidUpdate($this, curProps, nextProps, curState, nextState);
-        updateData(divRef.get($this), nextProps.getData());
+    protected void componentDidUpdate(ReactComponent<Props, State> $this, Props prevProps, Props curProps, State prevState, State curState) {
+        super.componentDidUpdate($this, prevProps, curProps, prevState, curState);
+        updateData(divRef.get($this), curProps.getData());
     }
 
     @Override
@@ -99,6 +99,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
     private native void init(DivElement divElement, FullCalendarOptions options) /*-{
         // build opts object with events as first param (required by full calendar)
+        // todo look into JsObject(isNative) for options
         var opts = {
             events: [], // must always be first
             dayClick: options.dayClick,
