@@ -10,11 +10,14 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.lang.reflect.Array;
 
 /**
  *  need to install regular chart.js for this to work, use: npm install chart.js
+ *  this class is for global configuration accross all charts, it is never actually instantiated
  */
+@Singleton
 public class ChartJs extends ExternalComponent<ChartJs.Props> {
 
     @Inject
@@ -83,7 +86,6 @@ public class ChartJs extends ExternalComponent<ChartJs.Props> {
 //
 //        Func.Run onAnimationProgress;
 //        Func.Run onAnimationComplete;
-//        MouseEventHandler onClick;
 
 
         @JsProperty
@@ -337,12 +339,6 @@ public class ChartJs extends ExternalComponent<ChartJs.Props> {
 
         @JsProperty
         void setOnAnimationComplete(Func.Run onAnimationComplete);
-
-        @JsProperty
-        MouseEventHandler getOnClick();
-
-        @JsProperty
-        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////
@@ -598,12 +594,6 @@ public class ChartJs extends ExternalComponent<ChartJs.Props> {
         @JsOverlay
         default Props onAnimationComplete(final Func.Run onAnimationComplete) {
             setOnAnimationComplete(onAnimationComplete);
-            return this;
-        }
-
-        @JsOverlay
-        default Props onClick(final MouseEventHandler onClick) {
-            setOnClick(onClick);
             return this;
         }
 
