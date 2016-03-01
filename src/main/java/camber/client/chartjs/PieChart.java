@@ -3,6 +3,7 @@ package camber.client.chartjs;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -25,13 +26,141 @@ public class PieChart extends ExternalComponent<PieChart.Props> {
     @JsType(isNative = true)
     public interface Props extends BaseProps {
         // chart specific options
+//        Data[] data;
+//        boolean segmentShowStroke;
+//        String segmentStrokeColor;
+//        double segmentStrokeWidth;
+//        double percentageInnerCutout; // 0 for pie chart
+//        double animationSteps;
+//        String animationEasing;
+//        boolean animateRotate;
+//        boolean animateScale;
+//        String legendTemplate;
 
+        @JsProperty
+        Data[] getData();
+
+        @JsProperty
+        void setData(Data[] data);
+
+        @JsProperty
+        boolean isSegmentShowStroke();
+
+        @JsProperty
+        void setSegmentShowStroke(boolean segmentShowStroke);
+
+        @JsProperty
+        String getSegmentStrokeColor();
+
+        @JsProperty
+        void setSegmentStrokeColor(String segmentStrokeColor);
+
+        @JsProperty
+        double getSegmentStrokeWidth();
+
+        @JsProperty
+        void setSegmentStrokeWidth(double segmentStrokeWidth);
+
+        @JsProperty
+        double getPercentageInnerCutout();
+
+        @JsProperty
+        void setPercentageInnerCutout(double percentageInnerCutout);
+
+        @JsProperty
+        double getAnimationSteps();
+
+        @JsProperty
+        void setAnimationSteps(double animationSteps);
+
+        @JsProperty
+        String getAnimationEasing();
+
+        @JsProperty
+        void setAnimationEasing(String animationEasing);
+
+        @JsProperty
+        boolean isAnimateRotate();
+
+        @JsProperty
+        void setAnimateRotate(boolean animateRotate);
+
+        @JsProperty
+        boolean isAnimateScale();
+
+        @JsProperty
+        void setAnimateScale(boolean animateScale);
+
+        @JsProperty
+        String getLegendTemplate();
+
+        @JsProperty
+        void setLegendTemplate(String legendTemplate);
 
 
         ////////////////////
         // fluent setters
         ////////////////////
 
+        @JsOverlay
+        default Props data(final Data[] data) {
+            setData(data);
+            return this;
+        }
+
+        @JsOverlay
+        default Props segmentShowStroke(final boolean segmentShowStroke) {
+            setSegmentShowStroke(segmentShowStroke);
+            return this;
+        }
+
+        @JsOverlay
+        default Props segmentStrokeColor(final String segmentStrokeColor) {
+            setSegmentStrokeColor(segmentStrokeColor);
+            return this;
+        }
+
+        @JsOverlay
+        default Props segmentStrokeWidth(final double segmentStrokeWidth) {
+            setSegmentStrokeWidth(segmentStrokeWidth);
+            return this;
+        }
+
+        @JsOverlay
+        default Props percentageInnerCutout(final double percentageInnerCutout) {
+            setPercentageInnerCutout(percentageInnerCutout);
+            return this;
+        }
+
+        @JsOverlay
+        default Props animationSteps(final double animationSteps) {
+            setAnimationSteps(animationSteps);
+            return this;
+        }
+
+        @JsOverlay
+        default Props animationEasing(final String animationEasing) {
+            setAnimationEasing(animationEasing);
+            return this;
+        }
+
+        @JsOverlay
+        default Props animateRotate(final boolean animateRotate) {
+            setAnimateRotate(animateRotate);
+            return this;
+        }
+
+        @JsOverlay
+        default Props animateScale(final boolean animateScale) {
+            setAnimateScale(animateScale);
+            return this;
+        }
+
+        @JsOverlay
+        default Props legendTemplate(final String legendTemplate) {
+            setLegendTemplate(legendTemplate);
+            return this;
+        }
 
     }
 
@@ -42,59 +171,29 @@ public class PieChart extends ExternalComponent<PieChart.Props> {
     @JsType(isNative = true)
     public interface Data {
         @JsProperty
-        String[] getLabels();
+        double getValue();
 
         @JsProperty
-        void setLabels(String[] labels);
+        void setValue(double value);
 
         @JsProperty
-        Dataset[] getDatasets();
+        String getColor();
 
         @JsProperty
-        void setDatasets(Dataset[] datasets);
+        void setColor(String color);
 
-    }
+        @JsProperty
+        String getHighlight();
 
-    /**
-     *
-     */
-    @JsType(isNative = true)
-    public interface Dataset {
+        @JsProperty
+        void setHighlight(String highlight);
+
         @JsProperty
         String getLabel();
 
         @JsProperty
         void setLabel(String label);
 
-        @JsProperty
-        String getFillColor();
-
-        @JsProperty
-        void setFillColor(String fillColor);
-
-        @JsProperty
-        String getStrokeColor();
-
-        @JsProperty
-        void setStrokeColor(String strokeColor);
-
-        @JsProperty
-        String getHighlightFill();
-
-        @JsProperty
-        void setHighlightFill(String highlightFill);
-
-        @JsProperty
-        String getHighlightStroke();
-
-        @JsProperty
-        void setHighlightStroke(String highlightStroke);
-
-        @JsProperty
-        double[] getData();
-
-        @JsProperty
-        void setData(double[] data);
     }
 
 }
