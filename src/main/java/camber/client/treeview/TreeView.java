@@ -9,10 +9,12 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by admin on 3/1/16.
  */
+@Singleton
 public class TreeView extends ExternalComponent<TreeView.Props> {
 
     @Inject
