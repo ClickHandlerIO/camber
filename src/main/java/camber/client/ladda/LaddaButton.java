@@ -24,7 +24,7 @@ public class LaddaButton extends ExternalComponent<LaddaButton.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.MaterialUi.Ladda;
+        return $wnd.Camber.Ladda;
     }-*/;
 
     @JsType(isNative = true)
