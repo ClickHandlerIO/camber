@@ -23,6 +23,4 @@ public class VerticleResourceView {
     public boolean groupByResource;
     public boolean groupByDateAndResource;
 
-
-
 }
