@@ -44,6 +44,7 @@ import SelectField from 'material-ui/lib/select-field'
 import Slider from 'material-ui/lib/slider'
 import Snackbar from 'material-ui/lib/snackbar'
 import Spacing from 'material-ui/lib/styles/spacing';
+import Sticky from 'react-sticky/lib/sticky';
 import SvgIcon from 'material-ui/lib/svg-icon';
 import SvgIconAccountBox from 'material-ui/lib/svg-icons/action/account-box';
 import SvgIconAccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
@@ -189,4 +190,5 @@ module.exports = {
     },
     TextareaAutosize: TextareaAutosize,
     Ladda: Ladda,
+    Sticky: Sticky,
 };
