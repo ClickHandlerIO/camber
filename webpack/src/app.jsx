@@ -25,7 +25,7 @@ import FontIcon from 'material-ui/lib/font-icon'
 import GridList from 'material-ui/lib/grid-list/grid-list'
 import IconButton from 'material-ui/lib/icon-button';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
-import Ladda from 'ladda/dist/ladda';
+import Ladda from 'ladda/js/ladda';
 import LeftNav from 'material-ui/lib/left-nav';
 import LinearProgress from 'material-ui/lib/linear-progress'
 import List from 'material-ui/lib/lists/list';
