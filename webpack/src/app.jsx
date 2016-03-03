@@ -42,6 +42,7 @@ import RadioButtonGroup from 'material-ui/lib/radio-button-group'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
 import SelectField from 'material-ui/lib/select-field'
 import Slider from 'material-ui/lib/slider'
+import SmartTime from 'react-smart-time-ago/dist/index'
 import Snackbar from 'material-ui/lib/snackbar'
 import Spacing from 'material-ui/lib/styles/spacing';
 import SvgIcon from 'material-ui/lib/svg-icon';
@@ -189,4 +190,5 @@ module.exports = {
     },
     TextareaAutosize: TextareaAutosize,
     Ladda: Ladda,
+    SmartTime: SmartTime,
 };
