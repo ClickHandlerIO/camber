@@ -21,7 +21,7 @@ public class TreeView extends ExternalComponent<TreeView.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.MaterialUi.TreeView;
+        return $wnd.Camber.TreeView;
     }-*/;
 
 
