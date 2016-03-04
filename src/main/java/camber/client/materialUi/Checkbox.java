@@ -1,13 +1,14 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
+import io.clickhandler.web.react.ReactElement;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
-import io.clickhandler.web.react.ReactElement;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -101,6 +102,18 @@ public class Checkbox extends ExternalComponent<Checkbox.Props> {
         @JsProperty
         void setValueLink(String valueLink);
 
+        @JsProperty
+        String getLabel();
+
+        @JsProperty
+        void setLabel(String label);
+
+        @JsProperty
+        Func.Run1<Boolean> getOnCheck();
+
+        @JsProperty
+        void setOnCheck(Func.Run1<Boolean> onCheck);
+
 
         ////////////////////
         // fluent setters
@@ -166,6 +179,16 @@ public class Checkbox extends ExternalComponent<Checkbox.Props> {
             return this;
         }
 
+        @JsOverlay
+        default Props label(final String label) {
+            setLabel(label);
+            return this;
+        }
 
+        @JsOverlay
+        default Props onCheck(final Func.Run1<Boolean> onCheck) {
+            setOnCheck(onCheck);
+            return this;
+        }
     }
 }
