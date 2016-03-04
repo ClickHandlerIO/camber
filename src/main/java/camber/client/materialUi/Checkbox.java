@@ -109,10 +109,10 @@ public class Checkbox extends ExternalComponent<Checkbox.Props> {
         void setLabel(String label);
 
         @JsProperty
-        Func.Run1<Boolean> getOnCheck();
+        Func.Run getOnCheck();
 
         @JsProperty
-        void setOnCheck(Func.Run1<Boolean> onCheck);
+        void setOnCheck(Func.Run onCheck);
 
 
         ////////////////////
@@ -186,7 +186,7 @@ public class Checkbox extends ExternalComponent<Checkbox.Props> {
         }
 
         @JsOverlay
-        default Props onCheck(final Func.Run1<Boolean> onCheck) {
+        default Props onCheck(final Func.Run onCheck) {
             setOnCheck(onCheck);
             return this;
         }
