@@ -3,6 +3,7 @@ package camber.client.fullCalendar;
 import camber.client.util.Lodash;
 import com.google.gwt.user.client.Window;
 import elemental.html.DivElement;
+import io.clickhandler.momentGwt.client.Moment;
 import io.clickhandler.web.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -141,6 +142,34 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         $wnd.$(divElement).fullCalendar('addEventSource', data);
     }-*/;
 
+    // doesn't work in options
+    private native Moment getDate() /*-{
+        $wnd.$(divElement).fullCalendar('getDate');
+    }-*/;
+
+    private native void select(Moment moment) /*-{
+        $wnd.$(divElement).fullCalendar('select', moment);
+    }-*/;
+
+    private native void unselect() /*-{
+        $wnd.$(divElement).fullCalendar('unselect');
+    }-*/;
+
+    private native void refetchEvents() /*-{
+        $wnd.$(divElement).fullCalendar('refetchEvents');
+    }-*/;
+
+    // render a new event on the calendar
+    private native void renderEvent(FullCalendarEvent event) /*-{
+        $wnd.$(divElement).fullCalendar('renderEvent', event);
+    }-*/;
+
+    // rerenders all events on the calendar
+    private native void rerenderEvents() /*-{
+        $wnd.$(divElement).fullCalendar('rerenderEvents');
+    }-*/;
+
+
     public interface EventClickHandler {
         void onEventClicked(String eventId);
     }
@@ -178,5 +207,16 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
     @JsType(isNative = true)
     public interface State {
+        @JsProperty
+        FullCalendarEvent[] getEvents();
+
+        @JsProperty
+        void setEvents(FullCalendarEvent[] events);
+
+        @JsOverlay
+        default State events(final FullCalendarEvent[] events) {
+            setEvents(events);
+            return this;
+        }
     }
 }
