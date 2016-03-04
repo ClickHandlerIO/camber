@@ -5,13 +5,13 @@ import jsinterop.annotations.JsType;
 
 @JsType
 public class ResourceObject {
-    String id; // EventObjects with a corresponding resourceId field will be linked to this event.
-    String eventColor;
-    String eventBackgroundColor;
-    String eventBorderColor;
-    String eventTextColor;
-    String eventClassName;
-    String parentId;
+    public String id; // EventObjects with a corresponding resourceId field will be linked to this event.
+    public String eventColor;
+    public String eventBackgroundColor;
+    public String eventBorderColor;
+    public String eventTextColor;
+    public String eventClassName;
+    public String parentId;
 
     // scheduler stuff
     public String resourceGroupField;
