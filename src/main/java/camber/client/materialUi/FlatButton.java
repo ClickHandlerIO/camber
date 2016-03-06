@@ -106,11 +106,11 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         @JsProperty
         void setOnMouseLeave(MouseEventHandler onMouseLeave);
 
-        @JsProperty
-        MouseEventHandler getOnClick();
-
-        @JsProperty
-        void setOnClick(MouseEventHandler onClick);
+//        @JsProperty
+//        MouseEventHandler getOnClick();
+//
+//        @JsProperty
+//        void setOnClick(MouseEventHandler onClick);
 
         @JsProperty
         boolean isKeyboardFocused();
@@ -154,9 +154,21 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         @JsProperty
         void setStyle(CSSProps style);
 
+        @JsProperty
+        Func.Run getOnTouchTap();
+
+        @JsProperty
+        void setOnTouchTap(Func.Run touchTap);
+
         ////////////////////
         // fluent setters
         ////////////////////
+
+        @JsOverlay
+        default Props onTouchTap(Func.Run onTouchTap) {
+            setOnTouchTap(onTouchTap);
+            return this;
+        }
 
         @JsOverlay
         default Props backgroundColor(String backgroundColor){
@@ -230,11 +242,11 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
             return this;
         }
 
-        @JsOverlay
-        default Props onClick(MouseEventHandler onClick){
-            setOnClick(onClick);
-            return this;
-        }
+//        @JsOverlay
+//        default Props onClick(MouseEventHandler onClick){
+//            setOnClick(onClick);
+//            return this;
+//        }
 
         @JsOverlay
         default Props keyboardFocused(boolean keyboardFocused){

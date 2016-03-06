@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.Func;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
@@ -85,11 +86,11 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
         @JsProperty
         void setOnMouseLeave(MouseEventHandler onMouseLeave);
 
-        @JsProperty
-        MouseEventHandler getOnClick();
+//        @JsProperty
+//        MouseEventHandler getOnClick();
 
-        @JsProperty
-        void setOnClick(MouseEventHandler onClick);
+//        @JsProperty
+//        void setOnClick(MouseEventHandler onClick);
 
         @JsProperty
         CSSProps getStyle();
@@ -121,11 +122,21 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
         @JsProperty
         void setTouch(boolean touch);
 
+        @JsProperty
+        Func.Run getOnTouchTap();
 
+        @JsProperty
+        void setOnTouchTap(Func.Run touchTap);
 
         ////////////////////
         // fluent setters
         ////////////////////
+
+        @JsOverlay
+        default Props onTouchTap(Func.Run onTouchTap) {
+            setOnTouchTap(onTouchTap);
+            return this;
+        }
 
         @JsOverlay
         default Props className(String className) {
@@ -181,11 +192,11 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
             return this;
         }
 
-        @JsOverlay
-        default Props onClick(MouseEventHandler onClick) {
-            setOnClick(onClick);
-            return this;
-        }
+//        @JsOverlay
+//        default Props onClick(MouseEventHandler onClick) {
+//            setOnClick(onClick);
+//            return this;
+//        }
 
         @JsOverlay
         default Props style(CSSProps style) {
