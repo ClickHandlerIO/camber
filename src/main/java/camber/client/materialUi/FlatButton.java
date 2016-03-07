@@ -106,11 +106,13 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
         @JsProperty
         void setOnMouseLeave(MouseEventHandler onMouseLeave);
 
-//        @JsProperty
-//        MouseEventHandler getOnClick();
-//
-//        @JsProperty
-//        void setOnClick(MouseEventHandler onClick);
+        @Deprecated
+        @JsProperty
+        MouseEventHandler getOnClick();
+
+        @Deprecated
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
         @JsProperty
         boolean isKeyboardFocused();
@@ -242,11 +244,12 @@ public class FlatButton extends ExternalComponent<FlatButton.Props> {
             return this;
         }
 
-//        @JsOverlay
-//        default Props onClick(MouseEventHandler onClick){
-//            setOnClick(onClick);
-//            return this;
-//        }
+        @Deprecated
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick){
+            setOnClick(onClick);
+            return this;
+        }
 
         @JsOverlay
         default Props keyboardFocused(boolean keyboardFocused){

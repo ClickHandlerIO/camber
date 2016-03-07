@@ -1,6 +1,5 @@
 package camber.client.materialUi;
 
-import com.google.gwt.dom.client.NativeEvent;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.event.TouchEventHandler;
 import io.clickhandler.web.react.ExternalComponent;
@@ -111,11 +110,13 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
         @JsProperty
         void setLinkButton(boolean linkButton);
 
-//        @JsProperty
-//        MouseEventHandler getOnClick();
+        @Deprecated
+        @JsProperty
+        MouseEventHandler getOnClick();
 
-//        @JsProperty
-//        void setOnClick(MouseEventHandler onClick);
+        @Deprecated
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
         @JsProperty
         MouseEventHandler getOnMouseDown();
@@ -259,11 +260,12 @@ public class RaisedButton extends ExternalComponent<RaisedButton.Props> {
             return this;
         }
 
-//        @JsOverlay
-//        default Props onClick(MouseEventHandler onClick) {
-//            setOnClick(onClick);
-//            return this;
-//        }
+        @Deprecated
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
 
         @JsOverlay
         default Props onTouchTap(Func.Run onTouchTap) {

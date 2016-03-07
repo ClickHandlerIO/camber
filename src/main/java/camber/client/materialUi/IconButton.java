@@ -86,11 +86,13 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
         @JsProperty
         void setOnMouseLeave(MouseEventHandler onMouseLeave);
 
-//        @JsProperty
-//        MouseEventHandler getOnClick();
+        @Deprecated
+        @JsProperty
+        MouseEventHandler getOnClick();
 
-//        @JsProperty
-//        void setOnClick(MouseEventHandler onClick);
+        @Deprecated
+        @JsProperty
+        void setOnClick(MouseEventHandler onClick);
 
         @JsProperty
         CSSProps getStyle();
@@ -192,11 +194,12 @@ public class IconButton extends ExternalComponent<IconButton.Props> {
             return this;
         }
 
-//        @JsOverlay
-//        default Props onClick(MouseEventHandler onClick) {
-//            setOnClick(onClick);
-//            return this;
-//        }
+        @Deprecated
+        @JsOverlay
+        default Props onClick(MouseEventHandler onClick) {
+            setOnClick(onClick);
+            return this;
+        }
 
         @JsOverlay
         default Props style(CSSProps style) {
