@@ -19,12 +19,12 @@ public class AreaChart {
     public class Props extends BaseProps {
         String className;
         AreaData[] data;
-        String width;
-        String height;
+        Object width; // string or double
+        Object height;
         ViewBoxObject viewBoxObject;
         String title;
         Object xAxisTickInterval; // can have string unit; double: interval
-        String yAxisTickCounty;
+        String yAxisTickCount;
         boolean interpolate;
         Object interpolationType;
         boolean hoverAnimation;

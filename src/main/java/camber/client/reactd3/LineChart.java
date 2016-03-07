@@ -21,8 +21,8 @@ public class LineChart {
         Object legend; // usually a string, assuming like legend Template in chartjs, sometimes boolean
         LineData[] data;
         String className;
-        String width;
-        String height;
+        Object width; // string or double
+        Object height;
         ViewBoxObject viewBoxObject;
         String title;
         String yAxisLabel;

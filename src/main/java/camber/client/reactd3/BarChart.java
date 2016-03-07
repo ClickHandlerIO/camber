@@ -1,37 +1,39 @@
 package camber.client.reactd3;
 
 
+import io.clickhandler.web.Func;
 import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
-import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
-public class ScatterChart {
+public class BarChart {
 
     @Inject
-    public ScatterChart() {
+    public BarChart() {
     }
 
 
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
-        Object legend; // usually a string, assuming like legend Template in chartjs, sometimes boolean
-        String className;
-        double circleRadius;
-        ScatterData[] data;
-        Object width; // string or double
-        Object height;
-        String title;
-        double xAxisStrokeWidth;
-        double yAxisStrokeWidth;
+        String chartClassName;
         String xAxisClassName;
         String yAxisClassName;
-        boolean hoverAnimation;
-        Object margins; // use an object for margins, can be created as another interface in here if needed
+        BarData[] data;
+        String title;
+        double yAxisTickCount;
+        String yAxisLabel;
+        String xAxisLabel;
+        String stackOffset; // one of 4 values
+        Object width; // string or double
+        double height;
+        double rangeRoundBandsPadding;
+        Object margins; // can be created as another interface in here if needed
+        String fill; // seems to be fill color
 
+        Func.Run1<Object> valuesAccessor;
         MouseEventHandler onClick;
 
 
@@ -47,7 +49,7 @@ public class ScatterChart {
 
 
     @JsType(isNative = true)
-    public class ScatterData {
+    public class BarData {
         String name;
         Values[] values;
 
@@ -57,9 +59,7 @@ public class ScatterChart {
     public class Values {
         double x;
         double y;
-
     }
-
 
 
 }
