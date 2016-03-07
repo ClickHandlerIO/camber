@@ -44,7 +44,6 @@ public class BarChart extends ExternalComponent<BarChart.Props> {
 //        Func.Run1<Object> valuesAccessor;
 //        MouseEventHandler onClick;
 
-
         @JsProperty
         String getChartClassName();
 
