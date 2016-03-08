@@ -8,10 +8,10 @@ import jsinterop.annotations.JsType;
 import javax.inject.Inject;
 
 
-public class AreaChart extends ExternalComponent<AreaChart.Props> {
+public class LineChart extends ExternalComponent<LineChart.Props> {
 
     @Inject
-    public AreaChart() {
+    public LineChart() {
     }
 
     @Override
@@ -21,34 +21,21 @@ public class AreaChart extends ExternalComponent<AreaChart.Props> {
 
     @JsType(isNative = true)
     public interface Props {
+        // not yet as developed as other chart types
+        String className;
         double id;
         String namespace;
-        String className;
-        double height;
-        double width;
-        Object origin;
-        boolean xDomainUpdate;
-        boolean yDomainUpdate;
-        String yMousePointerDisplayLocation;
-        Object padding;
-
-        Func.Run xScale;
-        Func.Run yScale;
-        Func.Run yMousePointerDisplayFormat;
-
-        // areachart specific
         String fill;
         Object[] plotData;
         String stroke;
-        double opacity;
 
-        Func.Run base;
+        Func.Run xScale;
+        Func.Run yScale;
         Func.Run xAccesor;
         Func.Run yAccesor;
 
-        // coordinate objects needed
-        XAxis xAxis;
-        YAxis yAxis;
+
+
 
     }
 }
