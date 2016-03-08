@@ -91,8 +91,13 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
 
 // victory charts
+import VictoryAnimation from 'victory/node_modules/victory-core/lib/victory-animation/victory-animation';
 import VictoryAxis from 'victory/node_modules/victory-chart/lib/components/victory-axis/victory-axis';
 import VictoryBar from 'victory/node_modules/victory-chart/lib/components/victory-bar/victory-bar';
+import VictoryLabel from 'victory/node_modules/victory-core/lib/victory-label/victory-label';
+import VictoryLine from 'victory/node_modules/victory-chart/lib/components/victory-line/victory-line';
+import VictoryPie from 'victory/node_modules/victory-pie/lib/components/victory-pie';
+import VictoryScatter from 'victory/node_modules/victory-chart/lib/components/victory-scatter/victory-scatter';
 
 
 module.exports = {
@@ -192,4 +197,13 @@ module.exports = {
         },
     },
     TextareaAutosize: TextareaAutosize,
+    Victory: {
+        VictoryAnimation: VictoryAnimation,
+        VictoryAxis: VictoryAxis,
+        VictoryBar: VictoryBar,
+        VictoryLabel: VictoryLabel,
+        VictoryLine: VictoryLine,
+        VictoryPie: VictoryPie,
+        VictoryScatter: VictoryScatter,
+    },
 };

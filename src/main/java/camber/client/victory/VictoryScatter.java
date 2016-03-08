@@ -12,36 +12,43 @@ import javax.inject.Inject;
 /**
  * these libraries are in alpha and may be updated soon
  */
-public class VictoryPie extends ExternalComponent<VictoryPie.Props> {
+public class VictoryScatter extends ExternalComponent<VictoryScatter.Props> {
 
     @Inject
-    public VictoryPie() {
+    public VictoryScatter() {
     }
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.Victory.VictoryPie;
+        return $wnd.Camber.Victory.VictoryScatter;
     }-*/;
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
+
         VictoryAnimation animate;
-        Object colorScale; // string, or array of css colors
+        String bubbleProperty;
         Object[] data;
-        double endAngle;
+        Object domain; // object with a min and max, examples ['a', 'z'], {x: [0, 100], y: [0, 1]}
         double height;
         double width;
-        double innerRadius;
         ReactElement labelComponent;
-        double padAngle;;
-        Object padding; // double or shape object
+        double maxBubbleSize;
+        Object padding; // number or object
+        Object samples;
+        Object scale;
+        boolean showLabels;
+        Object size;
         boolean standalone;
-        double startAngle;
-        // todo - handle style, it's more complex here
+        String symbol;
         Object style;
         Object x; // can be string or function also
         Object y;
+
         MouseEventHandler onClick;
+
+
+
 
 
     }

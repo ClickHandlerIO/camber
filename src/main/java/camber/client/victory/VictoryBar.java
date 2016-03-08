@@ -1,5 +1,6 @@
 package camber.client.victory;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -24,8 +25,7 @@ public class VictoryBar extends ExternalComponent<VictoryBar.Props> {
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
-
-        Object animate;
+        VictoryAnimation animate;
         Object[] data;
         Object dataAttributes;
         Object[] categories; // double or String array - like tick values
@@ -46,6 +46,8 @@ public class VictoryBar extends ExternalComponent<VictoryBar.Props> {
         Object y;
         // todo - handle style a better way? is more complex here
         Object style;
+
+        MouseEventHandler onClick;
 
 
     }

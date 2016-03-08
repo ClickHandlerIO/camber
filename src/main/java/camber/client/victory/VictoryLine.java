@@ -1,5 +1,6 @@
 package camber.client.victory;
 
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -8,7 +9,7 @@ import jsinterop.annotations.JsType;
 import javax.inject.Inject;
 
 /**
- * this is an enhanced label
+ * these libraries are in alpha and may be updated soon
  */
 public class VictoryLine extends ExternalComponent<VictoryLine.Props> {
 
@@ -23,7 +24,7 @@ public class VictoryLine extends ExternalComponent<VictoryLine.Props> {
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
-        Object animate;
+        VictoryAnimation animate;
         Object[] data;
         Object domain; // object with a min and max, examples ['a', 'z'], {x: [0, 100], y: [0, 1]}
         double height;
@@ -38,6 +39,7 @@ public class VictoryLine extends ExternalComponent<VictoryLine.Props> {
         Object style;
         Object x; // can be string or function also
         Object y;
+        MouseEventHandler onClick;
 
 
     }

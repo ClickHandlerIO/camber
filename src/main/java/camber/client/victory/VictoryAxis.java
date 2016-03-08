@@ -1,6 +1,7 @@
 package camber.client.victory;
 
 import io.clickhandler.web.dom.CSSProps;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -23,7 +24,7 @@ public class VictoryAxis extends ExternalComponent<VictoryAxis.Props> {
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
-
+        VictoryAnimation animate;
         boolean crossAxis;
         boolean dependentAxis;
         double[] domain; // a 2 element array with the min and max expected values for your axis
@@ -41,8 +42,9 @@ public class VictoryAxis extends ExternalComponent<VictoryAxis.Props> {
         double tickCount;
         String[] tickFormat;
         Object[] tickValues; // strings or numbers
-        Object animate;
         Object style;
+
+        MouseEventHandler onClick;
 
         // todo - handle style, it's more complex here
         /*
