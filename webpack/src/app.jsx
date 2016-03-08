@@ -90,6 +90,9 @@ import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
 
+// victory charts
+import VictoryAxis from 'victory/node_modules/victory-chart/lib/components/victory-axis/victory-axis';
+import VictoryBar from 'victory/node_modules/victory-chart/lib/components/victory-bar/victory-bar';
 
 
 module.exports = {
