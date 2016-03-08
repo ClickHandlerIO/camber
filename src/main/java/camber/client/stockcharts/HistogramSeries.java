@@ -9,12 +9,12 @@ import jsinterop.annotations.JsType;
 import javax.inject.Inject;
 
 /**
- * alpha library, please note any updates at https://github.com/rrag/react-stockcharts
+ * can be use with charts like Candlestick
  */
-public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> {
+public class HistogramSeries extends ExternalComponent<HistogramSeries.Props> {
 
     @Inject
-    public CandlestickChart() {
+    public HistogramSeries() {
     }
 
     @Override
@@ -23,18 +23,15 @@ public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> 
     }-*/;
 
     @JsType(isNative = true)
-    public interface Props extends BaseProps {
+    public class Props extends BaseProps {
         String className;
-        String wickClassName;
-        String candleClassName;
-        Object[] classNames; //  string array or shape array
-        double widthRatio;
-        Object[] stroke; //  string array or shape array
-        Object[] wickStroke; //  string array or shape array
-        Object[] fill; //  string array or shape array
-        Object[] compareSeries;
-        Object[] plotData;
+        String baseAt; // top, bottom, middle
+        String direction; // up, down
+        boolean stroke;
+        Object fill; // can be string or specific func
         double opacity;
+        double widthRatio;
+        Object[] plotData;
 
         Func.Run xScale;
         Func.Run yScale;

@@ -1,20 +1,17 @@
 package camber.client.stockcharts;
 
 import io.clickhandler.web.Func;
-import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
-/**
- * alpha library, please note any updates at https://github.com/rrag/react-stockcharts
- */
-public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> {
+
+public class CandlestickHistogramChart extends ExternalComponent<CandlestickHistogramChart.Props> {
 
     @Inject
-    public CandlestickChart() {
+    public CandlestickHistogramChart() {
     }
 
     @Override
@@ -23,7 +20,7 @@ public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> 
     }-*/;
 
     @JsType(isNative = true)
-    public interface Props extends BaseProps {
+    public interface Props {
         String className;
         String wickClassName;
         String candleClassName;
