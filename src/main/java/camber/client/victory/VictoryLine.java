@@ -50,88 +50,88 @@ public class VictoryLine extends ExternalComponent<VictoryLine.Props> {
         void setAnimate(VictoryAnimation animate);
 
         @JsProperty
-        public Object[] getData();
+        Object[] getData();
 
         @JsProperty
-        public void setData(Object[] data);
+        void setData(Object[] data);
 
         @JsProperty
-        public Object getDomain();
+        Object getDomain();
 
         @JsProperty
-        public void setDomain(Object domain);
+        void setDomain(Object domain);
 
         @JsProperty
-        public double getHeight();
+        double getHeight();
 
         @JsProperty
-        public void setHeight(double height);
+        void setHeight(double height);
 
         @JsProperty
-        public double getWidth();
+        double getWidth();
 
         @JsProperty
-        public void setWidth(double width);
+        void setWidth(double width);
 
         @JsProperty
-        public String getInterpolation();
+        String getInterpolation();
 
         @JsProperty
-        public void setInterpolation(String interpolation);
+        void setInterpolation(String interpolation);
 
         @JsProperty
-        public Object getLabel();
+        Object getLabel();
 
         @JsProperty
-        public void setLabel(Object label);
+        void setLabel(Object label);
 
         @JsProperty
-        public Object getPadding();
+        Object getPadding();
 
         @JsProperty
-        public void setPadding(Object padding);
+        void setPadding(Object padding);
 
         @JsProperty
-        public Object getSamples();
+        Object getSamples();
 
         @JsProperty
-        public void setSamples(Object samples);
+        void setSamples(Object samples);
 
         @JsProperty
-        public Object getScale();
+        Object getScale();
 
         @JsProperty
-        public void setScale(Object scale);
+        void setScale(Object scale);
 
         @JsProperty
-        public boolean isStandalone();
+        boolean isStandalone();
 
         @JsProperty
-        public void setStandalone(boolean standalone);
+        void setStandalone(boolean standalone);
 
         @JsProperty
-        public Object getStyle();
+        Object getStyle();
 
         @JsProperty
-        public void setStyle(Object style);
+        void setStyle(Object style);
 
         @JsProperty
-        public Object getX();
+        Object getX();
 
         @JsProperty
-        public void setX(Object x);
+        void setX(Object x);
 
         @JsProperty
-        public Object getY();
+        Object getY();
 
         @JsProperty
-        public void setY(Object y);
+        void setY(Object y);
 
         @JsProperty
-        public MouseEventHandler getOnClick();
+        MouseEventHandler getOnClick();
 
         @JsProperty
-        public void setOnClick(MouseEventHandler onClick);
+        void setOnClick(MouseEventHandler onClick);
 
 
         ////////////////////

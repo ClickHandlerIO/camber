@@ -37,34 +37,34 @@ public class VictoryAnimation extends ExternalComponent<VictoryAnimation.Props> 
 
 
         @JsProperty
-        public double getVelocity();
+        double getVelocity();
 
         @JsProperty
-        public void setVelocity(double velocity);
+        void setVelocity(double velocity);
 
         @JsProperty
-        public String getEasing();
+        String getEasing();
 
         @JsProperty
-        public void setEasing(String easing);
+        void setEasing(String easing);
 
         @JsProperty
-        public double getDelay();
+        double getDelay();
 
         @JsProperty
-        public void setDelay(double delay);
+        void setDelay(double delay);
 
         @JsProperty
-        public Object[] getData();
+        Object[] getData();
 
         @JsProperty
-        public void setData(Object[] data);
+        void setData(Object[] data);
 
         @JsProperty
-        public Func.Run getOnEnd();
+        Func.Run getOnEnd();
 
         @JsProperty
-        public void setOnEnd(Func.Run onEnd);
+        void setOnEnd(Func.Run onEnd);
 
 
         ////////////////////
