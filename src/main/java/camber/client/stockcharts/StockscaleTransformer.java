@@ -1,5 +1,6 @@
 package camber.client.stockcharts;
 
+import io.clickhandler.web.Func;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -7,10 +8,13 @@ import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
-public class CrossHair extends ExternalComponent<CrossHair.Props> {
+/**
+ *  is needed to use other transforms, or can be used alone with charts like Candlestick
+ */
+public class StockscaleTransformer extends ExternalComponent<StockscaleTransformer.Props> {
 
     @Inject
-    public CrossHair() {
+    public StockscaleTransformer() {
     }
 
     @Override
@@ -20,13 +24,11 @@ public class CrossHair extends ExternalComponent<CrossHair.Props> {
 
     @JsType(isNative = true)
     public class Props extends BaseProps {
-        String namespace;
-        double yAxisPad;
-        double height;
+        Object[] data;
         double width;
-        Object[] mouseXY;
-        String xDisplayValue;
-        Object[] edges;
+        String type; // svg, canvas
+
+        Func.Run1<StockscaleTransformer> fitWidth; // used for this component
 
 
 

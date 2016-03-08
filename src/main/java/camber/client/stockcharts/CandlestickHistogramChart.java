@@ -1,6 +1,7 @@
 package camber.client.stockcharts;
 
 import io.clickhandler.web.Func;
+import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import jsinterop.annotations.JsType;
@@ -20,7 +21,7 @@ public class CandlestickHistogramChart extends ExternalComponent<CandlestickHist
     }-*/;
 
     @JsType(isNative = true)
-    public interface Props {
+    public class Props extends BaseProps {
         String className;
         String wickClassName;
         String candleClassName;

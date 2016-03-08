@@ -1,7 +1,6 @@
 package camber.client.stockcharts;
 
 import io.clickhandler.web.Func;
-import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -10,12 +9,12 @@ import jsinterop.annotations.JsType;
 import javax.inject.Inject;
 
 /**
- * alpha library, please note any updates at https://github.com/rrag/react-stockcharts
+ * single component for candlestick chart with finance time scale, is shown that is can be combined like this in demo
  */
-public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> {
+public class CandlestickStockScaleChart extends ExternalComponent<CandlestickStockScaleChart.Props> {
 
     @Inject
-    public CandlestickChart() {
+    public CandlestickStockScaleChart() {
     }
 
     @Override
@@ -36,12 +35,17 @@ public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> 
         Object[] compareSeries;
         Object[] plotData;
         double opacity;
-
         Func.Run xScale;
         Func.Run yScale;
         Func.Run xAccesor;
         Func.Run yAccesor;
-        MouseEventHandler onClick;
+
+        // financial time props
+        Object[] data;
+        double width;
+        String type; // svg, canvas
+        Func.Run1<StockscaleTransformer> fitWidth; // used for this component
+
 
 
     }
