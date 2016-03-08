@@ -19,7 +19,7 @@ public class VictoryBar extends ExternalComponent<VictoryBar.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.TextAreaAutosize;
+        return $wnd.Camber.Victory.VictoryBar;
     }-*/;
 
     @JsType(isNative = true)

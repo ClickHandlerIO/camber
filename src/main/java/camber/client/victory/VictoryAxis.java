@@ -18,7 +18,7 @@ public class VictoryAxis extends ExternalComponent<VictoryAxis.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.TextAreaAutosize;
+        return $wnd.Camber.Victory.VictoryAxis;
     }-*/;
 
     @JsType(isNative = true)
