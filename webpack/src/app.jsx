@@ -38,7 +38,6 @@ import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover'
 import RadioButton from 'material-ui/lib/radio-button'
 import RadioButtonGroup from 'material-ui/lib/radio-button-group'
-import ReactD3 from 'react-d3/index'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
 import SelectField from 'material-ui/lib/select-field'
 import Slider from 'material-ui/lib/slider'
@@ -89,6 +88,15 @@ import Toggle from 'material-ui/lib/toggle'
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
+
+// d3 charts
+import AreaChart from 'react-d3/areachart/AreaChart'
+import BarChart from 'react-d3/barchart/BarChart'
+import CandlestickChart from 'react-d3/candlestick/CandlestickChart'
+import LineChart from 'react-d3/linechart/LineChart'
+import PieChart from 'react-d3/piechart/PieChart'
+import ScatterChart from 'react-d3/scatterchart/ScatterChart'
+import Treemap from 'react-d3/treemap/Treemap'
 
 
 
@@ -188,5 +196,13 @@ module.exports = {
         },
     },
     TextareaAutosize: TextareaAutosize,
-    ReactD3: ReactD3,
+    ReactD3: {
+        AreaChart: AreaChart,
+        BarChart: BarChart,
+        CandlestickChart: CandlestickChart,
+        LineChart: LineChart,
+        PieChart: PieChart,
+        ScatterChart: ScatterChart,
+        Treemap: Treemap,
+    },
 };

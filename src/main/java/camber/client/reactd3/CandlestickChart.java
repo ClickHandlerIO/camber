@@ -20,7 +20,7 @@ public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> 
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.CandlestickChart;
+        return $wnd.Camber.ReactD3.CandlestickChart;
     }-*/;
 
     @JsType(isNative = true)

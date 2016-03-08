@@ -21,7 +21,7 @@ public class AreaChart extends ExternalComponent<AreaChart.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.AreaChart;
+        return $wnd.Camber.ReactD3.AreaChart;
     }-*/;
 
 

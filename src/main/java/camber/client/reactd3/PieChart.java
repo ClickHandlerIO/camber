@@ -22,7 +22,7 @@ public class PieChart extends ExternalComponent<PieChart.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.PieChart;
+        return $wnd.Camber.ReactD3.PieChart;
     }-*/;
 
     @JsType(isNative = true)

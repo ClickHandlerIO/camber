@@ -19,7 +19,7 @@ public class LineChart extends ExternalComponent<LineChart.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.LineChart;
+        return $wnd.Camber.ReactD3.LineChart;
     }-*/;
 
 

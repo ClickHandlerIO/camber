@@ -22,7 +22,7 @@ public class BarChart extends ExternalComponent<BarChart.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.BarChart;
+        return $wnd.Camber.ReactD3.BarChart;
     }-*/;
 
     @JsType(isNative = true)

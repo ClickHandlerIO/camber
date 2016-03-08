@@ -22,7 +22,7 @@ public class Treemap extends ExternalComponent<Treemap.Props> {
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.Treemap;
+        return $wnd.Camber.ReactD3.Treemap;
     }-*/;
 
 
