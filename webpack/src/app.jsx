@@ -52,13 +52,19 @@ import SvgIconAddCircle from 'material-ui/lib/svg-icons/content/add-circle';
 import SvgIconAddCircleOutline from 'material-ui/lib/svg-icons/content/add-circle-outline';
 import SvgIconAddShoppingCart from 'material-ui/lib/svg-icons/action/add-shopping-cart';
 import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
+import SvgIconAttachFile from 'material-ui/lib/svg-icons/editor/attach-file';
 import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
+import SvgIconCloudDownload from 'material-ui/lib/svg-icons/file/cloud-download';
+import SvgIconCloudUpload from 'material-ui/lib/svg-icons/file/cloud-upload';
 import SvgIconDelete from 'material-ui/lib/svg-icons/action/delete';
 import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email';
+import SvgIconFileDownload from 'material-ui/lib/svg-icons/file/file-download';
+import SvgIconFileUpload from 'material-ui/lib/svg-icons/file/file-upload';
 import SvgIconFilterList from 'material-ui/lib/svg-icons/content/filter-list';
 import SvgIconGpsFixed from 'material-ui/lib/svg-icons/device/gps-fixed';
+import SvgIconInsertDriveFile from 'material-ui/lib/svg-icons/editor/insert-drive-file';
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
@@ -89,8 +95,6 @@ import Toggle from 'material-ui/lib/toggle'
 import Typography from 'material-ui/lib/styles/typography';
 import RaisedButton from 'material-ui/lib/raised-button';
 import ZIndex from 'material-ui/lib/styles/zIndex';
-
-
 
 module.exports = {
     React: React,
@@ -159,13 +163,19 @@ module.exports = {
             AddCircleOutline: SvgIconAddCircleOutline,
             AddShoppingCart: SvgIconAddShoppingCart,
             Archive: SvgIconArchive,
+            AttachFile: SvgIconAttachFile,
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,
+            CloudDownload: SvgIconCloudDownload,
+            CloudUpload: SvgIconCloudUpload,
             Close: SvgIconClose,
             Delete: SvgIconDelete,
             Email: SvgIconEmail,
+            FileDownload: SvgIconFileDownload,
+            FileUpload: SvgIconFileUpload,
             FilterList: SvgIconFilterList,
             GpsFixed: SvgIconGpsFixed,
+            InsertDriveFile: SvgIconInsertDriveFile,
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
             Menu: SvgIconMenu,
