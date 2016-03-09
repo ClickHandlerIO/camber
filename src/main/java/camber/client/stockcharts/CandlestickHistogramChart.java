@@ -42,8 +42,8 @@ public class CandlestickHistogramChart extends ExternalComponent<CandlestickHist
 //        HistogramSeries dataSeries; // another attempt by adding the component as a variable
 //        Func.Run xScale;
 //        Func.Run yScale;
-//        Func.Run xAccesor;
-//        Func.Run yAccesor;
+//        Func.Run xAccessor;
+//        Func.Run yAccessor;
 //        MouseEventHandler onClick;
 
 
@@ -132,16 +132,16 @@ public class CandlestickHistogramChart extends ExternalComponent<CandlestickHist
         void setyScale(Func.Run yScale);
 
         @JsProperty
-        Func.Run getxAccesor();
+        Func.Run getxAccessor();
 
         @JsProperty
-        void setxAccesor(Func.Run xAccesor);
+        void setxAccessor(Func.Run xAccessor);
 
         @JsProperty
-        Func.Run getyAccesor();
+        Func.Run getyAccessor();
 
         @JsProperty
-        void setyAccesor(Func.Run yAccesor);
+        void setyAccessor(Func.Run yAccessor);
 
         @JsProperty
         MouseEventHandler getOnClick();
@@ -239,14 +239,14 @@ public class CandlestickHistogramChart extends ExternalComponent<CandlestickHist
         }
 
         @JsOverlay
-        default Props xAccesor(final Func.Run xAccesor) {
-            setxAccesor(xAccesor);
+        default Props xAccessor(final Func.Run xAccessor) {
+            setxAccessor(xAccessor);
             return this;
         }
 
         @JsOverlay
-        default Props yAccesor(final Func.Run yAccesor) {
-            setyAccesor(yAccesor);
+        default Props yAccessor(final Func.Run yAccessor) {
+            setyAccessor(yAccessor);
             return this;
         }
 

@@ -41,8 +41,8 @@ public class CandlestickChart extends ExternalComponent<CandlestickChart.Props> 
 //
 //        Func.Run xScale;
 //        Func.Run yScale;
-//        Func.Run xAccesor;
-//        Func.Run yAccesor;
+//        Func.Run xAccessor;
+//        Func.Run yAccessor;
 //        MouseEventHandler onClick;
 
 
