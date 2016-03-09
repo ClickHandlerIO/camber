@@ -1,4 +1,4 @@
-package camber.client.stockcharts;
+package camber.client.stockcharts.customizable;
 
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;

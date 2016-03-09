@@ -1,6 +1,7 @@
 package camber.client.stockcharts;
 
 import io.clickhandler.web.Func;
+import io.clickhandler.web.event.MouseEventHandler;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
@@ -9,12 +10,13 @@ import jsinterop.annotations.JsType;
 import javax.inject.Inject;
 
 /**
- * can be use with charts like Candlestick
+ * A pre-wrapped sophisticated graph
+ * Spelled 'HeikinAshi' in documentation, but HaikinAshi in sample code so using that here.
  */
-public class HeikinAshiTransformer extends ExternalComponent<HeikinAshiTransformer.Props> {
+public class HaikinAshi extends ExternalComponent<HaikinAshi.Props> {
 
     @Inject
-    public HeikinAshiTransformer() {
+    public HaikinAshi() {
     }
 
     @Override
@@ -26,9 +28,10 @@ public class HeikinAshiTransformer extends ExternalComponent<HeikinAshiTransform
     public class Props extends BaseProps {
         Object[] data;
         double width;
-        String type; // svg, canvas
+        String type; // svg, hybrid
 
-        Func.Run1<HeikinAshiTransformer> fitWidth; // used for this component
+        Func.Run1<HaikinAshi> fitWidth; // used for this component
+        MouseEventHandler onClick;
 
 
 

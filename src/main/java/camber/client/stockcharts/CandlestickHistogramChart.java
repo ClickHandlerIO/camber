@@ -8,7 +8,9 @@ import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 
-
+/**
+ *  a more customizable histogram graph, has props from both component classes
+ */
 public class CandlestickHistogramChart extends ExternalComponent<CandlestickHistogramChart.Props> {
 
     @Inject

@@ -1,5 +1,6 @@
 package camber.client.stockcharts;
 
+import camber.client.stockcharts.customizable.StockscaleTransformer;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.react.BaseProps;
 import io.clickhandler.web.react.ExternalComponent;
