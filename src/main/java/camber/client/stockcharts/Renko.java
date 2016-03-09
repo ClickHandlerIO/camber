@@ -30,7 +30,7 @@ public class Renko extends ExternalComponent<Renko.Props> {
 //        Object[] data;
 //        double width;
 //        String type; // svg, hybrid
-//        Func.Run1<Renko> fitWidth; // used for this component
+//        Func.Run1<Renko> fitWidth; // removed from this
 //        MouseEventHandler onClick;
 
 
@@ -51,12 +51,6 @@ public class Renko extends ExternalComponent<Renko.Props> {
 
         @JsProperty
         void setType(String type);
-
-        @JsProperty
-        Func.Run1<Renko> getFitWidth();
-
-        @JsProperty
-        void setFitWidth(Func.Run1<Renko> fitWidth);
 
         @JsProperty
         MouseEventHandler getOnClick();
@@ -84,12 +78,6 @@ public class Renko extends ExternalComponent<Renko.Props> {
         @JsOverlay
         default Props type(final String type) {
             setType(type);
-            return this;
-        }
-
-        @JsOverlay
-        default Props fitWidth(final Func.Run1<Renko> fitWidth) {
-            setFitWidth(fitWidth);
             return this;
         }
 
