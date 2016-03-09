@@ -36,7 +36,6 @@ public class Chart extends ExternalComponent<Chart.Props> {
 //        String yMousePointerDisplayLocation;
 //        Object padding;
 //        Object origin; // can be array or func, defaults as 2 item double array for coordinates, but can be function
-//
 //        Func.Run xScale;
 //        Func.Run yScale;
 //        Func.Run yMousePointerDisplayFormat;
