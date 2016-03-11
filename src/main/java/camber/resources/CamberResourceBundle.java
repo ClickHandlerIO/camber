@@ -22,7 +22,7 @@ public interface CamberResourceBundle extends ClientBundle {
     @Source("js/jquery-2.2.1.min.js")
     TextResource jQuery();
 
-    @Source("js/select2.full.min.js")
+    @Source("js/select2.full.js")
     TextResource Select2();
 
     @Source("js/fullcalendar.min.js")

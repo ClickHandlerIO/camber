@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import com.google.gwt.core.client.JsDate;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
@@ -53,7 +54,6 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
 //        public Func.Run onShow; // func
 //        public TouchEventHandler onTouchTap; // func
 //        public Func.Run shouldDisableDate; // func
-
 
 
         @JsProperty
@@ -153,10 +153,10 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         void setDateTimeFormat(Func.Run dateTimeFormat);
 
         @JsProperty
-        Func.Run getFormatDate();
+        Func.Call1<String, JsDate> getFormatDate();
 
         @JsProperty
-        void setFormatDate(Func.Run formatDate);
+        void setFormatDate(Func.Call1<String, JsDate> formatDate);
 
         @JsProperty
         Func.Run getOnChange();
@@ -296,7 +296,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         }
 
         @JsOverlay
-        default Props formatDate(final Func.Run formatDate) {
+        default Props formatDate(final Func.Call1<String, JsDate> formatDate) {
             setFormatDate(formatDate);
             return this;
         }
