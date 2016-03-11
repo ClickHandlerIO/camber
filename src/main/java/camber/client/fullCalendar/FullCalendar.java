@@ -71,6 +71,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         FullCalendarHeader header = Jso.create();
         header.setCenter("prev,title,next");
         header.setLeft("month,agendaWeek,agendaDay");
+        header.setRight("");
 
         FullCalendarOptions options = Jso.create();
         options.setHeader(header);
@@ -85,47 +86,22 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
                 $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent);
             }
         });
-        options.setEvents(props().getEventFn());
+        options.setEvents((moment, moment2, o, run1) -> {
+            if ($this.props().getEventFn() != null) {
+                $this.props().getEventFn().run(moment, moment2, o, run1);
+            }
+        });
 
         init(divRef.get($this), options);
-//        updateData(divRef.get($this), $this.props().getData());
     }
 
     private native void init(DivElement divElement, FullCalendarOptions options) /*-{
-        // build opts object with events as first param (required by full calendar)
-        // todo look into JsObject(isNative) for options
-        //var opts = {
-        //    events: [], // must always be first
-        //    dayClick: options.dayClick,
-        //    eventColor: options.eventColor,
-        //    eventBackgroundColor: options.eventBackgroundColor,
-        //    eventBorderColor: options.eventBorderColor,
-        //    eventTextColor: options.eventTextColor,
-        //    eventClick: options.eventClick,
-        //    editable: options.editable,
-        //    eventStartEditable: options.eventStartEditable,
-        //    eventDurationEditable: options.eventDurationEditable,
-        //    eventOverlap: options.eventOverlap,
-        //    eventConstraint: options.eventConstraint,
-        //    eventLimit: options.eventLimit,
-        //    header: {
-        //        left: options.header.left,
-        //        center: options.header.center,
-        //        right: options.header.right
-        //    },
-        //    height: options.height
-        //};
         $wnd.$(divElement).fullCalendar(options);
     }-*/;
 
     private native void destroy(DivElement divElement) /*-{
         $wnd.$(divElement).fullCalendar('destroy');
     }-*/;
-
-//    private void updateData(DivElement divElement, FullCalendarEvent[] data) {
-//        clearEvents(divElement);
-//        addEvents(divElement, data);
-//    }
 
     private native void clearEvents(DivElement divElement) /*-{
         $wnd.$(divElement).fullCalendar('removeEvents');
@@ -158,7 +134,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         void setOnEventClicked(EventClickHandler onEventClicked);
 
         @JsOverlay
-        default Props eventFun(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {
+        default Props eventFn(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {
             setEventFn(eventFn);
             return this;
         }
