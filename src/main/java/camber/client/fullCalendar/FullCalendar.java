@@ -3,10 +3,14 @@ package camber.client.fullCalendar;
 import camber.client.util.Lodash;
 import com.google.gwt.user.client.Window;
 import elemental.html.DivElement;
+import io.clickhandler.momentGwt.client.Moment;
+import io.clickhandler.web.Func;
+import io.clickhandler.web.Jso;
 import io.clickhandler.web.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+
 import javax.inject.Inject;
 
 import static io.clickhandler.web.dom.DOM.div;
@@ -40,16 +44,6 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
             destroy(divRef.get($this));
             buildFullCalendar($this);
         }));
-
-        // for testing (fake data)
-//        FullCalendarEvent[] data = new FullCalendarEvent[9];
-//        for (int i = 1; i < 10; ++i) {
-//            FullCalendarEvent e = new FullCalendarEvent();
-//            e.id = Integer.toString(i);
-//            e.title = Integer.toString(i) + " Test";
-//            e.start = "2016-02-0" + Integer.toString(i) + "T10:30:00";
-//            data[i - 1] = e;
-//        }
     }
 
     @Override
@@ -60,7 +54,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     @Override
     protected void componentDidUpdate(ReactComponent<Props, State> $this, Props prevProps, Props curProps, State prevState, State curState) {
         super.componentDidUpdate($this, prevProps, curProps, prevState, curState);
-        updateData(divRef.get($this), curProps.getData());
+//        updateData(divRef.get($this), curProps.getData());
     }
 
     @Override
@@ -74,64 +68,64 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void buildFullCalendar(ReactComponent<Props, State> $this) {
-        FullCalendarHeader header = new FullCalendarHeader();
-        header.center = "prev,title,next";
-        header.left = "month,agendaWeek,agendaDay";
+        FullCalendarHeader header = Jso.create();
+        header.setCenter("prev,title,next");
+        header.setLeft("month,agendaWeek,agendaDay");
 
-        FullCalendarOptions options = new FullCalendarOptions();
-        options.header = header;
-        options.allDayDefault = false;
-        options.editable = false;
-        options.eventColor = "#3a87ad";
-        options.eventTextColor = "#fff";
-        options.eventLimit = true;
-        options.height = Window.getClientHeight() - divRef.get($this).getOffsetTop() - 24; // 24 is padding;
-//        options.dayClick = (moment, nativeEvent, fullCalendarView) -> log.trace("Day Clicked!");
-        options.eventClick = (fullCalendarEvent, nativeEvent, fullCalendarView) -> {
+        FullCalendarOptions options = Jso.create();
+        options.setHeader(header);
+        options.setAllDayDefault(false);
+        options.setEditable(false);
+        options.setEventColor("#3a87ad");
+        options.setEventTextColor("#fff");
+        options.setEventLimit(true);
+        options.setHeight(Window.getClientHeight() - divRef.get($this).getOffsetTop() - 24); // 24 is padding
+        options.setEventClick((fullCalendarEvent, nativeEvent1, fullCalendarView1) -> {
             if ($this.props().getOnEventClicked() != null) {
-                $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent.id);
+                $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent);
             }
-        };
+        });
+        options.setEvents(props().getEventFn());
 
         init(divRef.get($this), options);
-        updateData(divRef.get($this), $this.props().getData());
+//        updateData(divRef.get($this), $this.props().getData());
     }
 
     private native void init(DivElement divElement, FullCalendarOptions options) /*-{
         // build opts object with events as first param (required by full calendar)
         // todo look into JsObject(isNative) for options
-        var opts = {
-            events: [], // must always be first
-            dayClick: options.dayClick,
-            eventColor: options.eventColor,
-            eventBackgroundColor: options.eventBackgroundColor,
-            eventBorderColor: options.eventBorderColor,
-            eventTextColor: options.eventTextColor,
-            eventClick: options.eventClick,
-            editable: options.editable,
-            eventStartEditable: options.eventStartEditable,
-            eventDurationEditable: options.eventDurationEditable,
-            eventOverlap: options.eventOverlap,
-            eventConstraint: options.eventConstraint,
-            eventLimit: options.eventLimit,
-            header: {
-                left: options.header.left,
-                center: options.header.center,
-                right: options.header.right
-            },
-            height: options.height
-        };
-        $wnd.$(divElement).fullCalendar(opts);
+        //var opts = {
+        //    events: [], // must always be first
+        //    dayClick: options.dayClick,
+        //    eventColor: options.eventColor,
+        //    eventBackgroundColor: options.eventBackgroundColor,
+        //    eventBorderColor: options.eventBorderColor,
+        //    eventTextColor: options.eventTextColor,
+        //    eventClick: options.eventClick,
+        //    editable: options.editable,
+        //    eventStartEditable: options.eventStartEditable,
+        //    eventDurationEditable: options.eventDurationEditable,
+        //    eventOverlap: options.eventOverlap,
+        //    eventConstraint: options.eventConstraint,
+        //    eventLimit: options.eventLimit,
+        //    header: {
+        //        left: options.header.left,
+        //        center: options.header.center,
+        //        right: options.header.right
+        //    },
+        //    height: options.height
+        //};
+        $wnd.$(divElement).fullCalendar(options);
     }-*/;
 
     private native void destroy(DivElement divElement) /*-{
         $wnd.$(divElement).fullCalendar('destroy');
     }-*/;
 
-    private void updateData(DivElement divElement, FullCalendarEvent[] data) {
-        clearEvents(divElement);
-        addEvents(divElement, data);
-    }
+//    private void updateData(DivElement divElement, FullCalendarEvent[] data) {
+//        clearEvents(divElement);
+//        addEvents(divElement, data);
+//    }
 
     private native void clearEvents(DivElement divElement) /*-{
         $wnd.$(divElement).fullCalendar('removeEvents');
@@ -142,7 +136,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     }-*/;
 
     public interface EventClickHandler {
-        void onEventClicked(String eventId);
+        void onEventClicked(FullCalendarEvent event);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,26 +146,26 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     @JsType(isNative = true)
     public interface Props extends BaseProps {
         @JsProperty
+        Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> getEventFn();
+
+        @JsProperty
+        void setEventFn(Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn);
+
+        @JsProperty
         EventClickHandler getOnEventClicked();
 
         @JsProperty
         void setOnEventClicked(EventClickHandler onEventClicked);
 
-        @JsProperty
-        FullCalendarEvent[] getData();
-
-        @JsProperty
-        void setData(FullCalendarEvent[] data);
-
         @JsOverlay
-        default Props onEventClicked(final EventClickHandler onEventClicked) {
-            setOnEventClicked(onEventClicked);
+        default Props eventFun(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {
+            setEventFn(eventFn);
             return this;
         }
 
         @JsOverlay
-        default Props data(final FullCalendarEvent[] data) {
-            setData(data);
+        default Props onEventClicked(final EventClickHandler onEventClicked) {
+            setOnEventClicked(onEventClicked);
             return this;
         }
     }
