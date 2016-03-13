@@ -7,7 +7,8 @@ var concat = require('gulp-concat');
 var nano = require('gulp-cssnano');
 
 /* local vars */
-var sources = ['./src/main/java/camber/client/**/*.scss', './src/main/java/camber/client/**/*.css'];
+var sources = ['./src/main/java/camber/client/sass/camber.scss'];
+//var sources = ['./src/main/java/camber/client/**/*.scss', './src/main/java/camber/client/**/*.css'];
 var autoprefixVersions = 'last 2 versions';
 var outputLocation = 'src/main/java/camber/public/css/';
 var outputFile = 'camber.min.css';
@@ -27,7 +28,7 @@ gulp.task('dev', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([ autoprefixer({ browsers: [autoprefixVersions] }) ]))
         .pipe(concat(outputFile))
-        .pipe(nano({"zindex": false, "reduceIdents": false}))
+        //.pipe(nano({"zindex": false, "reduceIdents": false}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(outputLocation));
 });
