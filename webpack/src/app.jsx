@@ -52,6 +52,8 @@ import SvgIconAddCircle from 'material-ui/lib/svg-icons/content/add-circle';
 import SvgIconAddCircleOutline from 'material-ui/lib/svg-icons/content/add-circle-outline';
 import SvgIconAddShoppingCart from 'material-ui/lib/svg-icons/action/add-shopping-cart';
 import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
+import SvgIconArrowDropDown from 'material-ui/lib/svg-icons/navigation/arrow-drop-down';
+import SvgIconArrowDropUp from 'material-ui/lib/svg-icons/navigation/arrow-drop-up';
 import SvgIconAttachFile from 'material-ui/lib/svg-icons/editor/attach-file';
 import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
@@ -165,6 +167,8 @@ module.exports = {
             AddCircleOutline: SvgIconAddCircleOutline,
             AddShoppingCart: SvgIconAddShoppingCart,
             Archive: SvgIconArchive,
+            ArrowDropUp: SvgIconArrowDropUp,
+            ArrowDropDown: SvgIconArrowDropDown,
             AttachFile: SvgIconAttachFile,
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,

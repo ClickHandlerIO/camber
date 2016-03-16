@@ -1,6 +1,7 @@
 package camber.client.materialUi;
 
 import com.google.gwt.core.client.JsDate;
+import io.clickhandler.momentGwt.client.Moment;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
@@ -14,6 +15,7 @@ import jsinterop.annotations.JsType;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.Date;
 
 @Singleton
 public class DatePicker extends ExternalComponent<DatePicker.Props> {
@@ -69,10 +71,10 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         void setContainer(String container);
 
         @JsProperty
-        String getDefaultDate();
+        Date getDefaultDate();
 
         @JsProperty
-        void setDefaultDate(String defaultDate);
+        void setDefaultDate(Date defaultDate);
 
         @JsProperty
         boolean isDisableYearSelection();
@@ -212,7 +214,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         }
 
         @JsOverlay
-        default Props defaultDate(final String defaultDate) {
+        default Props defaultDate(final Date defaultDate) {
             setDefaultDate(defaultDate);
             return this;
         }
