@@ -61,6 +61,7 @@ import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
 import SvgIconCloudDownload from 'material-ui/lib/svg-icons/file/cloud-download';
 import SvgIconCloudUpload from 'material-ui/lib/svg-icons/file/cloud-upload';
 import SvgIconDelete from 'material-ui/lib/svg-icons/action/delete';
+import SvgIconDragHandle from 'material-ui/lib/svg-icons/editor/drag-handle';
 import SvgIconEmail from 'material-ui/lib/svg-icons/communication/email';
 import SvgIconFileDownload from 'material-ui/lib/svg-icons/file/file-download';
 import SvgIconFileUpload from 'material-ui/lib/svg-icons/file/file-upload';
@@ -176,6 +177,7 @@ module.exports = {
             CloudUpload: SvgIconCloudUpload,
             Close: SvgIconClose,
             Delete: SvgIconDelete,
+            DragHandle: SvgIconDragHandle,
             Email: SvgIconEmail,
             FileDownload: SvgIconFileDownload,
             FileUpload: SvgIconFileUpload,
