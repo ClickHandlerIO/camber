@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import com.google.gwt.core.client.JsDate;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.event.FocusEventHandler;
@@ -79,10 +80,10 @@ public class TimePicker extends ExternalComponent<TimePicker.Props> {
         void setTextFieldStyle(CSSProps textFieldStyle);
 
         @JsProperty
-        Func.Run getOnChange();
+        Func.Run2<Object, JsDate> getOnChange();
 
         @JsProperty
-        void setOnChange(Func.Run onChange);
+        void setOnChange(Func.Run2<Object, JsDate> onChange);
 
         @JsProperty
         Func.Run getOnDismiss();
@@ -114,7 +115,11 @@ public class TimePicker extends ExternalComponent<TimePicker.Props> {
         @JsProperty
         void setOnClick(MouseEventHandler onClick);
 
+        @JsProperty
+        String getHintText();
 
+        @JsProperty
+        void setHintText(String hintText);
 
         ////////////////////
         // fluent setters
@@ -157,7 +162,7 @@ public class TimePicker extends ExternalComponent<TimePicker.Props> {
         }
 
         @JsOverlay
-        default Props onChange(final Func.Run onChange) {
+        default Props onChange(final Func.Run2<Object, JsDate> onChange) {
             setOnChange(onChange);
             return this;
         }

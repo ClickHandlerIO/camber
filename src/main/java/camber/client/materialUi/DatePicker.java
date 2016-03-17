@@ -131,10 +131,10 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         void setTextFieldStyle(CSSProps textFieldStyle);
 
         @JsProperty
-        Object getValue();
+        JsDate getValue();
 
         @JsProperty
-        void setValue(Object value);
+        void setValue(JsDate value);
 
         @JsProperty
         String getValueLink();
@@ -161,10 +161,10 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         void setFormatDate(Func.Call1<String, JsDate> formatDate);
 
         @JsProperty
-        Func.Run getOnChange();
+        Func.Run2<Object, JsDate> getOnChange();
 
         @JsProperty
-        void setOnChange(Func.Run onChange);
+        void setOnChange(Func.Run2<Object, JsDate> onChange);
 
         @JsProperty
         Func.Run getOnDismiss();
@@ -196,6 +196,11 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         @JsProperty
         void setShouldDisableDate(Func.Run shouldDisableDate);
 
+        @JsProperty
+        String getHintText();
+
+        @JsProperty
+        void setHintText(String hintText);
 
         ////////////////////
         // fluent setters
@@ -274,7 +279,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         }
 
         @JsOverlay
-        default Props value(final Object value) {
+        default Props value(final JsDate value) {
             setValue(value);
             return this;
         }
@@ -304,7 +309,7 @@ public class DatePicker extends ExternalComponent<DatePicker.Props> {
         }
 
         @JsOverlay
-        default Props onChange(final Func.Run onChange) {
+        default Props onChange(final Func.Run2<Object, JsDate> onChange) {
             setOnChange(onChange);
             return this;
         }
