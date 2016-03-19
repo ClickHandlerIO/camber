@@ -83,11 +83,11 @@ import SvgIconUnarchive from 'material-ui/lib/svg-icons/content/unarchive';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Table from 'material-ui/lib/table/table'
-import TableRow from 'material-ui/lib/table/table-row'
+import TableRow from './overrides/material-ui/src/table/table-row'
 import TableRowColumn from 'material-ui/lib/table/table-row-column'
 import TableHeader from 'material-ui/lib/table/table-header'
 import TableHeaderColumn from 'material-ui/lib/table/table-header-column'
-import TableBody from 'material-ui/lib/table/table-body'
+import TableBody from './overrides/material-ui/src/table/table-body'
 import TableFooter from 'material-ui/lib/table/table-footer'
 import TextField from 'material-ui/lib/TextField/TextField';
 import TextareaAutosize from 'react-textarea-autosize/lib/TextareaAutosize';
