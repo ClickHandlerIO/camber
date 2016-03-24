@@ -1,5 +1,6 @@
 package camber.client.materialUi;
 
+import io.clickhandler.web.Reflection;
 import io.clickhandler.web.react.ExternalComponent;
 import io.clickhandler.web.react.ReactClass;
 import io.clickhandler.web.dom.CSSProps;
@@ -52,10 +53,10 @@ public class Paper extends ExternalComponent<Paper.Props> {
         @JsProperty
         void setTransitionEnabled(boolean transitionEnabled);
 
-        @JsProperty
+        @JsProperty(name = "zDepth")
         double getZDepth();
 
-        @JsProperty
+        @JsProperty(name = "zDepth")
         void setZDepth(double zDepth);
 
         // leaving out onClick as this contains many other components
@@ -91,7 +92,7 @@ public class Paper extends ExternalComponent<Paper.Props> {
 
         @JsOverlay
         default Props zDepth(double zDepth) {
-            setZDepth(zDepth);
+            Reflection.set(this, "zDepth", zDepth);
             return this;
         }
 
