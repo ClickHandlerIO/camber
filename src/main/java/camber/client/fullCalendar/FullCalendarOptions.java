@@ -106,6 +106,12 @@ public interface FullCalendarOptions {
     void setEventLimit(boolean eventLimit);
 
     @JsProperty
+    String getDefaultView();
+
+    @JsProperty
+    void setDefaultView(String defaultView);
+
+    @JsProperty
     Func.Run3<Moment, NativeEvent, FullCalendarView> getDayClick();
 
     @JsProperty

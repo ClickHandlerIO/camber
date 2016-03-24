@@ -38,6 +38,7 @@ import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover'
 import RadioButton from 'material-ui/lib/radio-button'
 import RadioButtonGroup from 'material-ui/lib/radio-button-group'
+import ReactSelect from 'react-select'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
 import SelectField from 'material-ui/lib/select-field'
 import Slider from 'material-ui/lib/slider'
@@ -208,5 +209,6 @@ module.exports = {
             ColorManipulator: ColorManipulator,
         },
     },
+    ReactSelect: ReactSelect,
     TextareaAutosize: TextareaAutosize,
 };
