@@ -39,7 +39,7 @@ import RadioButtonGroup from 'material-ui/lib/radio-button-group'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTransitionGroup from 'react-addons-transition-group'
-import ReactCssTransitionGroup from 'react-addons-css-transition-group'
+import ReactCssTransitionGroup from 'react/lib/ReactCSSTransitionGroup'
 import ReactSelect from 'react-select'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
 import SelectField from 'material-ui/lib/select-field'

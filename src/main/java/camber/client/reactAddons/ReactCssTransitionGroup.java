@@ -18,7 +18,7 @@ public class ReactCssTransitionGroup extends ExternalComponent<ReactCssTransitio
 
     @Override
     protected native ReactClass<Props> reactClass() /*-{
-        return $wnd.Camber.ReactSelect;
+        return $wnd.Camber.ReactAddons.ReactCssTransitionGroup;
     }-*/;
 
     @JsType(isNative = true)
