@@ -53,9 +53,9 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
             changeView(divRef.get($this), nextProps.getView().getId());
         }
 
-        if (!curProps.getMoment().isSame(nextProps.getMoment())) {
+//        if (!curProps.getMoment().isSame(nextProps.getMoment())) {
             goToDate(divRef.get($this), nextProps.getMoment());
-        }
+//        }
     }
 
     @Override
