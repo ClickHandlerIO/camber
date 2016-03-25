@@ -1,6 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactRouter from 'react-router';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Material Ui
@@ -38,6 +36,10 @@ import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover'
 import RadioButton from 'material-ui/lib/radio-button'
 import RadioButtonGroup from 'material-ui/lib/radio-button-group'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactTransitionGroup from 'react-addons-transition-group'
+import ReactCssTransitionGroup from 'react-addons-css-transition-group'
 import ReactSelect from 'react-select'
 import RefreshIndicator from 'material-ui/lib/refresh-indicator'
 import SelectField from 'material-ui/lib/select-field'
@@ -105,6 +107,10 @@ import ZIndex from 'material-ui/lib/styles/zIndex';
 module.exports = {
     React: React,
     ReactDOM: ReactDOM,
+    ReactAddons: {
+        ReactTransitionGroup: ReactTransitionGroup,
+        ReactCssTransitionGroup: ReactCssTransitionGroup,
+    },
     InjectTapEventPlugin: injectTapEventPlugin,
     Lodash: {
         assign: LodashAssign,

@@ -69,13 +69,13 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void buildFullCalendar(ReactComponent<Props, State> $this) {
-//        FullCalendarHeader header = Jso.create();
-//        header.setCenter("");
-//        header.setLeft("");
-//        header.setRight("");
+        FullCalendarHeader header = Jso.create();
+        header.setCenter("");
+        header.setLeft("");
+        header.setRight("");
 
         FullCalendarOptions options = Jso.create();
-//        options.setHeader(header);
+        options.setHeader(header);
         options.setDefaultView($this.props().getView().getId());
         options.setDefaultDate($this.props().getMoment());
         options.setAllDayDefault(false);
@@ -126,24 +126,6 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         void onEventClicked(FullCalendarEvent event);
     }
 
-    public enum View {
-        MONTH("month"),
-        BASIC_WEEK("basicWeek"),
-        AGENDA_WEEK("agendaWeek"),
-        BASIC_DAY("basicDay"),
-        AGENDA_DAY("agendaDay");
-
-        private String id;
-
-        View(String id) {
-            this.id = id;
-        }
-
-        public String getId() {
-            return id;
-        }
-    }
-
     ///////////////////////////////////////////////////////////////////////////////////////////////////
     // Args / Props / State / Route
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -169,10 +151,10 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         void setMoment(Moment moment);
 
         @JsProperty
-        View getView();
+        FullCalendarViewType getView();
 
         @JsProperty
-        void setView(View view);
+        void setView(FullCalendarViewType view);
 
         @JsOverlay
         default Props eventFn(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {
@@ -193,7 +175,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         }
 
         @JsOverlay
-        default Props view(final View view) {
+        default Props view(final FullCalendarViewType view) {
             setView(view);
             return this;
         }
