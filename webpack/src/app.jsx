@@ -71,6 +71,7 @@ import SvgIconFileUpload from 'material-ui/lib/svg-icons/file/file-upload';
 import SvgIconFilterList from 'material-ui/lib/svg-icons/content/filter-list';
 import SvgIconGpsFixed from 'material-ui/lib/svg-icons/device/gps-fixed';
 import SvgIconInsertDriveFile from 'material-ui/lib/svg-icons/editor/insert-drive-file';
+import SvgIconKeyboardArrowDown from 'material-ui/lib/svg-icons/hardware/keyboard-arrow-down';
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
@@ -79,6 +80,8 @@ import SvgIconPersonAdd from 'material-ui/lib/svg-icons/social/person-add';
 import SvgIconPowerSettingsNew from 'material-ui/lib/svg-icons/action/power-settings-new';
 import SvgIconPrint from 'material-ui/lib/svg-icons/action/print';
 import SvgIconReply from 'material-ui/lib/svg-icons/content/reply';
+import SvgIconRemoveCircle from 'material-ui/lib/svg-icons/content/remove-circle';
+import SvgIconRemoveCircleOutline from 'material-ui/lib/svg-icons/content/remove-circle-outline';
 import SvgIconSearch from 'material-ui/lib/svg-icons/action/search';
 import SvgIconSend from 'material-ui/lib/svg-icons/content/send';
 import SvgIconStorage from 'material-ui/lib/svg-icons/device/storage';
@@ -191,6 +194,7 @@ module.exports = {
             FilterList: SvgIconFilterList,
             GpsFixed: SvgIconGpsFixed,
             InsertDriveFile: SvgIconInsertDriveFile,
+            KeyboardArrowDown: SvgIconKeyboardArrowDown,
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
             Menu: SvgIconMenu,
@@ -199,6 +203,8 @@ module.exports = {
             PowerSettingsNew: SvgIconPowerSettingsNew,
             Print: SvgIconPrint,
             Reply: SvgIconReply,
+            RemoveCircle: SvgIconRemoveCircle,
+            RemoveCircleOutline: SvgIconRemoveCircleOutline,
             Search: SvgIconSearch,
             Send: SvgIconSend,
             Storage: SvgIconStorage,
