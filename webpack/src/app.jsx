@@ -75,6 +75,8 @@ import SvgIconKeyboardArrowDown from 'material-ui/lib/svg-icons/hardware/keyboar
 import SvgIconLaunch from 'material-ui/lib/svg-icons/action/launch';
 import SvgIconMailOutline from 'material-ui/lib/svg-icons/communication/mail-outline';
 import SvgIconMenu from 'material-ui/lib/svg-icons/navigation/menu';
+import SvgIconMoreHoriz from 'material-ui/lib/svg-icons/navigation/more-horiz';
+import SvgIconMoreVert from 'material-ui/lib/svg-icons/navigation/more-vert';
 import SvgIconNotifications from 'material-ui/lib/svg-icons/social/notifications';
 import SvgIconPersonAdd from 'material-ui/lib/svg-icons/social/person-add';
 import SvgIconPowerSettingsNew from 'material-ui/lib/svg-icons/action/power-settings-new';
@@ -198,6 +200,8 @@ module.exports = {
             Launch: SvgIconLaunch,
             MailOutline: SvgIconMailOutline,
             Menu: SvgIconMenu,
+            MoreHoriz: SvgIconMoreHoriz,
+            MoreVert: SvgIconMoreVert,
             Notifications: SvgIconNotifications,
             PersonAdd: SvgIconPersonAdd,
             PowerSettingsNew: SvgIconPowerSettingsNew,
