@@ -5,6 +5,7 @@ import elemental.html.DivElement;
 import io.clickhandler.momentGwt.client.Moment;
 import io.clickhandler.web.Func;
 import io.clickhandler.web.Jso;
+import io.clickhandler.web.dom.CSSProps;
 import io.clickhandler.web.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -27,7 +28,13 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
     @Override
     protected ReactElement render(ReactComponent<Props, State> reactComponent, Props props, State state) {
-        return div($ -> $.ref(divRef).className("camber-full-calendar"));
+        return div($ -> {
+            $.ref(divRef);
+            $.className("camber-full-calendar");
+            if (props.getStyle() != null) {
+                $.style(props.getStyle());
+            }
+        });
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,6 +50,11 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
             destroy(divRef.get($this));
             buildFullCalendar($this);
         }));
+
+        $this.subscribe(UpdateFullCalendarEvent.class, e -> {
+            destroy(divRef.get($this));
+            buildFullCalendar($this);
+        });
     }
 
     @Override
@@ -54,7 +66,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         }
 
 //        if (!curProps.getMoment().isSame(nextProps.getMoment())) {
-            goToDate(divRef.get($this), nextProps.getMoment());
+        goToDate(divRef.get($this), nextProps.getMoment());
 //        }
     }
 
@@ -83,7 +95,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         options.setEventColor("#3a87ad");
         options.setEventTextColor("#fff");
         options.setEventLimit(true);
-        options.setHeight(Window.getClientHeight() - divRef.get($this).getOffsetTop() - 24); // 24 is padding
+        options.setHeight(Window.getClientHeight() - divRef.get($this).getOffsetTop() - 15); // 15 is padding
         options.setEventClick((fullCalendarEvent, nativeEvent1, fullCalendarView1) -> {
             if ($this.props().getOnEventClicked() != null) {
                 $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent);
@@ -155,6 +167,12 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
         @JsProperty
         void setView(FullCalendarViewType view);
+
+        @JsProperty
+        CSSProps getStyle();
+
+        @JsProperty
+        void setStyle(CSSProps style);
 
         @JsOverlay
         default Props eventFn(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {
