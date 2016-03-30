@@ -52,7 +52,7 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         }));
 
         $this.subscribe(UpdateFullCalendarEvent.class, e -> {
-            destroy(divRef.get($this));
+            destroy(divRef.get($this)); // todo call 'render' instead?
             buildFullCalendar($this);
         });
     }
