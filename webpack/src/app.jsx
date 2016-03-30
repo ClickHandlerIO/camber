@@ -58,6 +58,8 @@ import SvgIconArchive from 'material-ui/lib/svg-icons/content/archive';
 import SvgIconArrowDropDown from 'material-ui/lib/svg-icons/navigation/arrow-drop-down';
 import SvgIconArrowDropUp from 'material-ui/lib/svg-icons/navigation/arrow-drop-up';
 import SvgIconAttachFile from 'material-ui/lib/svg-icons/editor/attach-file';
+import SvgIconCheck from 'material-ui/lib/svg-icons/navigation/check';
+import SvgIconCheckCircle from 'material-ui/lib/svg-icons/action/check-circle';
 import SvgIconChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import SvgIconChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 import SvgIconClose from 'material-ui/lib/svg-icons/navigation/close';
@@ -183,6 +185,8 @@ module.exports = {
             ArrowDropUp: SvgIconArrowDropUp,
             ArrowDropDown: SvgIconArrowDropDown,
             AttachFile: SvgIconAttachFile,
+            Check: SvgIconCheck,
+            CheckCircle: SvgIconCheckCicle,
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,
             CloudDownload: SvgIconCloudDownload,
