@@ -103,7 +103,7 @@ public abstract class AbstractGrid<D, P extends AbstractGrid.Props<D>> extends C
                                         if (state.getData() != null && !state.getData().isEmpty()) {
                                             for (D data : state.getData()) {
                                                 childList2.add(
-                                                        createCell(props.isReorderEnabled(), props.isSelectionEnabled(), state.getColumns(), data, props.getSelected() != null && props.getSelected().contains(data), (d, s) -> {
+                                                        createCell($this, props.isReorderEnabled(), props.isSelectionEnabled(), state.getColumns(), data, props.getSelected() != null && props.getSelected().contains(data), (d, s) -> {
                                                             if ($this.state().isLoading()) {
                                                                 return;
                                                             }
@@ -281,7 +281,7 @@ public abstract class AbstractGrid<D, P extends AbstractGrid.Props<D>> extends C
     // Abstract
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-    protected abstract ReactElement createCell(boolean reorderEnabled, boolean selectionEnabled, List<GridColumn> columns, D data, boolean isSelected, Func.Run2<D, Boolean> onSelectionChanged); // todo add handlers for selection change
+    protected abstract ReactElement createCell(ReactComponent<P, State<D>> $this, boolean reorderEnabled, boolean selectionEnabled, List<GridColumn> columns, D data, boolean isSelected, Func.Run2<D, Boolean> onSelectionChanged); // todo add handlers for selection change
 
     protected abstract GridColumn[] getColumns();
 
