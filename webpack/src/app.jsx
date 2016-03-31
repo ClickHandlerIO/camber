@@ -186,7 +186,7 @@ module.exports = {
             ArrowDropDown: SvgIconArrowDropDown,
             AttachFile: SvgIconAttachFile,
             Check: SvgIconCheck,
-            CheckCircle: SvgIconCheckCicle,
+            CheckCircle: SvgIconCheckCircle,
             ChevronLeft: SvgIconChevronLeft,
             ChevronRight: SvgIconChevronRight,
             CloudDownload: SvgIconCloudDownload,
