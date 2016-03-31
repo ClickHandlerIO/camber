@@ -36,6 +36,7 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
             opts.setMultiple(props.isMultiple());
             opts.setAllowClear(props.isAllowClear() && !props.isMultiple());
             opts.setPlaceholder(props.getPlaceholder());
+            opts.setEscapeMarkup(v -> v); // allow html content
             opts.setMinimumResultsForSearch(props.getMinimumResultsForSearch());
             opts.setDataAdapterFn((params, completion) -> {
                 if (params.getTerm() == null || params.getTerm().isEmpty() || $this.props().isDebounceDisabled()) {
