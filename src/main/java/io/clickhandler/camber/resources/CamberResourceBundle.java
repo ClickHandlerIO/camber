@@ -8,23 +8,12 @@ import com.google.gwt.resources.client.TextResource;
 public interface CamberResourceBundle extends ClientBundle {
     CamberResourceBundle INSTANCE = GWT.create(CamberResourceBundle.class);
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    // JS Resources
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    @Source("js/webpack-output.js")
-    TextResource WebpackOutput();
-
-    @Source("js/react-router.min.js")
-    TextResource ReactRouter();
-
-    @Source("js/jquery-2.2.1.min.js")
+    @Source("jquery-2.2.1.min.js")
     TextResource jQuery();
 
-    @Source("js/select2.full.js")
+    @Source("select2.full.js")
     TextResource Select2();
 
-    @Source("js/fullcalendar.min.js")
+    @Source("fullcalendar.min.js")
     TextResource FullCalendar();
 }
