@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.clickhandler</groupId>
     <artifactId>camber</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>camber</name>
     <description>Expose React and Js deps for GWT</description>
@@ -52,10 +52,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <gwt.version>2.8.0-SNAPSHOT</gwt.version>
-        <dagger-gwt.version>0.1.0-SNAPSHOT</dagger-gwt.version>
+        <react-gwt.version>0.1.0-SNAPSHOT</react-gwt.version>
+        <material-ui-gwt.version>0.1.0-SNAPSHOT</material-ui-gwt.version>
         <moment-gwt.version>0.1.0-SNAPSHOT</moment-gwt.version>
-        <clickhandlerweb.version>0.2.0-SNAPSHOT</clickhandlerweb.version>
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <gwt-maven-plugin.version>2.8.0-SNAPSHOT</gwt-maven-plugin.version>
         <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
@@ -137,8 +136,14 @@
 
         <dependency>
             <groupId>io.clickhandler</groupId>
-            <artifactId>web</artifactId>
-            <version>${clickhandlerweb.version}</version>
+            <artifactId>react-gwt</artifactId>
+            <version>${react-gwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.clickhandler</groupId>
+            <artifactId>material-ui-gwt</artifactId>
+            <version>${material-ui-gwt.version}</version>
         </dependency>
 
         <dependency>
