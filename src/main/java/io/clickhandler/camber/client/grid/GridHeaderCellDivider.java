@@ -28,7 +28,7 @@ public class GridHeaderCellDivider extends Component<GridHeaderCellDivider.Props
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> $this, Props props, State state) {
+    protected ReactElement render(ReactComponent<Props, State> $this) {
         return
                 div($ -> {
                             $.className("cell-divider");
@@ -49,11 +49,11 @@ public class GridHeaderCellDivider extends Component<GridHeaderCellDivider.Props
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected void componentDidMount(ReactComponent<Props, State> $this, Props props, State state) {
-        super.componentDidMount($this, props, state);
+    protected void componentDidMount(ReactComponent<Props, State> $this) {
+        super.componentDidMount($this);
 
         Browser.getWindow().addEventListener("mouseup", event -> {
-            if ($this.state().isMouseDown()) {
+            if ($this.getState().isMouseDown()) {
 //                log.trace("DROPPED!", event);
                 event.preventDefault();
                 event.stopPropagation();
@@ -62,11 +62,11 @@ public class GridHeaderCellDivider extends Component<GridHeaderCellDivider.Props
         }, false);
 
         Browser.getWindow().addEventListener("mousemove", event -> {
-            if ($this.state().isMouseDown()) {
+            if ($this.getState().isMouseDown()) {
                 event.preventDefault();
                 event.stopPropagation();
-                if ($this.props().getMovementXHandler() != null) {
-                    $this.props().getMovementXHandler().run(((GridMouseEvent) event).getMovementX());
+                if ($this.getProps().getMovementXHandler() != null) {
+                    $this.getProps().getMovementXHandler().run(((GridMouseEvent) event).getMovementX());
                 }
 
             }

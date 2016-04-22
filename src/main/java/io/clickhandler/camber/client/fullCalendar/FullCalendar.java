@@ -5,7 +5,7 @@ import elemental.html.DivElement;
 import io.clickhandler.momentGwt.client.Moment;
 import io.clickhandler.reactGwt.client.Func;
 import io.clickhandler.reactGwt.client.Jso;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -27,12 +27,12 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> reactComponent, Props props, State state) {
+    protected ReactElement render(ReactComponent<Props, State> $this) {
         return div($ -> {
             $.ref(divRef);
             $.className("camber-full-calendar");
-            if (props.getStyle() != null) {
-                $.style(props.getStyle());
+            if ($this.getProps().getStyle() != null) {
+                $.style($this.getProps().getStyle());
             }
         });
     }
@@ -42,8 +42,8 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected void componentDidMount(final ReactComponent<Props, State> $this, Props props, State state) {
-        super.componentDidMount($this, props, state);
+    protected void componentDidMount(final ReactComponent<Props, State> $this) {
+        super.componentDidMount($this);
         buildFullCalendar($this);
 
         $this.register(Window.addResizeHandler(resizeEvent -> {
@@ -58,10 +58,10 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
     }
 
     @Override
-    protected void componentWillReceiveProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.componentWillReceiveProps($this, curProps, nextProps);
+    protected void componentWillReceiveProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.componentWillReceiveProps($this, nextProps);
 
-        if (!curProps.getView().equals(nextProps.getView())) {
+        if (!$this.getProps().getView().equals(nextProps.getView())) {
             changeView(divRef.get($this), nextProps.getView().getId());
         }
 
@@ -88,8 +88,8 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
 
         FullCalendarOptions options = Jso.create();
         options.setHeader(header);
-        options.setDefaultView($this.props().getView().getId());
-        options.setDefaultDate($this.props().getMoment());
+        options.setDefaultView($this.getProps().getView().getId());
+        options.setDefaultDate($this.getProps().getMoment());
         options.setAllDayDefault(false);
         options.setEditable(false);
         options.setEventColor("#3a87ad");
@@ -97,13 +97,13 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         options.setEventLimit(true);
         options.setHeight(Window.getClientHeight() - divRef.get($this).getOffsetTop() - 15); // 15 is padding
         options.setEventClick((fullCalendarEvent, nativeEvent1, fullCalendarView1) -> {
-            if ($this.props().getOnEventClicked() != null) {
-                $this.props().getOnEventClicked().onEventClicked(fullCalendarEvent);
+            if ($this.getProps().getOnEventClicked() != null) {
+                $this.getProps().getOnEventClicked().onEventClicked(fullCalendarEvent);
             }
         });
         options.setEvents((moment, moment2, o, run1) -> {
-            if ($this.props().getEventFn() != null) {
-                $this.props().getEventFn().run(moment, moment2, o, run1);
+            if ($this.getProps().getEventFn() != null) {
+                $this.getProps().getEventFn().run(moment, moment2, o, run1);
             }
         });
 
@@ -169,10 +169,10 @@ public class FullCalendar extends Component<FullCalendar.Props, FullCalendar.Sta
         void setView(FullCalendarViewType view);
 
         @JsProperty
-        CSSProps getStyle();
+        StyleProps getStyle();
 
         @JsProperty
-        void setStyle(CSSProps style);
+        void setStyle(StyleProps style);
 
         @JsOverlay
         default Props eventFn(final Func.Run4<Moment, Moment, Object, Func.Run1<FullCalendarEvent[]>> eventFn) {

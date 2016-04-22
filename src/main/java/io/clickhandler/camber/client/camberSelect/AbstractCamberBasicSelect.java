@@ -5,7 +5,7 @@ import io.clickhandler.camber.client.util.Lodash;
 import com.google.gwt.user.client.Timer;
 import io.clickhandler.reactGwt.client.Func;
 import io.clickhandler.reactGwt.client.Jso;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.BaseProps;
 import io.clickhandler.reactGwt.client.react.Component;
 import io.clickhandler.reactGwt.client.react.ReactComponent;
@@ -30,22 +30,22 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<P, State<VALUE>> $this, P props, State<VALUE> state) {
+    protected ReactElement render(ReactComponent<P, State<VALUE>> $this) {
         return select2.$($ -> {
             Select2Options opts = Jso.create();
-            opts.setMultiple(props.isMultiple());
-            opts.setAllowClear(props.isAllowClear() && !props.isMultiple());
-            opts.setPlaceholder(props.getPlaceholder());
+            opts.setMultiple($this.getProps().isMultiple());
+            opts.setAllowClear($this.getProps().isAllowClear() && !$this.getProps().isMultiple());
+            opts.setPlaceholder($this.getProps().getPlaceholder());
             opts.setEscapeMarkup(v -> v); // allow html content
-            opts.setMinimumResultsForSearch(props.getMinimumResultsForSearch());
+            opts.setMinimumResultsForSearch($this.getProps().getMinimumResultsForSearch());
             opts.setDataAdapterFn((params, completion) -> {
-                if (params.getTerm() == null || params.getTerm().isEmpty() || $this.props().isDebounceDisabled()) {
+                if (params.getTerm() == null || params.getTerm().isEmpty() || $this.getProps().isDebounceDisabled()) {
                     internalFetch($this, params.getTerm(), completion);
                     return;
                 }
 
-                if ($this.state().getDebounceTimer() != null) {
-                    $this.state().getDebounceTimer().cancel();
+                if ($this.getState().getDebounceTimer() != null) {
+                    $this.getState().getDebounceTimer().cancel();
                 }
 
                 Timer t = new Timer() {
@@ -61,21 +61,21 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
 
             // Handle in/out of VALUE to Select2Data[] in the select2 control
 
-            if (props.isMultiple() && props.getOnMultipleValueChanged() != null) {
+            if ($this.getProps().isMultiple() && $this.getProps().getOnMultipleValueChanged() != null) {
                 $.setOnValueChange(select2Datas -> {
                     if (select2Datas == null || select2Datas.length < 1) {
                         $this.setState(s -> {
                             s.setSelectedDataMap(new HashMap<>());
                             s.setSelect2Value(null);
                         });
-                        props.getOnMultipleValueChanged().run(null);
+                        $this.getProps().getOnMultipleValueChanged().run(null);
                     } else {
                         Map<String, VALUE> selectedDataMap = new HashMap<>();
                         List<VALUE> values = new ArrayList<>();
                         for (Select2Data d : select2Datas) {
-                            VALUE value = $this.state().getSelectedDataMap().get(d.getId());
+                            VALUE value = $this.getState().getSelectedDataMap().get(d.getId());
                             if (value == null) {
-                                value = $this.state().getDataMap().get(d.getId());
+                                value = $this.getState().getDataMap().get(d.getId());
                             }
                             if (value != null) {
                                 values.add(value);
@@ -86,10 +86,10 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
                             s.setSelectedDataMap(selectedDataMap);
                             s.setSelect2Value(select2Datas);
                         });
-                        props.getOnMultipleValueChanged().run(values);
+                        $this.getProps().getOnMultipleValueChanged().run(values);
                     }
                 });
-            } else if (!props.isMultiple() && props.getOnValueChanged() != null) {
+            } else if (!$this.getProps().isMultiple() && $this.getProps().getOnValueChanged() != null) {
 
                 $.setOnValueChange(select2Datas -> {
                     if (select2Datas == null || select2Datas.length < 1) {
@@ -97,13 +97,13 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
                             s.setSelectedDataMap(new HashMap<>());
                             s.setSelect2Value(null);
                         });
-                        props.getOnValueChanged().run(null);
+                        $this.getProps().getOnValueChanged().run(null);
                     } else {
 
                         // check maps to match VALUE object
-                        VALUE value = $this.state().getSelectedDataMap().get(select2Datas[0].getId());
+                        VALUE value = $this.getState().getSelectedDataMap().get(select2Datas[0].getId());
                         if (value == null) {
-                            value = $this.state().getDataMap().get(select2Datas[0].getId());
+                            value = $this.getState().getDataMap().get(select2Datas[0].getId());
                         }
 
                         if (value != null) {
@@ -113,23 +113,23 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
                                 s.setSelectedDataMap(selectedDataMap);
                                 s.setSelect2Value(select2Datas);
                             });
-                            props.getOnValueChanged().run(value);
+                            $this.getProps().getOnValueChanged().run(value);
                         }
                     }
                 });
             }
 
             // set select2 value
-            $.setValue(state.getSelect2Value());
+            $.setValue($this.getState().getSelect2Value());
 
 
             // pass through props to select2
-            $.setOpen(props.isOpen());
-            $.setClose(props.isClose());
-            $.setEvents(props.getSelect2Events());
-            $.setDisabled(props.isDisabled());
-            $.setStyle(props.getStyle());
-            $.className(props.getClassName());
+            $.setOpen($this.getProps().isOpen());
+            $.setClose($this.getProps().isClose());
+            $.setEvents($this.getProps().getSelect2Events());
+            $.setDisabled($this.getProps().isDisabled());
+            $.setStyle($this.getProps().getStyle());
+            $.className($this.getProps().getClassName());
         });
     }
 
@@ -154,12 +154,12 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
     }
 
     @Override
-    protected void intakeProps(ReactComponent<P, State<VALUE>> $this, P curProps, P nextProps) {
-        super.intakeProps($this, curProps, nextProps);
-        boolean curPropsIsNull = curProps == null;
+    protected void intakeProps(ReactComponent<P, State<VALUE>> $this, P nextProps) {
+        super.intakeProps($this, nextProps);
+        boolean curPropsIsNull = $this.getProps() == null;
 
         if (nextProps.isMultiple()) {
-            boolean notEqualPropsValues = curProps == null || !Lodash.isEqual(curProps.getMultipleValue(), nextProps.getMultipleValue());
+            boolean notEqualPropsValues = $this.getProps() == null || !Lodash.isEqual($this.getProps().getMultipleValue(), nextProps.getMultipleValue());
             if (curPropsIsNull || notEqualPropsValues) {
                 if (nextProps.getMultipleValue() != null) {
                     List<Select2Data> datas = new ArrayList<>();
@@ -172,7 +172,7 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
                 }
             }
         } else {
-            boolean notEqualPropsValues = curProps == null || !Lodash.isEqual(curProps.getValue(), nextProps.getValue());
+            boolean notEqualPropsValues = $this.getProps() == null || !Lodash.isEqual($this.getProps().getValue(), nextProps.getValue());
             if (curPropsIsNull || notEqualPropsValues) {
                 if (nextProps.getValue() != null) {
                     $this.setState(s -> s.setSelect2Value(new Select2Data[]{translate(nextProps.getValue())}));
@@ -184,11 +184,11 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
     }
 
     @Override
-    protected boolean shouldComponentUpdate(ReactComponent<P, State<VALUE>> $this, P curProps, P nextProps, State<VALUE> curState, State<VALUE> nextState) {
-        boolean notEqualProps = !Lodash.isEqual(curProps, nextProps);
+    protected boolean shouldComponentUpdate(ReactComponent<P, State<VALUE>> $this, P nextProps, State<VALUE> nextState) {
+        boolean notEqualProps = !Lodash.isEqual($this.getProps(), nextProps);
         boolean notEqualSelect2Value = true; // only compare select2 value since the datamaps should not affect rendering
-        if (curState != null && curState.getSelect2Value() != null && nextState != null && nextState.getSelect2Value() != null) {
-            notEqualSelect2Value = !Lodash.isEqual(curState.getSelect2Value(), nextState.getSelect2Value());
+        if ($this.getState() != null && $this.getState().getSelect2Value() != null && nextState != null && nextState.getSelect2Value() != null) {
+            notEqualSelect2Value = !Lodash.isEqual($this.getState().getSelect2Value(), nextState.getSelect2Value());
         }
         return notEqualProps || notEqualSelect2Value;
     }
@@ -265,10 +265,10 @@ public abstract class AbstractCamberBasicSelect<VALUE, P extends AbstractCamberB
         void setClassName(String className);
 
         @JsProperty
-        CSSProps getStyle();
+        StyleProps getStyle();
 
         @JsProperty
-        void setStyle(CSSProps style);
+        void setStyle(StyleProps style);
 
         @JsProperty
         boolean isAllowClear();

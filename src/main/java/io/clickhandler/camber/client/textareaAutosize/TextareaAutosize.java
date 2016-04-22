@@ -13,7 +13,7 @@ public class TextareaAutosize extends ExternalComponent<TextareaAutosize.Props> 
     }
 
     @Override
-    protected native ReactClass<Props> reactClass() /*-{
+    protected native ReactClass<Props> getReactClass() /*-{
         return $wnd.Camber.TextAreaAutosize;
     }-*/;
 

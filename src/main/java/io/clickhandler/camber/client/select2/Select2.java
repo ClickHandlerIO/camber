@@ -6,7 +6,7 @@ import io.clickhandler.camber.client.util.Lodash;
 import elemental.html.SelectElement;
 import io.clickhandler.reactGwt.client.Func;
 import io.clickhandler.reactGwt.client.Jso;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.*;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -30,13 +30,13 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> reactComponent, Props props, State state) {
+    protected ReactElement render(ReactComponent<Props, State> $this) {
         return select($ -> {
             $.ref(selectRef);
-            $.disabled(props.isDisabled());
-            $.className("select2-raw " + (props.getOptions().isMultiple() ? "multiple " : "") + props.getClassName());
-            $.style(props.getStyle());
-            if (props.getOptions() != null && props.getOptions().isMultiple()) {
+            $.disabled($this.getProps().isDisabled());
+            $.className("select2-raw " + ($this.getProps().getOptions().isMultiple() ? "multiple " : "") + $this.getProps().getClassName());
+            $.style($this.getProps().getStyle());
+            if ($this.getProps().getOptions() != null && $this.getProps().getOptions().isMultiple()) {
                 $.multiple(true);
             }
         });
@@ -49,7 +49,7 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
     @Override
     public Props getDefaultProps(ReactComponent<Props, State> $this) {
         Props p = Jso.create();
-        p.setStyle(new CSSProps().width("100%"));
+        p.setStyle(new StyleProps().width("100%"));
         p.disabled(false);
         return p;
     }
@@ -62,42 +62,42 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
     }
 
     @Override
-    protected void componentDidMount(ReactComponent<Props, State> $this, Props props, State state) {
-        super.componentDidMount($this, props, state);
+    protected void componentDidMount(ReactComponent<Props, State> $this) {
+        super.componentDidMount($this);
 
         Func.Run1<Select2NativeEvent<Select2EventArgs>> onSelect = e -> {
-            Map<String, Select2Data> valueMap = $this.state().getValue();
-            if (!$this.props().getOptions().isMultiple()) {
+            Map<String, Select2Data> valueMap = $this.getState().getValue();
+            if (!$this.getProps().getOptions().isMultiple()) {
                 valueMap.clear();
             }
             Select2Data val = e.getParams().getData();
             valueMap.put(val.getId(), val);
             $this.setState(s -> s.setValue(valueMap));
-            if (props.getOnValueChange() != null) {
+            if ($this.getProps().getOnValueChange() != null) {
                 Collection<Select2Data> values = valueMap.values();
-                props.getOnValueChange().run(values.toArray(new Select2Data[values.size()]));
+                $this.getProps().getOnValueChange().run(values.toArray(new Select2Data[values.size()]));
             }
         };
 
         Func.Run1<Select2NativeEvent<Select2EventArgs>> onUnSelect = e -> {
-            Map<String, Select2Data> valueMap = $this.state().getValue();
+            Map<String, Select2Data> valueMap = $this.getState().getValue();
             valueMap.remove(e.getParams().getData().getId());
             $this.setState(s -> s.setValue(valueMap));
-            if (props.getOnValueChange() != null) {
+            if ($this.getProps().getOnValueChange() != null) {
                 Collection<Select2Data> values = valueMap.values();
-                props.getOnValueChange().run(values.toArray(new Select2Data[values.size()]));
+                $this.getProps().getOnValueChange().run(values.toArray(new Select2Data[values.size()]));
             }
         };
 
-        select2(selectRef.get($this), props.getOptions(), onSelect, onUnSelect, props.getEvents(), props.isOpen(), props.isClose());
+        select2(selectRef.get($this), $this.getProps().getOptions(), onSelect, onUnSelect, $this.getProps().getEvents(), $this.getProps().isOpen(), $this.getProps().isClose());
 
-        if (props.getValue() != null) {
+        if ($this.getProps().getValue() != null) {
             // todo this probably wont work - needs to be delayed or include in select2() call - same way as open / closed are
             Map<String, Select2Data> updatedMap = new HashMap<>();
-            for (Select2Data d : props.getValue()) {
+            for (Select2Data d : $this.getProps().getValue()) {
                 updatedMap.put(d.getId(), d);
             }
-            setValue(selectRef.get($this), props.getValue());
+            setValue(selectRef.get($this), $this.getProps().getValue());
             $this.setState(s -> s.setValue(updatedMap));
         }
 
@@ -112,12 +112,12 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
     }
 
     @Override
-    protected void componentWillReceiveProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.componentWillReceiveProps($this, curProps, nextProps);
+    protected void componentWillReceiveProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.componentWillReceiveProps($this, nextProps);
 
         // VALUE
         // Check to see if value passed in and the select2 control are in sync. if not, set the value on the control and update the tracking map
-        Set<String> curValueSet = $this.state().getValue().keySet();
+        Set<String> curValueSet = $this.getState().getValue().keySet();
         boolean propsValEmpty = nextProps.getValue() == null || nextProps.getValue().length == 0;
         boolean controlValEmpty = curValueSet.size() == 0;
 
@@ -147,25 +147,25 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
         }
 
         // OPEN
-        if (curProps.isOpen() != nextProps.isOpen() && nextProps.isOpen()) {
+        if ($this.getProps().isOpen() != nextProps.isOpen() && nextProps.isOpen()) {
             open(selectRef.get($this));
         }
 
         // CLOSE
-        if (curProps.isClose() != nextProps.isClose() && nextProps.isClose()) {
+        if ($this.getProps().isClose() != nextProps.isClose() && nextProps.isClose()) {
             close(selectRef.get($this));
         }
     }
 
     @Override
-    protected boolean shouldComponentUpdate(ReactComponent<Props, State> $this, Props curProps, Props nextProps, State curState, State nextState) {
-        if (curProps == null) {
+    protected boolean shouldComponentUpdate(ReactComponent<Props, State> $this, Props nextProps, State nextState) {
+        if ($this.getProps() == null) {
             return true;
         }
 
-        boolean disabled = curProps.isDisabled() != nextProps.isDisabled();
-        boolean className = !Lodash.isEqual(curProps.getClassName(), nextProps.getClassName());
-        boolean style = !Lodash.isEqual(curProps.getStyle(), nextProps.getStyle());
+        boolean disabled = $this.getProps().isDisabled() != nextProps.isDisabled();
+        boolean className = !Lodash.isEqual($this.getProps().getClassName(), nextProps.getClassName());
+        boolean style = !Lodash.isEqual($this.getProps().getStyle(), nextProps.getStyle());
         return disabled || className || style;
     }
 
@@ -315,10 +315,10 @@ public class Select2 extends Component<Select2.Props, Select2.State> {
         void setClassName(String className);
 
         @JsProperty
-        CSSProps getStyle();
+        StyleProps getStyle();
 
         @JsProperty
-        void setStyle(CSSProps style);
+        void setStyle(StyleProps style);
 
         @JsProperty
         boolean isOpen();

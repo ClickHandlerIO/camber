@@ -2,7 +2,7 @@ package io.clickhandler.camber.client.timePicker;
 
 import io.clickhandler.momentGwt.client.Moment;
 import io.clickhandler.reactGwt.client.Func;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.BaseProps;
 import io.clickhandler.reactGwt.client.react.Component;
 import io.clickhandler.reactGwt.client.react.ReactComponent;
@@ -34,35 +34,35 @@ public class SimpleTimePicker extends Component<SimpleTimePicker.Props, SimpleTi
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> $this, Props props, State state) {
+    protected ReactElement render(ReactComponent<Props, State> $this) {
         return div($ -> $.className("flex-row align-items-center"),
                 timePickerHourSelect.$($ -> {
                     $.setAllowClear(false);
-                    $.setStyle(new CSSProps().width("65px"));
-                    $.setValue(state.getHours());
+                    $.setStyle(new StyleProps().width("65px"));
+                    $.setValue($this.getState().getHours());
                     $.setOnValueChanged(v -> {
                         $this.setState(s -> s.setHours(v));
-                        fireUpdate($this, v, $this.state().getMinutes(), $this.state().getMeridian());
+                        fireUpdate($this, v, $this.getState().getMinutes(), $this.getState().getMeridian());
                     });
                 }),
                 div($ -> $.style(s -> s.margin("0 5px")), ":"),
                 timePickerMinute15Select.$($ -> {
                     $.setAllowClear(false);
-                    $.setStyle(new CSSProps().width("65px"));
-                    $.setValue(state.getMinutes());
+                    $.setStyle(new StyleProps().width("65px"));
+                    $.setValue($this.getState().getMinutes());
                     $.setOnValueChanged(v -> {
                         $this.setState(s -> s.setMinutes(v));
-                        fireUpdate($this, $this.state().getHours(), v, $this.state().getMeridian());
+                        fireUpdate($this, $this.getState().getHours(), v, $this.getState().getMeridian());
                     });
                 }),
                 div($ -> $.style(s -> s.width("5px"))),
                 timePickerMeridianSelect.$($ -> {
                     $.setAllowClear(false);
-                    $.setStyle(new CSSProps().width("75px"));
-                    $.setValue(state.getMeridian());
+                    $.setStyle(new StyleProps().width("75px"));
+                    $.setValue($this.getState().getMeridian());
                     $.setOnValueChanged(v -> {
                         $this.setState(s -> s.setMeridian(v));
-                        fireUpdate($this, $this.state().getHours(), $this.state().getMinutes(), v);
+                        fireUpdate($this, $this.getState().getHours(), $this.getState().getMinutes(), v);
                     });
                 })
         );
@@ -73,8 +73,8 @@ public class SimpleTimePicker extends Component<SimpleTimePicker.Props, SimpleTi
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected void intakeProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.intakeProps($this, curProps, nextProps);
+    protected void intakeProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.intakeProps($this, nextProps);
 
         Moment m = nextProps.getTime() == null ? Moment.moment() : nextProps.getTime();
         $this.setState(s -> {
@@ -94,8 +94,8 @@ public class SimpleTimePicker extends Component<SimpleTimePicker.Props, SimpleTi
         time.hours(hour.getValue() + (meridian.equals(TimePickerMeridian.PM) ? 12 : 0));
         time.minutes(minute.getValue());
 
-        if ($this.props().getOnTimeChanged() != null) {
-            $this.props().getOnTimeChanged().run(time);
+        if ($this.getProps().getOnTimeChanged() != null) {
+            $this.getProps().getOnTimeChanged().run(time);
         }
     }
 

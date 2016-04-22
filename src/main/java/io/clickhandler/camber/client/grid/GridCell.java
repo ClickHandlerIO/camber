@@ -3,7 +3,7 @@ package io.clickhandler.camber.client.grid;
 import io.clickhandler.materialUiGwt.client.Checkbox;
 import io.clickhandler.materialUiGwt.client.icons.DragHandleSvgIcon;
 import io.clickhandler.reactGwt.client.Func;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.BaseProps;
 import io.clickhandler.reactGwt.client.react.Component;
 import io.clickhandler.reactGwt.client.react.ReactComponent;
@@ -29,10 +29,10 @@ public abstract class GridCell<D, P extends GridCell.Props<D>, S extends GridCel
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<P, S> $this, P props, S state) {
-        return div($ -> $.className("grid-cell" + " " + (props.getClassName() != null ? props.getClassName() : "") + (props.isSelected() ? " selected" : "")),
+    protected ReactElement render(ReactComponent<P, S> $this) {
+        return div($ -> $.className("grid-cell" + " " + ($this.getProps().getClassName() != null ? $this.getProps().getClassName() : "") + ($this.getProps().isSelected() ? " selected" : "")),
                 childList -> {
-                    if (props.isReorderEnabled()) {
+                    if ($this.getProps().isReorderEnabled()) {
                         childList.add(
                                 div($ -> $.className("reorder"),
                                         dragHandleSvgIcon.$()
@@ -40,14 +40,14 @@ public abstract class GridCell<D, P extends GridCell.Props<D>, S extends GridCel
                         );
                     }
 
-                    if (props.isSelectionEnabled()) {
+                    if ($this.getProps().isSelectionEnabled()) {
                         childList.add(
                                 div($ -> $.className("checkbox"),
                                         checkbox.$($ -> {
-                                            $.setChecked(props.isSelected());
+                                            $.setChecked($this.getProps().isSelected());
                                             $.setOnCheck(() -> {
-                                                if (props.getOnSelectionChanged() != null) {
-                                                    $this.props().getOnSelectionChanged().run($this.props().getData(), !props.isSelected());
+                                                if ($this.getProps().getOnSelectionChanged() != null) {
+                                                    $this.getProps().getOnSelectionChanged().run($this.getProps().getData(), !$this.getProps().isSelected());
                                                 }
                                             });
                                         })
@@ -56,7 +56,7 @@ public abstract class GridCell<D, P extends GridCell.Props<D>, S extends GridCel
                     }
 
                     childList.add(
-                            renderCell($this, props.getData(), props.getColumns())
+                            renderCell($this, $this.getProps().getData(), $this.getProps().getColumns())
                     );
                 }
         );
@@ -72,9 +72,9 @@ public abstract class GridCell<D, P extends GridCell.Props<D>, S extends GridCel
 
     protected abstract ReactElement renderCell(ReactComponent<P, S> $this, D data, List<GridColumn> columns);
 
-    protected CSSProps applyColumnSizing(CSSProps style, String columnId, List<GridColumn> columns) {
+    protected StyleProps applyColumnSizing(StyleProps style, String columnId, List<GridColumn> columns) {
         if (style == null) {
-            style = new CSSProps();
+            style = new StyleProps();
         }
 
         if (columnId == null || columnId.isEmpty() || columns == null || columns.isEmpty()) {

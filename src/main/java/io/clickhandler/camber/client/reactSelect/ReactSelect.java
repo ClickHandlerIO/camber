@@ -15,7 +15,7 @@ public class ReactSelect extends ExternalComponent<ReactSelect.Props> {
     }
 
     @Override
-    protected native ReactClass<Props> reactClass() /*-{
+    protected native ReactClass<Props> getReactClass() /*-{
         return $wnd.Camber.ReactSelect;
     }-*/;
 

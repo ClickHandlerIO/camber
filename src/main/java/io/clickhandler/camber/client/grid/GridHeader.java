@@ -30,21 +30,21 @@ public class GridHeader extends Component<GridHeader.Props, GridHeader.State> {
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> $this, Props props, State state) {
+    protected ReactElement render(ReactComponent<Props, State> $this) {
         return div($ -> $.className("grid-header"),
                 headerChildren -> {
-                    if (props.isReorderEnabled()) {
+                    if ($this.getProps().isReorderEnabled()) {
                         headerChildren.add(div($ -> $.className("reorder-placeholder")));
                     }
 
-                    if (props.isSelectionEnabled()) {
+                    if ($this.getProps().isSelectionEnabled()) {
                         headerChildren.add(
                                 div($ -> $.className("checkbox"),
                                         checkbox.$($ -> {
-                                            $.setChecked(props.isAllSelected());
+                                            $.setChecked($this.getProps().isAllSelected());
                                             $.setOnCheck(() -> {
-                                                if (props.getOnAllSelectedChanged() != null) {
-                                                    $this.props().getOnAllSelectedChanged().run(!$this.props().isAllSelected());
+                                                if ($this.getProps().getOnAllSelectedChanged() != null) {
+                                                    $this.getProps().getOnAllSelectedChanged().run(!$this.getProps().isAllSelected());
                                                 }
                                             });
                                         })
@@ -55,19 +55,19 @@ public class GridHeader extends Component<GridHeader.Props, GridHeader.State> {
                     headerChildren.add(
                             div($ -> $.className("header-row-container"),
                                     rowContainerChildren -> {
-                                        for (double i = 0.; i <= state.getMaxRowIdx(); ++i) {
+                                        for (double i = 0.; i <= $this.getState().getMaxRowIdx(); ++i) {
                                             final double j = i;
                                             rowContainerChildren.add(
                                                     div($ -> $.className("header-row"),
                                                             rowChildren -> {
-                                                                for (GridColumn c : $this.props().getColumns()) {
+                                                                for (GridColumn c : $this.getProps().getColumns()) {
                                                                     if (c.getDisplay().getRow() == j) {
                                                                         rowChildren.add(
                                                                                 gridHeaderCell.$($ -> {
                                                                                     $.setColumn(c);
                                                                                     $.setOnSortChanged((c2, sort) -> {
-                                                                                        if ($this.props().getOnSortChanged() != null) {
-                                                                                            $this.props().getOnSortChanged().run(c2, sort);
+                                                                                        if ($this.getProps().getOnSortChanged() != null) {
+                                                                                            $this.getProps().getOnSortChanged().run(c2, sort);
                                                                                         }
                                                                                     });
                                                                                 })
@@ -90,8 +90,8 @@ public class GridHeader extends Component<GridHeader.Props, GridHeader.State> {
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected void intakeProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.intakeProps($this, curProps, nextProps);
+    protected void intakeProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.intakeProps($this, nextProps);
 
         // get row count
         double maxRowIdx = 0.;

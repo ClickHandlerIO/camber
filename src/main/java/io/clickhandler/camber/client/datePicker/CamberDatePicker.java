@@ -31,8 +31,8 @@ public class CamberDatePicker extends Component<CamberDatePicker.Props, CamberDa
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent $this, Props props, State state) {
-        return div($ -> $.id(state.getGuid()));
+    protected ReactElement render(ReactComponent<Props, State> $this) {
+        return div($ -> $.id($this.getState().getGuid()));
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,18 +49,18 @@ public class CamberDatePicker extends Component<CamberDatePicker.Props, CamberDa
     }
 
     @Override
-    protected void componentDidMount(ReactComponent<Props, State> $this, Props props, State state) {
-        super.componentDidMount($this, props, state);
+    protected void componentDidMount(ReactComponent<Props, State> $this) {
+        super.componentDidMount($this);
 
         // add widget to ui
-        HTMLPanel panel = HTMLPanel.wrap(Document.get().getElementById(state.getGuid()));
-        panel.add(state.getPicker());
+        HTMLPanel panel = HTMLPanel.wrap(Document.get().getElementById($this.getState().getGuid()));
+        panel.add($this.getState().getPicker());
     }
 
     @Override
-    protected void intakeProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.intakeProps($this, curProps, nextProps);
-        $this.state().getPicker().setValue(nextProps.getMoment());
+    protected void intakeProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.intakeProps($this, nextProps);
+        $this.getState().getPicker().setValue(nextProps.getMoment());
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////

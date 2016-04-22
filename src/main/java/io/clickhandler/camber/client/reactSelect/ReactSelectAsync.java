@@ -15,7 +15,7 @@ public class ReactSelectAsync extends ExternalComponent<ReactSelectAsync.Props> 
     }
 
     @Override
-    protected native ReactClass<Props> reactClass() /*-{
+    protected native ReactClass<Props> getReactClass() /*-{
         return $wnd.Camber.ReactSelectAsync;
     }-*/;
 

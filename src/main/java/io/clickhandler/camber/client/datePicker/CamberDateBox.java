@@ -33,8 +33,8 @@ public class CamberDateBox extends Component<CamberDateBox.Props, CamberDateBox.
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent $this, Props props, State state) {
-        return div($ -> $.id(state.getGuid()));
+    protected ReactElement render(ReactComponent<Props, State> $this) {
+        return div($ -> $.id($this.getState().getGuid()));
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,12 +50,12 @@ public class CamberDateBox extends Component<CamberDateBox.Props, CamberDateBox.
         DateBox widget = new DateBox();
         widget.setFireNullValues(true);
         widget.addValueChangeHandler(e -> {
-            if ($this.props().getOnMomentChanged() != null) {
-                $this.props().getOnMomentChanged().run(e.getValue() == null ? null : DateUtil.fromBrowserAdjustedDate(e.getValue()));
+            if ($this.getProps().getOnMomentChanged() != null) {
+                $this.getProps().getOnMomentChanged().run(e.getValue() == null ? null : DateUtil.fromBrowserAdjustedDate(e.getValue()));
             }
         });
-        if ($this.props().getWidth() != null) {
-            widget.setWidth($this.props().getWidth());
+        if ($this.getProps().getWidth() != null) {
+            widget.setWidth($this.getProps().getWidth());
         }
         s.setDateBox(widget);
 
@@ -63,18 +63,18 @@ public class CamberDateBox extends Component<CamberDateBox.Props, CamberDateBox.
     }
 
     @Override
-    protected void componentDidMount(ReactComponent<Props, State> $this, Props props, State state) {
-        super.componentDidMount($this, props, state);
+    protected void componentDidMount(ReactComponent<Props, State> $this) {
+        super.componentDidMount($this);
 
         // add widget to ui
-        HTMLPanel panel = HTMLPanel.wrap(Document.get().getElementById(state.getGuid()));
-        panel.add(state.getDateBox());
+        HTMLPanel panel = HTMLPanel.wrap(Document.get().getElementById($this.getState().getGuid()));
+        panel.add($this.getState().getDateBox());
     }
 
     @Override
-    protected void intakeProps(ReactComponent<Props, State> $this, Props curProps, Props nextProps) {
-        super.intakeProps($this, curProps, nextProps);
-        DateBox widget = $this.state().getDateBox();
+    protected void intakeProps(ReactComponent<Props, State> $this, Props nextProps) {
+        super.intakeProps($this, nextProps);
+        DateBox widget = $this.getState().getDateBox();
         widget.setFormat(new DateBox.DefaultFormat(DateTimeFormat.getFormat(nextProps.getFormat())));
         widget.setValue(nextProps.getMoment() == null ? null : DateUtil.toBrowserAdjustedDate(nextProps.getMoment()), false);
         widget.getDatePicker().setVisibleYearCount(nextProps.getVisibleYearCount() == null ? 20 : nextProps.getVisibleYearCount().intValue());

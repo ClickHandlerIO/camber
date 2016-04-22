@@ -5,7 +5,7 @@ import io.clickhandler.materialUiGwt.client.icons.ArrowDropDownSvgIcon;
 import io.clickhandler.materialUiGwt.client.icons.ArrowDropUpSvgIcon;
 import elemental.html.DivElement;
 import io.clickhandler.reactGwt.client.Func;
-import io.clickhandler.reactGwt.client.dom.CSSProps;
+import io.clickhandler.reactGwt.client.dom.StyleProps;
 import io.clickhandler.reactGwt.client.react.*;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
@@ -36,14 +36,14 @@ public class GridHeaderCell extends Component<GridHeaderCell.Props, GridHeaderCe
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    protected ReactElement render(ReactComponent<Props, State> $this, Props props, State state) {
-        GridColumn c = props.getColumn();
+    protected ReactElement render(ReactComponent<Props, State> $this) {
+        GridColumn c = $this.getProps().getColumn();
 
         return div($ -> {
                     $.ref(divRef);
                     $.className("header-cell" + (!c.isAllowSort() ? " not-sortable" : ""));
 
-                    CSSProps s = new CSSProps();
+                    StyleProps s = new StyleProps();
                     s.overflow("hidden");
                     s.minWidth(c.getDisplay().getMinWidth() == null ? 0 : c.getDisplay().getMinWidth() + "px");
                     if (c.getDisplay().getWidth() != null) {
@@ -59,7 +59,7 @@ public class GridHeaderCell extends Component<GridHeaderCell.Props, GridHeaderCe
                             // handle sort
                             $.className("title-span");
                             $.onClick(e -> {
-                                GridColumn c2 = $this.props().getColumn();
+                                GridColumn c2 = $this.getProps().getColumn();
                                 if (!c2.isAllowSort()) {
                                     return;
                                 }
@@ -84,8 +84,8 @@ public class GridHeaderCell extends Component<GridHeaderCell.Props, GridHeaderCe
                                         break;
                                 }
 
-                                if ($this.props().getOnSortChanged() != null) {
-                                    $this.props().getOnSortChanged().run(c2, updatedSort);
+                                if ($this.getProps().getOnSortChanged() != null) {
+                                    $this.getProps().getOnSortChanged().run(c2, updatedSort);
                                 }
                             });
                         },
