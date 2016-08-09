@@ -10,6 +10,7 @@ import Avatar from 'material-ui/lib/avatar';
 import Badge from 'material-ui/lib/badge';
 import Card from 'material-ui/lib/card/card'
 import CircularProgress from 'material-ui/lib/circular-progress'
+import ChartJs from 'react-chartjs/dist/react-chartjs';
 import Checkbox from 'material-ui/lib/checkbox'
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
@@ -231,4 +232,5 @@ module.exports = {
     },
     ReactSelect: ReactSelect,
     TextareaAutosize: TextareaAutosize,
+    ChartJs: ChartJs,
 };
